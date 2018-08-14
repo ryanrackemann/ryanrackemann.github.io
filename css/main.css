@@ -1,0 +1,45 @@
+.nolink{
+	text-decoration: none;
+}
+
+h1{	font-size: 44px !important; }
+h2{	font-size: 38px !important; }
+h3{ font-size: 32px !important; }
+p{ font-size: 18px !important; }
+
+.w3-card-2 img{
+	width: 100%;
+}
+
+.horList ul
+{
+	width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.horList ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+.horList li:not(:first-child):before {
+    content: " | ";
+}
+
+.mySlides img{
+	width: 100%;
+}
+
+.clearBoth{
+	clear: both;
+}
+
+.icon{
+	width: 50px !important;
+}
+
+textarea{
+	resize: none;
+}
