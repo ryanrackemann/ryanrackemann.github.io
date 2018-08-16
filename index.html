@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/validation.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body class="w3-dark-gray w3-animate-opacity">
@@ -16,12 +17,12 @@
 		</div>
 	</header>
 	<div class="w3-container w3-padding-32 w3-dark-gray">
-		<h2 class="w3-panel w3-leftbar w3-border-teal w3-quarter">About me</h2>
-		<div class="w3-threequarter">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra velit ut velit euismod scelerisque. Pellentesque auctor elit dolor, eget rutrum purus condimentum eu.</p>
-			<p>Maecenas euismod sem luctus metus commodo, vel molestie arcu aliquet. Nullam placerat congue mauris in ultricies. Sed et libero nibh. Vestibulum nisi tellus, malesuada sed pellentesque eu, porttitor sed arcu. Nam non commodo purus. Maecenas scelerisque ultricies lacinia. Etiam ultrices felis tincidunt purus sodales commodo. Ut bibendum enim sit amet massa porta accumsan.</p>
+		<div class="w3-half">
+			<h2 class="w3-panel w3-leftbar w3-border-teal">About me</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra velit ut velit euismod scelerisque. Pellentesque auctor elit dolor, eget rutrum purus condimentum eu.</p>
+				<p>Maecenas euismod sem luctus metus commodo, vel molestie arcu aliquet. Nullam placerat congue mauris in ultricies. Sed et libero nibh. Vestibulum nisi tellus, malesuada sed pellentesque eu, porttitor sed arcu. Nam non commodo purus. Maecenas scelerisque ultricies lacinia. Etiam ultrices felis tincidunt purus sodales commodo. Ut bibendum enim sit amet massa porta accumsan.</p>
 		</div>
-		<div class="w3-center clearBoth">
+		<div class="w3-center w3-half sidePadding">
 			<div class="w3-content w3-display-container">
 				<!-- Slideshow Start -->
 				<div class="w3-display-container mySlides">
@@ -84,6 +85,7 @@
 	</div>
 	<div class="w3-container w3-padding-32 w3-dark-gray">
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Skills</h2>
+		<h3>Programming Languages</h3>
 		<div class="horList w3-large">
 			<ul>
 				<li>C</li>
@@ -100,40 +102,65 @@
 				<li>XSL/XSLT</li>
 			</ul>
 		</div>
+		<h3>Integrations</h3>
+		<div class="horList w3-large">
+			<ul>
+				<li>Google ReCaptcha (JavaScript or PHP)</li>
+				<li>PHPMailer</li>
+				<li>Bootstrap</li>
+				<li>W3.css</li>
+			</ul>
+		</div>
+		<h3>Other</h3>
+		<div class="horList w3-large">
+			<ul>
+				<li>PHP and JavaScript Form Validation</li>
+			</ul>
+		</div>
+
 	</div>
-	<form class="w3-container w3-padding-32 w3-black" action="">
+	<div class="w3-container w3-padding-32 w3-black">
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Contact</h2>
-		<div class="w3-half w3-margin-bottom">
-			<div class="w3-row w3-container">
-				<div class="w3-col  icon">
-					<i class="w3-xxlarge fa fa-user"></i>
+		<div id="response">text</div>
+		<form name="contactForm" onsubmit="validate()" action="javascript:void(0);">
+			<div class="w3-half w3-margin-bottom">
+				<div class="w3-row w3-container">
+					<label for="name">
+						<div class="w3-col  icon">
+							<i class="w3-xxlarge fa fa-user"></i>
+						</div>
+					</label>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" id="name" name="name" type="text" placeholder="First Last" required></input>
+					</div>
 				</div>
+			</div>
+			<div class="w3-half w3-margin-bottom">
+				<div class="w3-row w3-container">
+					<label for="email">
+						<div class="w3-col icon">
+							<i class="w3-xxlarge fa fa-envelope-o"></i>
+						</div>
+					</label>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" id="email" name="email" type="text" placeholder="Email" required>
+					</div>
+				</div>
+			</div>
+			<div class="w3-row w3-container clearBoth">
+				<label for="message">
+					<div class="w3-col icon">
+						<i class="w3-xxlarge fa fa-pencil"></i>
+					</div>
+				</label>
 				<div class="w3-rest">
-					<input class="w3-input w3-border" name="name" type="text" placeholder="First Last"></input>
+					<textarea rows="3" cols="50" class="w3-input w3-border" id="message" name="message" type="text" placeholder="Message" required></textarea>
 				</div>
 			</div>
-		</div>
-		<div class="w3-half w3-margin-bottom">
-			<div class="w3-row w3-container">
-			<div class="w3-col icon">
-				<i class="w3-xxlarge fa fa-envelope-o"></i>
+			<div class="w3-center">
+				<button data-theme="dark" data-sitekey="6LcYA2oUAAAAAJh-rXuTtZrDfV173Y5isPyIVIqE" type="submit" class="g-recaptcha w3-xlarge w3-button w3-section w3-teal w3-hover-white w3-padding">Submit <i class="w3-xlarge fa fa-check-square"></i></button>
 			</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="email" type="text" placeholder="Email">
-				</div>
-			</div>
-		</div>
-		<div class="w3-row w3-container clearBoth">
-			<div class="w3-col icon">
-				<i class="w3-xxlarge fa fa-pencil"></i>
-			</div>
-			<div class="w3-rest">
-				<textarea rows="3" cols="50" class="w3-input w3-border" name="message" type="text" placeholder="Message"></textarea>
-			</div>
-		</div>
-		<div class="w3-center">
-			<button data-theme="dark" data-sitekey="6LcYA2oUAAAAAJh-rXuTtZrDfV173Y5isPyIVIqE" data-callback="YourOnSubmitFn" type="submit" class="g-recaptcha w3-xlarge w3-button w3-section w3-teal w3-hover-white w3-padding">Submit <i class="w3-xlarge fa fa-check-square"></i></button>
-		</div>
-	</form>
+		</form>
+	</div>
 </body>
 </html>
