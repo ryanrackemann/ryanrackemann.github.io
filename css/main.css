@@ -18,6 +18,11 @@ p{ font-size: 18px !important; }
     padding: 0;
 }
 
+.sidePadding{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
 .horList ul li
 {
     list-style-type: none;
@@ -42,4 +47,8 @@ p{ font-size: 18px !important; }
 
 textarea{
 	resize: none;
+}
+
+label, input, textarea{
+	cursor: pointer;
 }
