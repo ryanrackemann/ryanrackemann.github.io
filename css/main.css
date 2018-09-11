@@ -8,7 +8,29 @@
 h1{	font-size: 44px !important; }
 h2{	font-size: 38px !important; }
 h3{ font-size: 32px !important; }
-p{ font-size: 18px !important; }
+p{ font-size: 20px !important; }
+input, textarea{ font-size: 20px !important; font: none !important; }
+
+h3, p, button{
+	 font-family: 'Fjalla One', sans-serif !important;
+}
+
+input, textarea{
+	font-family: 'VT323', monospace !important;
+}
+
+h2{
+	font-family: 'Orbitron', sans-serif !important;
+}
+
+h1{
+	font-family: 'Faster One', cursive !important;
+}
+
+input{
+	/*background-color: #616161 !important;*/
+	color: black !important;
+}
 
 .w3-card-2 img{
 	width: 100%;
