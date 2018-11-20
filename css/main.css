@@ -1,3 +1,40 @@
+/* Start Tabs */
+*{
+    box-sizing: border-box;
+}
+
+.tablist {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tablist button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tablist button:hover {
+    background-color: #ddd;
+}
+
+.tablist button.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+/* End Tabs */
+
 .hidden{
 	display: none;
 }
@@ -5,10 +42,17 @@
 	text-decoration: none;
 }
 
+.remove-padding{
+    padding: 0 !important;
+}
+
 h1{	font-size: 44px !important; }
 h2{	font-size: 38px !important; }
 h3{ font-size: 32px !important; }
-p{ font-size: 20px !important; }
+p{ 
+	font-size: 20px !important;
+	padding: 0 8px;
+}
 input, textarea{ font-size: 20px !important; font: none !important; }
 
 h3, p, button{
