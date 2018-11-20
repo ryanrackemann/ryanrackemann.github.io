@@ -5,7 +5,6 @@
 
 .tablist {
     overflow: hidden;
-    border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
 
@@ -30,16 +29,31 @@
 .tab-content {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
 }
+
+.tablist .w3-border-teal{
+    border-color: #009688!important;
+    background-color: #00968842 !important;
+}
+
+.tablist .w3-border-orange{
+    background-color: #ff980042 !important;
+    border-color: #ff9800!important;
+}
+
 /* End Tabs */
 
 .hidden{
 	display: none;
 }
+
 .nolink{
 	text-decoration: none;
+}
+
+.w3-dark-gray button{
+    color: #fff;
 }
 
 .remove-padding{
