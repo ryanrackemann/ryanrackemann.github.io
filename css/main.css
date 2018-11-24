@@ -106,6 +106,10 @@ input{
 	padding-right: 16px;
 }
 
+div {
+    word-wrap: break-word;
+}
+
 .horList ul li
 {
     list-style-type: none;

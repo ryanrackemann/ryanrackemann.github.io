@@ -9,13 +9,14 @@
 	<script type="text/javascript" src="js/email-success.js"></script>
 </head>
 <body onload="checkUrl()" class="w3-dark-gray w3-animate-opacity">
-	<div id="emailSuccess" class="w3-container w3-padding-32 w3-green w3-center hidden"></div>
-	<header class="w3-padding-16 w3-white w3-shadow w3-margin-bottom">
+	<div id="emailSuccess" class="w3-container w3-padding-16 w3-green w3-center hidden"></div>
+	<header class="w3-white w3-shadow">
 		<div class="w3-container w3-center">
-			<h1 class="w3-panel w3-leftbar w3-bottombar w3-rightbar w3-topbar w3-border-teal w3-padding-32">Ryan Rackemann</h1>
+			<h1 class="w3-panel w3-leftbar w3-bottombar w3-rightbar w3-topbar w3-border-teal w3-padding-16
+			">Ryan Rackemann</h1>
 		</div>
 	</header>
-	<div class="w3-container w3-padding-32 w3-dark-gray">
+	<div class="w3-container w3-padding-16 w3-dark-gray">
 		<div class="w3-half">
 			<h2 class="w3-panel w3-leftbar w3-border-teal">About me</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra velit ut velit euismod scelerisque. Pellentesque auctor elit dolor, eget rutrum purus condimentum eu.</p>
@@ -26,15 +27,15 @@
 				<!-- Slideshow Start -->
 				<div class="w3-display-container mySlides">
 				  <img src="img/nasa.jpg" />
-				  <div class="w3-display-topmiddle w3-small w3-container w3-padding-16 w3-dark-gray w3-opacity-min">Nasa</div>
+				  <div class="w3-display-topmiddle w3-small w3-container w3-dark-gray w3-opacity-min">Nasa</div>
 				</div>
 				<div class="w3-display-container mySlides">
 				  <img src="img/ski.jpg" />
-				  <div class="w3-display-topmiddle w3-small w3-container w3-padding-16 w3-dark-gray w3-opacity-min">Skiing</div>
+				  <div class="w3-display-topmiddle w3-small w3-container w3-dark-gray w3-opacity-min">Skiing</div>
 				</div>
 				<div class="w3-display-container mySlides">
 				  <img src="img/disney.jpg" />
-				  <div class="w3-display-topmiddle w3-small w3-container w3-padding-16 w3-dark-gray w3-opacity-min">Disneyland</div>
+				  <div class="w3-display-topmiddle w3-small w3-container w3-dark-gray w3-opacity-min">Disneyland</div>
 				</div>
 				<button class="w3-button w3-display-left w3-dark-gray w3-hover-black w3-opacity slider" onclick="plusDivs(-1)">&#10094;</button>
 				<button class="w3-button w3-display-right w3-dark-gray w3-hover-black w3-opacity slider" onclick="plusDivs(+1)">&#10095;</button>
@@ -43,13 +44,14 @@
 		</div>
 	<script type="text/javascript" src="js/slide.js"></script>
 	</div>
-	<div class="w3-container w3-padding-32 w3-white">
+	<div class="w3-container w3-padding-16 w3-white">
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Projects</h2>
-		<div class="w3-container w3-padding-32 w3-white">
+		<div class="w3-white">
 			<div class="tablist w3-black">
 				<button id="defaultOpen" class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'Python')">Python</button>
 				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'PHP')">PHP</button>
 				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'JavaScript')">JavaScript</button>
+				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'HTML')">HTML</button>
 			</div>
 
 			<div id="Python" class="tab-content w3-dark-gray">
@@ -117,47 +119,15 @@
 	<div id="JavaScript" class="tab-content w3-dark-gray">
 		<p>Here is some JavaScript code for some testing purposes.</p>
 	</div>
+
+	<div id="HTML" class="tab-content w3-dark-gray">
+		<p>Here is some HTML for some testing purposes.</p>
+	</div>
 </div>
 		</div>
 	<script type="text/JavaScript" src="js/tabular.js"></script>
-		<!-- <p>There have been many projects that I have worked on through my time at CSU Channel Islands as both student and student worker.</p>
-		<div class="w3-row-padding w3-center">
-			<div class="w3-third">
-				<a href="#" class="nolink">
-					<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-						<img src="img/ski.jpg" alt="" />
-						<div class="w3-container">
-							<h3>Card 1</h3>
-							<p>Little description explaining what this project is</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-third">
-				<a href="#" class="nolink">
-					<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-						<img src="img/disney.jpg" alt="" />
-						<div class="w3-container">
-							<h3>Card 2</h3>
-							<p>Little description explaining what this project is</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="w3-third">
-				<a href="#" class="nolink">
-					<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-						<img src="img/nasa.jpg" alt="" />
-						<div class="w3-container">
-							<h3>Card 3</h3>
-							<p>Little description explaining what this project is</p>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div> -->
 	</div>
-	<div class="w3-container w3-padding-32 w3-dark-gray">
+	<div class="w3-container w3-padding-16 w3-dark-gray">
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Skills</h2>
 		<h3>Programming Languages</h3>
 		<div class="horList w3-large">
@@ -192,7 +162,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="w3-container w3-padding-32 w3-black">
+	<div class="w3-container w3-padding-16 w3-black">
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Contact</h2>
 		<form method="post" name="contactForm" action="https://formspree.io/ryanrackemann@gmail.com">
 			<input type="hidden" name="_next" value="https://www.ryanrackemann.com/?success" />
