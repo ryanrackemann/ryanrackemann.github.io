@@ -48,82 +48,28 @@
 		<h2 class="w3-panel w3-leftbar w3-border-teal">Projects</h2>
 		<div class="w3-white">
 			<div class="tablist w3-black">
-				<button id="defaultOpen" class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'Python')">Python</button>
-				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'PHP')">PHP</button>
-				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'JavaScript')">JavaScript</button>
-				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'HTML')">HTML</button>
+				<button id="defaultOpen" class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'pyWrapper')">Python</button>
+				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'phpWrapper')">PHP</button>
+				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'jsWrapper')">JavaScript</button>
+				<button class="tab-header w3-leftbar w3-border-orange" onclick="getProjects(event, 'htmlWrapper')">HTML</button>
 			</div>
 
-			<div id="Python" class="tab-content w3-dark-gray">
-				<p>There have been many projects that I have worked on through my time at CSU Channel Islands as both student and student worker.</p>
-				<div class="remove-padding w3-row-padding w3-center">
-					<div class="w3-third">
-						<a href="#" class="nolink">
-							<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-								<div class="w3-container">
-									<h3>Transformations</h3>
-									<p>Little description explaining what this project is</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="w3-third">
-						<a href="#" class="nolink">
-							<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-								<div class="w3-container">
-									<h3>Web Scraper</h3>
-									<p>Little description explaining what this project is</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="w3-third">
-						<a href="#" class="nolink">
-							<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-								<div class="w3-container">
-									<h3>Sitemap Generator</h3>
-									<p>Little description explaining what this project is</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="w3-third">
-						<a href="#" class="nolink">
-							<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-								<div class="w3-container">
-									<h3>Line of Best Fit</h3>
-									<p>Little description explaining what this project is</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
+			<div id="pyWrapper" class="tab-content w3-dark-gray">
+				<div id="py" class="remove-padding w3-row-padding w3-center"></div>
 			</div>
 
-	<div id="PHP" class="tab-content w3-dark-gray">
-		<p>Here is some PHP code for some testing purposes.</p>
-		<div class="remove-padding w3-row-padding w3-center">
-			<div class="w3-third">
-				<a href="#" class="nolink">
-					<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">
-						<div class="w3-container">
-							<h3>Form Builder</h3>
-							<p>Little description explaining what this project is</p>
-						</div>
-					</div>
-				</a>
-			</div>
+		<div id="phpWrapper" class="tab-content w3-dark-gray">
+			<div id="php" class="remove-padding w3-row-padding w3-center"></div>
+		</div>
+
+		<div id="jsWrapper" class="tab-content w3-dark-gray">
+			<div id="js" class="remove-padding w3-row-padding w3-center"></div>
+		</div>
+
+		<div id="htmlWrapper" class="tab-content w3-dark-gray">
+			<div id="html" class="remove-padding w3-row-padding w3-center"></div>
 		</div>
 	</div>
-
-	<div id="JavaScript" class="tab-content w3-dark-gray">
-		<p>Here is some JavaScript code for some testing purposes.</p>
-	</div>
-
-	<div id="HTML" class="tab-content w3-dark-gray">
-		<p>Here is some HTML for some testing purposes.</p>
-	</div>
-</div>
 		</div>
 	<script type="text/JavaScript" src="js/tabular.js"></script>
 	</div>

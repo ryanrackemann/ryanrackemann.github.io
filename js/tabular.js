@@ -1,3 +1,42 @@
+var transformations = {
+    href: '#',
+    title: 'Transformations',
+    descr: 'Little description explaining what this project is',
+    tags: ['py']
+};
+var scraper = {
+    href: '#',
+    title: 'Web Scraper',
+    descr: 'Little description explaining what this project is',
+    tags: ['py']
+};
+var sitemapGenerator = {
+    href: '#',
+    title: 'Sitemap Generator',
+    descr: 'Little description explaining what this project is',
+    tags: ['py', 'html']
+};
+var lineOfBestFit = {
+    href: '#',
+    title: 'Line of Best Fit',
+    descr: 'Little description explaining what this project is',
+    tags: ['py']
+};
+var formBuilder = {
+    href: '#',
+    title: 'Form Builder',
+    descr: 'Little description explaining what this project is',
+    tags: ['html', 'php', 'js']
+};
+var projects = [
+    transformations,
+    scraper,
+    sitemapGenerator,
+    lineOfBestFit,
+    formBuilder
+];
+
+// Controls tabs for Projects section
 function getProjects(event, name) {
     // Declare all variables
     var i, tabcontent, tabheader;
@@ -19,3 +58,21 @@ function getProjects(event, name) {
     event.currentTarget.className = "tab-header active w3-leftbar w3-border-teal";
 }
 document.getElementById("defaultOpen").click();
+
+// Manages the relative projects under each Language Project tab
+function fillLang(lang) {
+    for (var i = 0; i < projects.length; i++) {
+        for (var j = 0; j < projects[i].tags.length; j++) {
+            document.getElementById(projects[i].tags[j]).innerHTML = '<div class="w3-third">' +
+                    '<a href="' + projects[i].href + '" class="nolink">' +
+                        '<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">' +
+                            '<div class="w3-container">' +
+                                '<h3>' + projects[i].title + '</h3>' +
+                                '<p>' + projects[i].descr + '</p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</a>' +
+                '</div>';
+        }
+    }
+}
