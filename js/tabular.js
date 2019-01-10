@@ -60,10 +60,13 @@ function getProjects(event, name) {
 document.getElementById("defaultOpen").click();
 
 // Manages the relative projects under each Language Project tab
-function fillLang(lang) {
+function fillLang() {
     for (var i = 0; i < projects.length; i++) {
         for (var j = 0; j < projects[i].tags.length; j++) {
-            document.getElementById(projects[i].tags[j]).innerHTML = '<div class="w3-third">' +
+            console.log(projects[i].title);
+            console.log(projects[i].descr);
+            console.log(projects[i].tags[j]);
+            document.getElementById(projects[i].tags[j]).innerHTML += '<div class="w3-third">' +
                     '<a href="' + projects[i].href + '" class="nolink">' +
                         '<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">' +
                             '<div class="w3-container">' +
@@ -75,4 +78,9 @@ function fillLang(lang) {
                 '</div>';
         }
     }
+}
+
+window.onload = function() {
+    checkUrl();
+    fillLang();
 }
