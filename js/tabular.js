@@ -63,9 +63,6 @@ document.getElementById("defaultOpen").click();
 function fillLang() {
     for (var i = 0; i < projects.length; i++) {
         for (var j = 0; j < projects[i].tags.length; j++) {
-            console.log(projects[i].title);
-            console.log(projects[i].descr);
-            console.log(projects[i].tags[j]);
             document.getElementById(projects[i].tags[j]).innerHTML += '<div class="w3-third">' +
                     '<a href="' + projects[i].href + '" class="nolink">' +
                         '<div class="w3-card-2 w3-black w3-hover-teal w3-hover-shadow w3-margin-bottom">' +
