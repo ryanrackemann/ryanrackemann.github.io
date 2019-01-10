@@ -1,0 +1,138 @@
+.hidden{
+	display: none;
+}
+
+/* Start Badges */
+.best-seller{
+	margin-left: 5px ;
+	display: inline-block;
+	padding-left: 8px;
+	padding-right: 8px;
+	vertical-align: super;
+	text-align: center;
+	background-color: #c01f01;
+	color: white;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+.new{
+	margin-left: 5px ;
+	display: inline-block;
+	padding-left: 8px;
+	padding-right: 8px;
+	vertical-align: super;
+	text-align: center;
+	background-color: #939496;
+	color: white;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+.price{
+	float: right;
+	display: inline-block;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 4px;
+    border: black 1px solid;
+	text-align: center;
+}
+/* End Badges */
+
+ul.menu{
+	border-top: #9394964a 1px solid;
+	list-style: none;
+	margin-left: 0 !important;
+	padding: 0;
+}
+
+ul.menu>li{
+	border-bottom: #9394964a 1px solid;
+	padding: 12px;
+}
+
+.banner-image{
+	width: 700px;
+}
+
+#fb-likes{
+	position: relative;
+    margin: 20px auto 0 auto;
+    top: 50%;
+}
+
+.go{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.sidePadding{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.ja-red{
+	background-color: #c01f01 !important;
+	color: white !important;
+}
+
+.ja-gray{
+	background-color: #939496 !important;
+	color: black !important;
+}
+
+.w3-container{
+	padding-left: 100px !important;
+	padding-right: 100px !important;
+}
+
+/* Start Tabs */
+*{
+    box-sizing: border-box;
+}
+
+.tablist {
+    overflow: hidden;
+    background-color: #c01f01;
+    color: white;
+}
+
+.tablist button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+button.tab-header.inactive:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.tablist button.active {
+    background-color: white;
+    color: black;
+}
+
+.tablist button.inactive {
+    background-color: #c01f01;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    background-color: white;
+}
+
+
+/* End Tabs */
