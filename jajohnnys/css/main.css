@@ -1,9 +1,42 @@
-.hidden{
-	display: none;
+@media only screen and (max-width: 600px) {
+	.mobilize {
+		display: block;
+		width: 100% !important;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.mobilize p{
+		margin-top: 12px !important;
+		margin-bottom: 0 !important;
+	}
+
+	iframe {
+		display: block !important;
+		margin: 12px auto 0 auto !important;
+		float: none !important;
+	}
+}
+
+iframe {
+	float: right;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.pad {
+	padding-top: 16px !important;
+	padding-bottom: 16px !important;
 }
 
 /* Start Badges */
-.best-seller{
+.best-seller {
 	margin-left: 5px ;
 	display: inline-block;
 	padding-left: 8px;
@@ -16,7 +49,7 @@
 	border-radius: 4px;
 }
 
-.new{
+.new {
 	margin-left: 5px ;
 	display: inline-block;
 	padding-left: 8px;
@@ -29,7 +62,7 @@
 	border-radius: 4px;
 }
 
-.price{
+.price {
 	float: right;
 	display: inline-block;
 	padding-left: 8px;
@@ -40,29 +73,30 @@
 }
 /* End Badges */
 
-ul.menu{
+ul.menu {
 	border-top: #9394964a 1px solid;
 	list-style: none;
 	margin-left: 0 !important;
 	padding: 0;
 }
 
-ul.menu>li{
+ul.menu > li {
 	border-bottom: #9394964a 1px solid;
 	padding: 12px;
 }
 
-.banner-image{
+.banner-image {
+	max-width: 100%;
 	width: 700px;
 }
 
-#fb-likes{
+#fb-likes {
 	position: relative;
     margin: 20px auto 0 auto;
     top: 50%;
 }
 
-.go{
+.go {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -71,28 +105,28 @@ ul.menu>li{
   -webkit-transform: rotate(-45deg);
 }
 
-.sidePadding{
+.sidePadding {
 	padding-left: 16px;
 	padding-right: 16px;
 }
 
-.ja-red{
+.ja-red {
 	background-color: #c01f01 !important;
 	color: white !important;
 }
 
-.ja-gray{
+.ja-gray {
 	background-color: #939496 !important;
 	color: black !important;
 }
 
-.w3-container{
+.pad {
 	padding-left: 100px !important;
 	padding-right: 100px !important;
 }
 
 /* Start Tabs */
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -133,6 +167,4 @@ button.tab-header.inactive:hover {
     border-top: none;
     background-color: white;
 }
-
-
 /* End Tabs */
