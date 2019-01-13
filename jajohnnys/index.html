@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="w3-dark-gray w3-animate-opacity">
+	<header class="w3-padding-16 ja-red">
+		<h1 class="hidden">J.A. Johnny's Cafe&#769;</h1>
+		<div class="center">
+			<img class="banner-image" src="img/ja-logo.png" alt="J.A. Johnny's" />
+		</div>
+	</header>
 	<div class="w3-container w3-row">
 		<div class="w3-half mobilize">
 			<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br /><a class="w3-small" href="#">View our complete hours >></a></p>
@@ -16,13 +22,7 @@
 			<iframe id="fb-likes" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FJA-Johnnys-Parker-AZ-266454250204251%2F&width=147&layout=button_count&action=like&size=large&show_faces=false&share=true&height=46&appId" width="147" height="42" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 		</div>
 	</div>
-	<header class="w3-padding-16 ja-red">
-		<h1 class="hidden">J.A. Johnny's Cafe&#769;</h1>
-		<div class="center">
-			<img class="banner-image" src="img/ja-logo.png" alt="J.A. Johnny's" />
-		</div>
-	</header>
-	<div class="w3-container w3-padding-32 w3-white w3-mobile">
+	<div class="w3-container w3-padding-16 w3-white w3-mobile">
 		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
 		<div class="w3-half">
 			<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated & renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
@@ -38,38 +38,191 @@
 		<h2>Menu</h2>
 		<div class="w3-white">
 			<div class="tablist">
-				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'pyWrapper')">Appetizers</button>
-				<button class="tab-header" onclick="getProjects(event, 'phpWrapper')">Sides</button>
-				<button class="tab-header" onclick="getProjects(event, 'jsWrapper')">Drinks</button>
+				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'breakfast')">Breakfast</button>
+				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
+				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'pizza')">Pizza</button>
+				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'burg')">Burgers, Sandwiches, Salads, and More</button>
 			</div>
-			<div id="pyWrapper" class="tab-content">
-				<div id="py" class="remove-padding w3-row-padding w3-margin-top">
+
+			<div id="breakfast" class="tab-content">
+				<div class="remove-padding w3-row-padding w3-margin-top">
 					<ul class="menu">
 						<li>
-							<h3>Burger<span class="best-seller">Best Seller</span><span class="price">$10.95</span></h3>
-							<p>It has stuff on it like lettuce and tomato and those kinds of things</p>
+							<h3>Chile Verde Breakfast Burrito<span class="price">5.75</span></h3>
 						</li>
 						<li>
-							<h3>Veggie Burger<span class="price">$9.95</span></h3>
-							<p>It also has stuff on it like lettuce and tomato and those kinds of things</p>
+							<h3>Breakfast Sandwich<span class="price">5.75</span></h3>
+							<p>Ham or bacon with egg and cheese</p>
 						</li>
 						<li>
-							<h3>Chicken Strips<span class="new">New</span> <span class="price">$6.95</span></h3>
-							<p>Three pieces of crusted chickens</p>
+							<h3>Ham or Bacon Egg Burrito<span class="price">5.75</span></h3>
+						</li>
+						<li>Traditional breakfast available, just ask :)</li>
+					</ul>
+				</div>
+			</div>
+			<div id="app" class="tab-content">
+				<div class="remove-padding w3-row-padding w3-margin-top">
+					<ul class="menu">
+						<li>
+							<h3>Chicken Strips (4)<span class="new">New</span><span class="price">$6.50</span></h3>
+						</li>
+						<li>
+							<h3>Fried Zucchini Sticks<span class="price">$4.25</span></h3>
+						</li>
+						<li>
+							<h3>Fried Pickles<span class="price">$4.25</span></h3>
+						</li>
+						<li>
+							<h3>Chicken Wings (6)<span class="hot">HOT!</span><span class="price">$6.50</span></h3>
+							<p>Hot, Naked, or BBQ</p>
+						</li>
+						<li>
+							<h3>Fried/Jal. Cheese Sticks (6)<span class="price">$4.50</span></h3>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<div id="phpWrapper" class="tab-content">
-				<div id="php" class="remove-padding w3-row-padding w3-margin-top"></div>
+			<div id="pizza" class="tab-content">
+				<div class="remove-padding w3-row-padding w3-margin-top">
+					<ul class="menu">
+						<li>
+							<h3>12" Cheese<span class="price">$12.00</span></h3>
+						</li>
+						<li>
+							<h3>12" 5 Cheese<span class="price">$14.00</span></h3>
+						</li>
+						<li>
+							<h3>Pepperoni<span class="price">$13.00</span></h3>
+						</li>
+						<li>
+							<h3>J.A.'s White<span class="price">$13.00</span></h3>
+							<p>Includes: garlic, basil, mozzarella, romano, parmesan, and asiago</p>
+						</li>
+						<li>
+							<h3>Veggie<span class="price">$13.00</span></h3>
+							<p>Includes: bell peppers, onions, tomato, mushrooms, olives</p>
+						</li>
+						<li>
+							<h3>Supreme<span class="price">$15.00</span></h3>
+							<p>Includes: pepperoni, sausage, bell peppers, onion, mushrooms</p>
+						</li>
+						<li>
+							<h3>Meat Lovers<span class="price">$15.00</span></h3>
+							<p>Includes: pepperoni, sausage, canadian bacon, salami, and bacon</p>
+						</li>
+						<li>
+							<h3>Hawaiian<span class="price">$14.00</span></h3>
+							<p>Includes: canadian bacon and pineapple</p>
+						</li>
+						<li>
+							<h3>Pastrami<span class="price">$15.00</span></h3>
+							<p>Includes: pastrami, pepperoncinis, and mustard</p>
+						</li>
+						<li>
+							<h3>Margarita<span class="price">$13.00</span></h3>
+							<p>Includes: olive oil, tomato, garlic, and basil</p>
+						</li>
+						<li>
+							<p>Extra Toppings<span class="price">$1.00</span></p>
+							<p>Gluten Free<span class="price">$2.00</span></p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div id="jsWrapper" class="tab-content">
-				<div id="js" class="remove-padding w3-row-padding w3-margin-top"></div>
-			</div>
-			<div id="htmlWrapper" class="tab-content">
-				<div id="html" class="remove-padding w3-row-padding w3-margin-top"></div>
+			<div id="burg" class="tab-content">
+				<div class="remove-padding w3-row-padding w3-margin-top">
+					<ul class="menu">
+						<li>
+							<h3>Angus Burger<span class="price">$7.50</span></h3>
+							<p>Lettuce, Tomato, Onion, Pastrami, Thousand Island. (Add cheese<span class="new">$0.50</span>)</p>
+						</li>
+						<li>
+							<h3>Traditional Patty Melt<span class="price">$7.50</span></h3>
+						</li>
+						<li>
+							<h3>BLT<span class="price">$7.25</span></h3>
+						</li>
+						<li>
+							<h3>J.A.'s Grilled Cheese<span class="price">$4.75</span></h3>
+						</li>
+						<li>
+							<h3>J.A.'s Not a Reuben<span class="price">$7.75</span></h3>
+						</li>
+						<li>
+							<h3>Grilled Chicken Sandwich<span class="price">$7.50</span></h3>
+						</li>
+						<li>
+							<h3>Fish and Chips<span class="price">$8.50</span></h3>
+						</li>
+						<li>
+							<h3>Chicken Caesar Sandwich<span class="price">$7.50</span></h3>
+						</li>
+						<li>
+							<h3>Chef Salad<span class="price">$5.95</span></h3>
+						</li>
+						<li>
+							<h3>Dinner Salad<span class="price">$4.95</span></h3>
+						</li>
+						<li>
+							<h3>Turkey Burger<span class="price">$6.00</span></h3>
+							<p>Add cheese<span class="new">$0.50</span></p>
+						</li>
+						<li>
+							<h3>Turkey Melt<span class="price">$6.25</span></h3>
+						</li>
+						<li>
+							<h3>Grilled Pastrami<span class="price">$7.50</span></h3>
+						</li>
+						<li>
+							<h3>Grilled Ham and Cheese<span class="price">$6.75</span></h3>
+						</li>
+						<li>
+							<h3>J.A.'s Club Sandwich<span class="price">$8.50</span></h3>
+						</li>
+						<li>
+							<h3>Polish Sausage Sandwich<span class="price">$6.75</span></h3>
+						</li>
+						<li>
+							<h3>Deli Sandwiches<span class="price">$6.75</span></h3>
+							<p>Turkey, Salami, Ham, or Veggie</p>
+							<p>Choice of Veggie includes: lettuce, tomato, and in&ndash;season veggies.</p>
+						</li>
+						<li>
+							<h3>Fried Onion Rings<span class="price">$5.75</span></h3>
+						</li>
+						<li>
+							<h3>Fresh Cut French Fries<span class="price">$2.50</span></h3>
+							<p>In season</p>
+						</li>
+						<li>
+							<h3>French Fries<span class="price">$1.75</span></h3>
+							<p>Out of season</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
+	</div>
+	<div class="w3-cell-row">
+		<div class="ja-red w3-container w3-cell w3-mobile">
+			<h2>Hours</h2>
+			<p>Monday: 10am &ndash; 9pm<br />
+				Tuesday: 10am &ndash; 9pm<br />
+				Wednesday: 10am &ndash; 9pm<br />
+				Thursday: 10am &ndash; 9pm<br />
+				Friday: 10am &ndash; 9pm<br />
+				Saturday: 10am &ndash; 9pm<br />
+				Sunday: 10am &ndash; 9pm<br />
+			</p>
+		</div>
+		<div class="w3-white w3-container w3-cell w3-mobile">
+			<h2>Directions</h2>
+			<p>J.A. Johnny's Cafe&#769;<br />9134 Riverside Drive<br />Parker, AZ</p>
+		</div>
+	</div>
+	<div class="w3-container w3-padding-16 ja-gray">
+		<h2>Next section</h2>
 	</div>
 	<footer class="w3-container w3-padding-16 ja-red">
 	</footer>
