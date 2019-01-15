@@ -168,17 +168,24 @@ ul.menu > li > p {
 	padding-right: 100px !important;
 }
 
-/* Start Tabs */
-* {
-    box-sizing: border-box;
-}
+/* Start Form Fields */
 
+input, textarea{ font-size: 20px !important; font: none !important; }
+input, textarea{ font-family: 'VT323', monospace !important; }
+input{ color: black !important; }
+.icon{ width: 50px !important; }
+textarea{ resize: none; }
+label, input, textarea{ cursor: pointer; }
+
+/* End Form Fields */
+
+/* Start Tabs */
+* { box-sizing: border-box; }
 .tablist {
     overflow: hidden;
     background-color: #c01f01;
     color: white;
 }
-
 .tablist button {
     background-color: inherit;
     float: left;
@@ -188,22 +195,18 @@ ul.menu > li > p {
     padding: 14px 16px;
     transition: 0.3s;
 }
-
 button.tab-header.inactive:hover {
     background-color: #ccc;
     color: black;
 }
-
 .tablist button.active {
     background-color: white;
     color: black;
 }
-
 .tablist button.inactive {
     background-color: #c01f01;
     color: white;
 }
-
 .tab-content {
     display: none;
     padding: 6px 12px;

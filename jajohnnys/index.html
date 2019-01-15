@@ -257,16 +257,57 @@
 		</div>
 		<div class="w3-white w3-container w3-cell w3-mobile">
 			<h2>Directions</h2>
-			<p>J.A. Johnny's Cafe&#769;<br />9134 Riverside Drive<br />Parker, AZ</p>
-			<a class="btn" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps &gt;&gt;</a>
+			<p>J.A. Johnny's Cafe&#769;<br />9134 Riverside Dr<br />Parker, AZ 85344</p>
+			<a id="direct" class="btn" target="_blank" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps &gt;&gt;</a>
 		</div>
 	</div>
 	<div class="w3-container w3-padding-16 ja-gray">
-		<h2>Next section</h2>
+		<h2>Contact Us</h2>
+		<form method="post" name="contactForm" action="https://formspree.io/ryanrackemann@gmail.com">
+			<input type="hidden" name="_next" value="https://www.ryanrackemann.com/?success" />
+			<div class="w3-half w3-margin-bottom">
+				<div class="w3-row w3-container">
+					<label for="name">
+						<div class="w3-col  icon">
+							<i class="w3-xxlarge fa fa-user"></i>
+						</div>
+					</label>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" id="name" name="name" type="text" placeholder="First Last" required />
+					</div>
+				</div>
+			</div>
+			<div class="w3-half w3-margin-bottom">
+				<div class="w3-row w3-container">
+					<label for="email">
+						<div class="w3-col icon">
+							<i class="w3-xxlarge fa fa-envelope-o"></i>
+						</div>
+					</label>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" id="email" name="_replyto" type="text" placeholder="Email" required />
+					</div>
+				</div>
+			</div>
+			<div class="w3-row w3-container clearBoth">
+				<label for="message">
+					<div class="w3-col icon">
+						<i class="w3-xxlarge fa fa-pencil"></i>
+					</div>
+				</label>
+				<div class="w3-rest">
+					<textarea rows="3" cols="50" class="w3-input w3-border" id="message" name="message" type="text" placeholder="Message" required></textarea>
+				</div>
+			</div>
+			<div class="w3-center">
+				<button type="submit" class="w3-xlarge w3-button w3-section w3-teal w3-hover-white w3-padding">Submit <i class="w3-xlarge fa fa-check-square"></i></button>
+			</div>
+		</form>
 	</div>
 	<footer class="w3-container w3-padding-16 ja-red">
 	</footer>
 	<script type="text/JavaScript" src="js/tabs.js"></script>
+	<script type="text/JavaScript" src="js/geoDirect.js"></script>
 	</div>
 </body>
 </html>
