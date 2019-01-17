@@ -1,0 +1,146 @@
+@media only screen and (max-width: 600px) {
+	.mobilize {
+		display: block;
+		width: 100% !important;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.mobilize p{
+		margin-top: 12px !important;
+		margin-bottom: 0 !important;
+	}
+
+	iframe#fb-likes {
+		display: block !important;
+		margin: 12px auto 0 auto !important;
+		float: none !important;
+	}
+
+	ul.menu > li > .menuItem {
+		width: 100%;
+		float: none;
+	}
+
+	ul.menu > li > .price, ul.menu > li > .new { float: none; }
+}
+
+.block-wrap {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 16px;
+	justify-content: space-between;
+}
+
+.block {
+	padding: 16px;
+	display:inline-grid;
+	align-content: center;
+}
+
+.pad {
+	padding: 16px;
+}
+
+.push {
+	margin-top: 16px !important;
+}
+
+iframe {
+	border: 0;
+	float: right;
+	overflow: hidden;
+	height: 28px;
+	width: 147px;
+}
+
+#fb-likes {
+	position: relative;
+	float: right;
+}
+
+.hidden { display: none !important; }
+
+.center { text-align: center !important; }
+
+.no-pad { padding: 0 !important; }
+
+.btn {
+	display: inline-block;
+	background-color: black;
+	color: white;
+	user-select: none;
+	margin-top: 2px;
+	padding: 6px 12px;
+	border-radius: 4px;
+    border: black 1px solid;
+	text-decoration: none;
+}
+
+.btn-small{
+	font-size: 12px;
+}
+
+.btn:hover {
+	background-color: #939496;
+	color: white;
+	display: inline-block;
+}
+
+.ja-red {
+	background-color: #c01f01 !important;
+	color: white !important;
+}
+
+.ja-gray {
+	background-color: #939496 !important;
+	color: black !important;
+}
+
+/* Start Form Fields */
+
+input, textarea{ font-size: 20px !important; font: none !important; }
+input, textarea{ font-family: 'VT323', monospace !important; }
+input{ color: black !important; }
+.icon{ width: 50px !important; }
+textarea{ resize: none; }
+label, input, textarea{ cursor: pointer; }
+
+/* End Form Fields */
+
+/* Start Tabs */
+* { box-sizing: border-box; }
+.tablist {
+	padding: 16px 16px 0 16px !important;
+    overflow: hidden;
+    background-color: #c01f01;
+    color: white;
+}
+.tablist button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+button.tab-header.inactive:hover {
+    background-color: #ccc;
+    color: black;
+}
+.tablist button.active {
+    background-color: white;
+    color: black;
+}
+.tablist button.inactive {
+    background-color: #c01f01;
+    color: white;
+}
+.tab-content {
+    display: none;
+    padding: 6px 12px !important;
+    border-top: none;
+    background-color: white;
+}
+/* End Tabs */

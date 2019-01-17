@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
 <head>
 	<title>Ryan Rackemann</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta property="og:url"           content="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="J.A. Johnny's" />
+<meta property="og:description"   content="J.A. Johnny's Cafe" />
+<meta property="og:image"         content="https://www.ryanrackemann.com/jajohnnys/img/ja-logo.png" />
+
 </head>
-<body class="w3-white w3-animate-opacity">
-	<header class="w3-padding-16 ja-red">
+<body>
+	<header class="pad ja-red">
 		<h1 class="hidden">J.A. Johnny's Cafe&#769;</h1>
 		<div class="center">
 			<img class="banner-image" src="img/ja-logo.png" alt="J.A. Johnny's" />
 		</div>
 	</header>
-	<div class="w3-container w3-row ja-gray">
-		<div class="w3-half mobilize">
-			<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br /><a class="btn btn-small" href="#">View our complete hours &gt;&gt;</a></p>
+	<div class="block-wrap ja-gray">
+		<div class="block">
+				<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br /><a class="btn btn-small push" href="#">View our complete hours</a></p>
 		</div>
-		<div class="w3-half mobilize">
-			<iframe id="fb-likes" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FJA-Johnnys-Parker-AZ-266454250204251%2F&width=147&layout=button_count&action=like&size=large&show_faces=false&share=true&height=46&appId" width="147" height="42" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+		<div class="block">
+			<p><a id="facebook" class="btn" href="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251">Visit us on FaceBook</a></p>
 		</div>
 	</div>
-	<div class="w3-container w3-padding-16 w3-white w3-mobile">
+	<div class="w3-container w3-white w3-mobile">
 		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
 		<div class="w3-half">
 			<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated & renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
 			<p>The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
 			<p>We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
 		</div>
-		<div class="w3-half sidePadding center w3-mobile">
+		<div class="w3-half center w3-mobile">
 			<img src="img/storefront.jpg" class="w3-image" alt="J.A. Johnny's Cafe&#769; Storefront" />
 		</div>
-	<script type="text/javascript" src="js/slide.js"></script>
 	</div>
-	<div class="w3-container w3-padding-16 ja-gray">
+	<div class="w3-container ja-gray">
 		<h2>Menu</h2>
-		<div class="w3-white">
+		<div class="w3-white no-pad">
 			<div class="tablist">
 				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'breakfast')">Breakfast</button>
 				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
@@ -45,7 +53,7 @@
 			</div>
 
 			<div id="breakfast" class="tab-content">
-				<div class="remove-padding w3-row-padding w3-margin-top">
+				<div class="w3-row-padding w3-margin-top">
 					<ul class="menu">
 						<li>
 							<h3 class="menuItem">Chile Verde Breakfast Burrito</h3>
@@ -65,7 +73,7 @@
 				</div>
 			</div>
 			<div id="app" class="tab-content">
-				<div class="remove-padding w3-row-padding w3-margin-top">
+				<div class="w3-row-padding w3-margin-top">
 					<ul class="menu">
 						<li>
 							<h3 class="menuItem">Chicken Strips (4)<span class="new">New</span></h3>
@@ -92,7 +100,7 @@
 				</div>
 			</div>
 			<div id="pizza" class="tab-content">
-				<div class="remove-padding w3-row-padding w3-margin-top">
+				<div class="w3-row-padding w3-margin-top">
 					<ul class="menu">
 						<li>
 							<h3 class="menuItem">12" Cheese</h3>
@@ -149,7 +157,7 @@
 				</div>
 			</div>
 			<div id="burg" class="tab-content">
-				<div class="remove-padding w3-row-padding w3-margin-top">
+				<div class="w3-row-padding w3-margin-top">
 					<ul class="menu">
 						<li>
 							<h3 class="menuItem">Angus Burger</h3>
@@ -258,20 +266,20 @@
 		<div class="w3-white w3-container w3-cell w3-mobile">
 			<h2>Directions</h2>
 			<p>J.A. Johnny's Cafe&#769;<br />9134 Riverside Dr<br />Parker, AZ 85344</p>
-			<a id="direct" class="btn" target="_blank" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps &gt;&gt;</a>
+			<a id="direct" class="btn" target="_blank" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps</a>
 		</div>
 	</div>
-	<div class="w3-container w3-padding-16 ja-gray">
+	<div class="w3-container ja-gray">
 		<h2>Contact Us</h2>
 		<form method="post" name="contactForm" action="https://formspree.io/ryanrackemann@gmail.com">
 			<input type="hidden" name="_next" value="https://www.ryanrackemann.com/?success" />
 			<div class="w3-half w3-margin-bottom">
 				<div class="w3-row w3-container">
-					<label for="name">
-						<div class="w3-col  icon">
+					<div class="w3-col  icon">
+						<label for="name">
 							<i class="w3-xxlarge fa fa-user"></i>
-						</div>
-					</label>
+						</label>
+					</div>
 					<div class="w3-rest">
 						<input class="w3-input w3-border" id="name" name="name" type="text" placeholder="First Last" required />
 					</div>
@@ -279,24 +287,24 @@
 			</div>
 			<div class="w3-half w3-margin-bottom">
 				<div class="w3-row w3-container">
-					<label for="email">
-						<div class="w3-col icon">
+					<div class="w3-col icon">
+						<label for="email">
 							<i class="w3-xxlarge fa fa-envelope-o"></i>
-						</div>
-					</label>
+						</label>
+					</div>
 					<div class="w3-rest">
 						<input class="w3-input w3-border" id="email" name="_replyto" type="text" placeholder="Email" required />
 					</div>
 				</div>
 			</div>
 			<div class="w3-row w3-container clearBoth">
-				<label for="message">
-					<div class="w3-col icon">
+				<div class="w3-col icon">
+					<label for="message">
 						<i class="w3-xxlarge fa fa-pencil"></i>
-					</div>
-				</label>
+					</label>
+				</div>
 				<div class="w3-rest">
-					<textarea rows="3" cols="50" class="w3-input w3-border" id="message" name="message" type="text" placeholder="Message" required></textarea>
+					<textarea rows="3" cols="50" class="w3-input w3-border" id="message" name="message" placeholder="Message" required></textarea>
 				</div>
 			</div>
 			<div class="w3-center">
@@ -304,10 +312,9 @@
 			</div>
 		</form>
 	</div>
-	<footer class="w3-container w3-padding-16 ja-red">
+	<footer class="w3-container ja-red">
 	</footer>
-	<script type="text/JavaScript" src="js/tabs.js"></script>
-	<script type="text/JavaScript" src="js/geoDirect.js"></script>
-	</div>
+	<script src="js/tabs.js"></script>
+	<script src="js/geoDirect.js"></script>
 </body>
 </html>
