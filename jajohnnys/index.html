@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Ryan Rackemann</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta property="og:url"           content="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="J.A. Johnny's" />
-<meta property="og:description"   content="J.A. Johnny's Cafe" />
-<meta property="og:image"         content="https://www.ryanrackemann.com/jajohnnys/img/ja-logo.png" />
-
 </head>
 <body>
-	<header class="pad ja-red">
+	<div class="pants">
+	<header class="husky pad ja-red">
 		<h1 class="hidden">J.A. Johnny's Cafe&#769;</h1>
 		<div class="center">
 			<img class="banner-image" src="img/ja-logo.png" alt="J.A. Johnny's" />
 		</div>
 	</header>
-	<div class="block-wrap ja-gray">
-		<div class="block">
-				<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br /><a class="btn btn-small push" href="#">View our complete hours</a></p>
+	<div class="husky pants ja-gray">
+		<div class="slim no-pad">
+				<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br><a class="btn btn-small push" href="#">View our complete hours</a></p>
 		</div>
-		<div class="block">
-			<p><a id="facebook" class="btn" href="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251">Visit us on FaceBook</a></p>
+		<div class="slim no-pad">
+			<p><a id="facebook" target="_blank" class="btn" href="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251">Visit us on FaceBook</a></p>
 		</div>
 	</div>
-	<div class="w3-container w3-white w3-mobile">
-		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
-		<div class="w3-half">
-			<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated & renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
+		<div class="slim">
+			<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
+			<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
 			<p>The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
 			<p>We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
 		</div>
-		<div class="w3-half center w3-mobile">
-			<img src="img/storefront.jpg" class="w3-image" alt="J.A. Johnny's Cafe&#769; Storefront" />
+		<div class="slim">
+			<img src="img/storefront.jpg" class="" alt="J.A. Johnny's Cafe&#769; Storefront" />
 		</div>
-	</div>
-	<div class="w3-container ja-gray">
+	<div class="husky ja-gray">
 		<h2>Menu</h2>
-		<div class="w3-white no-pad">
+		<div class="white no-pad">
 			<div class="tablist">
 				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'breakfast')">Breakfast</button>
-				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
-				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'pizza')">Pizza</button>
-				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'burg')">Burgers, Sandwiches, Salads, and More</button>
+				<button class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
+				<button class="tab-header" onclick="getProjects(event, 'pizza')">Pizza</button>
+				<button class="tab-header" onclick="getProjects(event, 'burg')">Burgers, Sandwiches, Salads, and More</button>
 			</div>
 
 			<div id="breakfast" class="tab-content">
@@ -150,7 +142,7 @@
 							<p>Includes: olive oil, tomato, garlic, and basil</p>
 						</li>
 						<li>
-							<p class="menuItem">Extra Toppings <span class="new">$1.00</p>
+							<p class="menuItem">Extra Toppings <span class="new">$1.00</span></p>
 							<p class="menuItem">Gluten Free <span class="new">$2.00</span></p>
 						</li>
 					</ul>
@@ -251,25 +243,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="w3-cell-row">
-		<div class="ja-red w3-container w3-cell w3-mobile">
-			<h2>Hours</h2>
-			<p>Monday: 10am &ndash; 9pm<br />
-				Tuesday: 10am &ndash; 9pm<br />
-				Wednesday: 10am &ndash; 9pm<br />
-				Thursday: 10am &ndash; 9pm<br />
-				Friday: 10am &ndash; 9pm<br />
-				Saturday: 10am &ndash; 9pm<br />
-				Sunday: 10am &ndash; 9pm<br />
-			</p>
-		</div>
-		<div class="w3-white w3-container w3-cell w3-mobile">
-			<h2>Directions</h2>
-			<p>J.A. Johnny's Cafe&#769;<br />9134 Riverside Dr<br />Parker, AZ 85344</p>
-			<a id="direct" class="btn" target="_blank" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps</a>
-		</div>
+	<div class="ja-red slim">
+		<h2>Hours</h2>
+		<p>Monday: 10am &ndash; 9pm<br>
+		Tuesday: 10am &ndash; 9pm<br>
+		Wednesday: 10am &ndash; 9pm<br>
+		Thursday: 10am &ndash; 9pm<br>
+		Friday: 10am &ndash; 9pm<br>
+		Saturday: 10am &ndash; 9pm<br>
+		Sunday: 10am &ndash; 9pm<br>
+		</p>
 	</div>
-	<div class="w3-container ja-gray">
+	<div class="white slim">
+		<h2>Directions</h2>
+		<p>J.A. Johnny's Cafe&#769;<br>9134 Riverside Dr<br>Parker, AZ 85344</p>
+		<a id="direct" class="btn" target="_blank" href="https://goo.gl/maps/MJ2qngVvtYC2">View in Google Maps</a>
+	</div>
+	<div class="husky ja-gray">
 		<h2>Contact Us</h2>
 		<form method="post" name="contactForm" action="https://formspree.io/ryanrackemann@gmail.com">
 			<input type="hidden" name="_next" value="https://www.ryanrackemann.com/?success" />
@@ -314,6 +304,7 @@
 	</div>
 	<footer class="w3-container ja-red">
 	</footer>
+</div>
 	<script src="js/tabs.js"></script>
 	<script src="js/geoDirect.js"></script>
 </body>

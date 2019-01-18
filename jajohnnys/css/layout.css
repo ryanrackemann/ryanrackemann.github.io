@@ -25,25 +25,34 @@
 	ul.menu > li > .price, ul.menu > li > .new { float: none; }
 }
 
-.block-wrap {
+.pants {
 	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 16px;
+	grid-template-columns: 25% 25% 25% 25%;
 	justify-content: space-between;
 }
-
-.block {
-	padding: 16px;
-	display:inline-grid;
-	align-content: center;
-}
-
-.pad {
+.skinny {
+	grid-column: auto / span 1;
 	padding: 16px;
 }
+.slim {
+	grid-column: auto / span 2;
+	padding: 16px;
+}
+.regular {
+	grid-column: auto / span 3;
+	padding: 16px;
+}
+.husky {
+	grid-column: auto / span 4;
+	padding: 16px;
+}
 
-.push {
-	margin-top: 16px !important;
+.no-pad {
+	padding: 0 !important;
+}
+
+.right {
+	float: right;
 }
 
 iframe {
@@ -54,9 +63,10 @@ iframe {
 	width: 147px;
 }
 
-#fb-likes {
-	position: relative;
-	float: right;
+img {
+	max-width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
 
 .hidden { display: none !important; }
@@ -87,60 +97,3 @@ iframe {
 	display: inline-block;
 }
 
-.ja-red {
-	background-color: #c01f01 !important;
-	color: white !important;
-}
-
-.ja-gray {
-	background-color: #939496 !important;
-	color: black !important;
-}
-
-/* Start Form Fields */
-
-input, textarea{ font-size: 20px !important; font: none !important; }
-input, textarea{ font-family: 'VT323', monospace !important; }
-input{ color: black !important; }
-.icon{ width: 50px !important; }
-textarea{ resize: none; }
-label, input, textarea{ cursor: pointer; }
-
-/* End Form Fields */
-
-/* Start Tabs */
-* { box-sizing: border-box; }
-.tablist {
-	padding: 16px 16px 0 16px !important;
-    overflow: hidden;
-    background-color: #c01f01;
-    color: white;
-}
-.tablist button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-}
-button.tab-header.inactive:hover {
-    background-color: #ccc;
-    color: black;
-}
-.tablist button.active {
-    background-color: white;
-    color: black;
-}
-.tablist button.inactive {
-    background-color: #c01f01;
-    color: white;
-}
-.tab-content {
-    display: none;
-    padding: 6px 12px !important;
-    border-top: none;
-    background-color: white;
-}
-/* End Tabs */

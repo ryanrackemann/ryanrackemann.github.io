@@ -136,6 +136,11 @@ ul.menu > li > p {
 	color: black !important;
 }
 
+.ja-white {
+	background-color: white !important;
+	color: black !important;
+}
+
 /* Start Form Fields */
 
 input, textarea{ font-size: 20px !important; font: none !important; }
