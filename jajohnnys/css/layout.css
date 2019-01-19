@@ -1,34 +1,8 @@
-@media only screen and (max-width: 600px) {
-	.mobilize {
-		display: block;
-		width: 100% !important;
-		text-align: center;
-		line-height: 1.2;
-	}
-
-	.mobilize p{
-		margin-top: 12px !important;
-		margin-bottom: 0 !important;
-	}
-
-	iframe#fb-likes {
-		display: block !important;
-		margin: 12px auto 0 auto !important;
-		float: none !important;
-	}
-
-	ul.menu > li > .menuItem {
-		width: 100%;
-		float: none;
-	}
-
-	ul.menu > li > .price, ul.menu > li > .new { float: none; }
-}
 
 .pants {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
-	justify-content: space-between;
+	justify-content: center;
 }
 .skinny {
 	grid-column: auto / span 1;
@@ -48,19 +22,11 @@
 }
 
 .no-pad {
-	padding: 0 !important;
+	padding: 0;
 }
 
 .right {
 	float: right;
-}
-
-iframe {
-	border: 0;
-	float: right;
-	overflow: hidden;
-	height: 28px;
-	width: 147px;
 }
 
 img {
@@ -69,31 +35,34 @@ img {
     vertical-align: middle;
 }
 
-.hidden { display: none !important; }
+.hidden { display: none; }
 
-.center { text-align: center !important; }
+.center { text-align: center; }
 
-.no-pad { padding: 0 !important; }
+.no-pad { padding: 0; }
 
-.btn {
-	display: inline-block;
-	background-color: black;
-	color: white;
-	user-select: none;
-	margin-top: 2px;
-	padding: 6px 12px;
-	border-radius: 4px;
-    border: black 1px solid;
-	text-decoration: none;
+
+@media only screen and (max-width: 600px) {
+	.mobilize {
+		display: block;
+		width: 100%;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.mobilize p{
+		margin-top: 12px;
+		margin-bottom: 0;
+	}
+
+	ul.menu > li > .menuItem {
+		width: 100%;
+		float: none;
+	}
+
+	ul.menu > li > .price, ul.menu > li > .new { float: none; }
+
+	.skinny, .slim, .regular, .husky {
+		grid-column: auto / span 4;
+	}
 }
-
-.btn-small{
-	font-size: 12px;
-}
-
-.btn:hover {
-	background-color: #939496;
-	color: white;
-	display: inline-block;
-}
-

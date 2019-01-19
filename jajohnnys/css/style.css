@@ -1,7 +1,17 @@
-body {
+
+html, body {
 	background-color: white;
 	color: black;
+	/*font-family: Verdana,sans-serif;*/
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
 }
+
+h2 { font-family: 'Hind', sans-serif; font-size: 36px; margin: 8px 0; }
+h3 { font-family: 'Roboto', sans-serif;  font-size: 28px; margin: 8px 0; }
+h4 { font-family: 'Open Sans Condensed', sans-serif;  font-size: 22px; margin: 8px 0; }
+p, a, li, button { font-family: 'Quicksand', sans-serif; font-size: 18px; margin: 8px 0; }
 
 /* Start Badges */
 .best-seller {
@@ -47,7 +57,7 @@ body {
 ul.menu {
 	border-top: #9394964a 1px solid;
 	list-style: none;
-	margin-left: 0 !important;
+	margin-left: 0;
 	padding: 0;
 }
 
@@ -70,6 +80,9 @@ ul.menu > li > p {
 	width: 700px;
 }
 
+a {	color: white; }
+a:hover { color: black; }
+
 .btn {
 	display: inline-block;
 	background-color: black;
@@ -80,16 +93,16 @@ ul.menu > li > p {
 	border-radius: 4px;
     border: black 1px solid;
 	text-decoration: none;
+	font-size: 18px;
 }
 
 .btn-small{
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .btn:hover {
-	background-color: #939496;
-	color: white;
-	display: inline-block;
+	background-color: white;
+	color: black; 
 }
 
 .btn::after {
@@ -103,21 +116,9 @@ ul.menu > li > p {
 	-webkit-transform: rotate(-45deg);
 }
 
-#facebook {
-	background-color: #365899 !important;
-	color: white !important;
-	border: 0 !important;
-}
-
-#facebook:hover {
-	background-color: white !important;
-	color: #365899 !important;
-	border: 0 !important;
-}
-
-#facebook.btn:hover:after {
+.btn:hover:after {
 	content: '';
-	border: solid #365899;
+	border: solid black;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
@@ -126,43 +127,100 @@ ul.menu > li > p {
 	-webkit-transform: rotate(-45deg);
 }
 
+.btn.btn-hov-gray:hover {
+	background-color: #939496;
+	color: white;
+}
+
+.btn.btn-hov-gray:hover:after {
+	border: solid white;
+}
+
+#facebook {
+	float: right;
+	background-color: #365899;
+	color: white;
+	border: 0;
+}
+
+#facebook:hover {
+	background-color: white;
+	color: #365899;
+	border: 0;
+}
+
+#facebook.btn:hover:after {
+	border: solid #365899;
+	border-width: 0 3px 3px 0;
+	transform: rotate(-45deg);
+}
+
+.btn.no-caret:after {
+	display: none;
+}
+
 .ja-red {
-	background-color: #c01f01 !important;
-	color: white !important;
+	background-color: #c01f01;
+	color: white;
 }
 
 .ja-gray {
-	background-color: #939496 !important;
-	color: black !important;
+	background-color: #939496;
+	color: black;
 }
 
 .ja-white {
-	background-color: white !important;
-	color: black !important;
+	background-color: white;
+	color: black;
 }
 
 /* Start Form Fields */
 
-input, textarea{ font-size: 20px !important; font: none !important; }
-input, textarea{ font-family: 'VT323', monospace !important; }
-input{ color: black !important; }
-.icon{ width: 50px !important; }
+input, textarea {
+	font-size: 22px;
+	font-family: 'VT323', monospace;
+	border: 0;
+	width: 100%;
+	padding: 8px;
+	overflow: visible;
+}
+input{ color: black; }
+/*.icon{ width: 50px; }*/
 textarea{ resize: none; }
-label, input, textarea{ cursor: pointer; }
+label, input, textarea, .submit { cursor: pointer; }
+.submit { font-size: 22px; }
+i.fa {
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+	float: left;
+	margin-right: 12px;
+}
+.no-flow { overflow: hidden; }
+button > i.fa {
+    float: right;
+    width: auto;
+    height: auto;
+    font-size: 28px;
+    margin: 0 0 0 12px;
+}
 
 /* End Form Fields */
 
 /* Start Tabs */
 * { box-sizing: border-box; }
 .tablist {
-	padding: 16px 16px 0 16px !important;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	justify-content: space-between;
+	padding: 16px 16px 0 16px;
     overflow: hidden;
     background-color: #c01f01;
     color: white;
 }
+.menu-dropdown { display: none; }
 .tablist button {
-    background-color: inherit;
-    float: left;
+	grid-column: auto / span 1;
     border: none;
     outline: none;
     cursor: pointer;
@@ -183,8 +241,47 @@ button.tab-header.inactive:hover {
 }
 .tab-content {
     display: none;
-    padding: 6px 12px !important;
+    padding: 6px 12px;
     border-top: none;
     background-color: white;
 }
 /* End Tabs */
+
+@media only screen and (max-width: 600px) {
+	/* Tablist Start */
+	.tablist {
+		padding: 16px;
+	}
+	.tablist button {
+		font-weight: bold;
+		grid-column: auto / span 5;
+	}
+	.menu-dropdown {
+		display: initial;
+		padding: 6px;
+	    background-color: black;
+	    color: white;
+	    margin-bottom: 12px;
+	}
+	.drop-open {
+		content: '';
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 6px;
+		transform: rotate(225deg);
+		-webkit-transform: rotate(225deg);
+	}
+	.drop-closed {
+		content: '';
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 6px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+	}
+	/* Tablist End */
+}

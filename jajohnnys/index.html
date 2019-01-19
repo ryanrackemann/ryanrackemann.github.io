@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Ryan Rackemann</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand|Muli:400,700|Hind|Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/layout.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="pants">
@@ -25,23 +25,30 @@
 			<p><a id="facebook" target="_blank" class="btn" href="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251">Visit us on FaceBook</a></p>
 		</div>
 	</div>
-		<div class="slim">
-			<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
-			<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
-			<p>The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
-			<p>We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
-		</div>
-		<div class="slim">
-			<img src="img/storefront.jpg" class="" alt="J.A. Johnny's Cafe&#769; Storefront" />
-		</div>
+	<div class="slim">
+		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
+		<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
+		<p>The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
+		<p>We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
+	</div>
+	<div class="slim">
+		<img src="img/storefront.jpg" class="" alt="J.A. Johnny's Cafe&#769; Storefront" />
+	</div>
 	<div class="husky ja-gray">
 		<h2>Menu</h2>
 		<div class="white no-pad">
 			<div class="tablist">
+				<button class="menu-dropdown"><span class="hidden">View Menu Categories</span><span class="drop-open"></span></button>
 				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'breakfast')">Breakfast</button>
 				<button class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
 				<button class="tab-header" onclick="getProjects(event, 'pizza')">Pizza</button>
 				<button class="tab-header" onclick="getProjects(event, 'burg')">Burgers, Sandwiches, Salads, and More</button>
+				<button class="tab-header" onclick="getProjects(event, 'chili')">Chili</button>
+				<button class="tab-header" onclick="getProjects(event, 'yung-sen')">Youngins/Seniors</button>
+				<button class="tab-header" onclick="getProjects(event, 'libations')">Libations</button>
+				<button class="tab-header" onclick="getProjects(event, 'gelato')">Gelato</button>
+				<button class="tab-header" onclick="getProjects(event, 'coffee')">Coffee</button>
+				<button class="tab-header" onclick="getProjects(event, 'sweets')">Sweets</button>
 			</div>
 
 			<div id="breakfast" class="tab-content">
@@ -263,46 +270,45 @@
 		<h2>Contact Us</h2>
 		<form method="post" name="contactForm" action="https://formspree.io/ryanrackemann@gmail.com">
 			<input type="hidden" name="_next" value="https://www.ryanrackemann.com/?success" />
-			<div class="w3-half w3-margin-bottom">
-				<div class="w3-row w3-container">
-					<div class="w3-col  icon">
-						<label for="name">
-							<i class="w3-xxlarge fa fa-user"></i>
-						</label>
-					</div>
-					<div class="w3-rest">
-						<input class="w3-input w3-border" id="name" name="name" type="text" placeholder="First Last" required />
-					</div>
-				</div>
-			</div>
-			<div class="w3-half w3-margin-bottom">
-				<div class="w3-row w3-container">
-					<div class="w3-col icon">
-						<label for="email">
-							<i class="w3-xxlarge fa fa-envelope-o"></i>
-						</label>
-					</div>
-					<div class="w3-rest">
-						<input class="w3-input w3-border" id="email" name="_replyto" type="text" placeholder="Email" required />
-					</div>
-				</div>
-			</div>
-			<div class="w3-row w3-container clearBoth">
-				<div class="w3-col icon">
-					<label for="message">
-						<i class="w3-xxlarge fa fa-pencil"></i>
+			<div class="pants">
+				<div class="slim">
+					<label for="name">
+						<i class="fa fa-user"></i>
 					</label>
+					<div class="no-flow">
+						<input  id="name" name="name" type="text" placeholder="First Last" required />
+					</div>
 				</div>
-				<div class="w3-rest">
-					<textarea rows="3" cols="50" class="w3-input w3-border" id="message" name="message" placeholder="Message" required></textarea>
+				<div class="slim">
+					<label for="email">
+						<i class="fa fa-envelope-o"></i>
+					</label>
+					<div class="no-flow">
+						<input id="email" name="_replyto" type="text" placeholder="Email" required />
+					</div>
 				</div>
-			</div>
-			<div class="w3-center">
-				<button type="submit" class="w3-xlarge w3-button w3-section w3-teal w3-hover-white w3-padding">Submit <i class="w3-xlarge fa fa-check-square"></i></button>
+				<div class="husky">
+					<label for="message">
+						<i class="fa fa-pencil"></i>
+					</label>
+					<div class="no-flow">
+						<textarea rows="3" cols="50" class="" id="message" name="message" placeholder="Message" required></textarea>
+					</div>
+					<div class="center">
+						<button type="submit" class="btn submit no-caret">Submit <i class="fa fa-check-square"></i></button>
+					</div>
+				</div>
 			</div>
 		</form>
 	</div>
-	<footer class="w3-container ja-red">
+	<footer class="husky ja-red">
+		<div class="pants">
+			<div class="slim">
+				<p>J.A. Johnny&apos;s Cafe&#769;</p>
+			</div>
+			<div class="slim">
+				<a class="right" href="mailto:ryanrackemann@gmail.com">WebMaster</a>
+			</div>
 	</footer>
 </div>
 	<script src="js/tabs.js"></script>
