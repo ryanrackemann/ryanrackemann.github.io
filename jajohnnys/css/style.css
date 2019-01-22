@@ -67,20 +67,16 @@ ul.menu > li {
 	overflow: auto;
 }
 
-ul.menu > li > .menuItem {
-	float: left;
-}
+ul.menu > li > .menuItem { float: left; }
 
-ul.menu > li > p {
-	clear: both;
-}
+ul.menu > li > p { clear: both; }
 
 .banner-image {
 	max-width: 100%;
 	width: 700px;
 }
 
-a {	color: white; }
+a { color: white; }
 a:hover { color: black; }
 
 .btn {
@@ -88,17 +84,14 @@ a:hover { color: black; }
 	background-color: black;
 	color: white;
 	user-select: none;
-	margin-top: 2px;
 	padding: 6px 12px;
 	border-radius: 4px;
-    border: black 1px solid;
+	border: black 1px solid;
 	text-decoration: none;
 	font-size: 18px;
 }
 
-.btn-small{
-	font-size: 14px;
-}
+.btn-small{ font-size: 14px; }
 
 .btn:hover {
 	background-color: white;
@@ -255,6 +248,14 @@ button.tab-header.inactive:hover {
 	.tablist button {
 		font-weight: bold;
 		grid-column: auto / span 5;
+	}
+	.tablist .inactive {
+		display: none;
+	}
+	.tablist button.active {
+		margin: 0;
+		background-color: #c01f01;
+		color: white;
 	}
 	.menu-dropdown {
 		display: initial;
