@@ -1,4 +1,3 @@
-
 .pants {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
@@ -6,18 +5,17 @@
 }
 .skinny {
 	grid-column: auto / span 1;
-	padding: 16px;
 }
 .slim {
 	grid-column: auto / span 2;
-	padding: 16px;
 }
 .regular {
 	grid-column: auto / span 3;
-	padding: 16px;
 }
 .husky {
 	grid-column: auto / span 4;
+}
+.skinny, .slim, .regular, .husky {
 	padding: 16px;
 }
 
@@ -41,12 +39,59 @@ img {
 
 .no-pad { padding: 0; }
 
+footer, header {
+	grid-column: auto / span 4;
+}
+
+/* Start Navigation */
+
+nav {
+	grid-column: auto / span 4;
+	background-color: black;
+	margin: 0;
+}
+
+nav > ul {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	justify-content: center;
+	text-align: center;
+	list-style-type: none;
+	margin: 0 150px;
+	padding: 0;
+}
+
+nav > ul > li {
+	grid-column: auto / span 1;
+	margin: 0;
+}
+
+nav > ul > li > a {
+	margin: 0;
+	padding: 16px 0;
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+
+nav > ul > li > a:hover {
+	display: block;
+	text-decoration: none;
+	background-color: white;
+	color: black;
+}
+
+/* End Navigation */
 
 @media only screen and (max-width: 600px) {
 	.mobilize {
 		display: block;
 		width: 100%;
 		line-height: 1.2;
+	}
+
+	.right {
+		float: none;
 	}
 
 	.mobilize p{
@@ -64,5 +109,10 @@ img {
 	.skinny, .slim, .regular, .husky {
 		grid-column: auto / span 4;
 		text-align: center;
+		padding: 12px 6px;
+	}
+
+	.mini-left {
+		text-align: left;
 	}
 }

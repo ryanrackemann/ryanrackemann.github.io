@@ -11,25 +11,14 @@
 </head>
 <body>
 	<div class="pants">
-	<header class="husky pad ja-red">
-		<h1 class="hidden">J.A. Johnny's Cafe&#769;</h1>
-		<div class="center">
-			<img class="banner-image" src="img/ja-logo.png" alt="J.A. Johnny's" />
-		</div>
-	</header>
-	<div class="husky pants ja-gray">
-		<div class="slim no-pad">
-				<p>Today's Hours: 10 a.m. &ndash; 9 p.m.<br><a class="btn btn-small push" href="#">View our complete hours</a></p>
-		</div>
-		<div class="slim no-pad">
-			<p><a id="facebook" target="_blank" class="btn" href="https://www.facebook.com/JA-Johnnys-Parker-AZ-266454250204251">Visit us on FaceBook</a></p>
-		</div>
-	</div>
+	<header id="header" class="pad ja-red"></header>
+	<nav id="nav"></nav>
+	<div id="hours-fb" class="husky pants ja-gray"></div>
 	<div class="slim">
 		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
-		<p>Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
-		<p>The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
-		<p>We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
+		<p class="mini-left">Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
+		<p class="mini-left">The menu items at J.A. Johnny&apos;s only use the finest, freshest quality ingredients. Are you in the mood for a late evening snack? You must try our flakey, sweet and tart apple pie. (Or what desserts will you be serving? need more words here too)</p>
+		<p class="mini-left">We&apos;re easy to find in the awesome community of Parker, Arizona, a small town with big-city food!</p>
 	</div>
 	<div class="slim">
 		<img src="img/storefront.jpg" class="" alt="J.A. Johnny's Cafe&#769; Storefront" />
@@ -38,7 +27,6 @@
 		<h2>Menu</h2>
 		<div class="white no-pad">
 			<div class="tablist">
-				<button class="menu-dropdown"><span class="hidden">View Menu Categories</span><span class="drop-open"></span></button>
 				<button id="defaultOpen" class="tab-header" onclick="getProjects(event, 'breakfast')">Breakfast</button>
 				<button class="tab-header" onclick="getProjects(event, 'app')">Appetizers</button>
 				<button class="tab-header" onclick="getProjects(event, 'pizza')">Pizza</button>
@@ -49,6 +37,7 @@
 				<button class="tab-header" onclick="getProjects(event, 'gelato')">Gelato</button>
 				<button class="tab-header" onclick="getProjects(event, 'coffee')">Coffee</button>
 				<button class="tab-header" onclick="getProjects(event, 'sweets')">Sweets</button>
+				<button class="menu-dropdown"><span class="hidden">View Menu Categories</span><span class="drop-closed"></span></button>
 			</div>
 
 			<div id="breakfast" class="tab-content">
@@ -301,17 +290,11 @@
 			</div>
 		</form>
 	</div>
-	<footer class="husky ja-red">
-		<div class="pants">
-			<div class="slim">
-				<p>J.A. Johnny&apos;s Cafe&#769;</p>
-			</div>
-			<div class="slim">
-				<a class="right" href="mailto:ryanrackemann@gmail.com">WebMaster</a>
-			</div>
-	</footer>
+	<footer id="footer" class="ja-red"></footer>
 </div>
 	<script src="js/tabs.js"></script>
 	<script src="js/geoDirect.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/includes.js"></script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+:root{
+	--red: #c01f01;
+	--gray: #939496;
+	--opaque-gray: #9394964a;
+}
 
 html, body {
 	background-color: white;
@@ -10,6 +15,7 @@ html, body {
 
 h2 { font-family: 'Hind', sans-serif; font-size: 36px; margin: 8px 0; }
 h3 { font-family: 'Roboto', sans-serif;  font-size: 28px; margin: 8px 0; }
+.best-seller, .new { font-family: 'Roboto', sans-serif;  font-size: 22px; margin: 8px 0; }
 h4 { font-family: 'Open Sans Condensed', sans-serif;  font-size: 22px; margin: 8px 0; }
 p, a, li, button { font-family: 'Quicksand', sans-serif; font-size: 18px; margin: 8px 0; }
 
@@ -21,9 +27,8 @@ p, a, li, button { font-family: 'Quicksand', sans-serif; font-size: 18px; margin
 	padding-right: 8px;
 	vertical-align: super;
 	text-align: center;
-	background-color: #c01f01;
+	background-color: var(--red);
 	color: white;
-	font-size: 14px;
 	border-radius: 4px;
 }
 
@@ -33,9 +38,8 @@ p, a, li, button { font-family: 'Quicksand', sans-serif; font-size: 18px; margin
 	padding-left: 8px;
 	padding-right: 8px;
 	text-align: center;
-	background-color: #939496;
+	background-color: var(--gray);
 	color: white;
-	font-size: 14px;
 	border-radius: 4px;
 }
 
@@ -55,14 +59,14 @@ p, a, li, button { font-family: 'Quicksand', sans-serif; font-size: 18px; margin
 /* End Badges */
 
 ul.menu {
-	border-top: #9394964a 1px solid;
+	border-top: var(--opaque-gray) 1px solid;
 	list-style: none;
 	margin-left: 0;
 	padding: 0;
 }
 
 ul.menu > li {
-	border-bottom: #9394964a 1px solid;
+	border-bottom: var(--opaque-gray) 1px solid;
 	padding: 12px;
 	overflow: auto;
 }
@@ -121,7 +125,7 @@ a:hover { color: black; }
 }
 
 .btn.btn-hov-gray:hover {
-	background-color: #939496;
+	background-color: var(--gray);
 	color: white;
 }
 
@@ -153,12 +157,12 @@ a:hover { color: black; }
 }
 
 .ja-red {
-	background-color: #c01f01;
+	background-color: var(--red);
 	color: white;
 }
 
 .ja-gray {
-	background-color: #939496;
+	background-color: var(--gray);
 	color: black;
 }
 
@@ -208,7 +212,7 @@ button > i.fa {
 	justify-content: space-between;
 	padding: 16px 16px 0 16px;
     overflow: hidden;
-    background-color: #c01f01;
+    background-color: var(--red);
     color: white;
 }
 .menu-dropdown { display: none; }
@@ -240,6 +244,7 @@ button.tab-header.inactive:hover {
 }
 /* End Tabs */
 
+
 @media only screen and (max-width: 600px) {
 	/* Tablist Start */
 	.tablist {
@@ -254,15 +259,22 @@ button.tab-header.inactive:hover {
 	}
 	.tablist button.active {
 		margin: 0;
-		background-color: #c01f01;
+		background-color: var(--red);
 		color: white;
 	}
-	.menu-dropdown {
+	.tablist .menu-dropdown {
 		display: initial;
-		padding: 6px;
-	    background-color: black;
+		padding: 0;
+	    background-color: var(--red);
 	    color: white;
-	    margin-bottom: 12px;
+	    margin: 0;
+	}
+	.tablist .menu-dropdown:hover {
+		display: initial;
+		padding: 0;
+	    background-color: var(--gray);
+	    color: black;
+	    margin: 0;
 	}
 	.drop-open {
 		content: '';
@@ -283,6 +295,9 @@ button.tab-header.inactive:hover {
 		margin-left: 6px;
 		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);
+	}
+	.tablist.menu-dropdown.drop-open:hover, .tablist.menu-dropdown.drop-open:hover {
+		border: solid black;
 	}
 	/* Tablist End */
 }

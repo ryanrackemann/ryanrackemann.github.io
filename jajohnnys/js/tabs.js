@@ -13,11 +13,13 @@ function getProjects(event, name) {
     tabheader = document.getElementsByClassName("tab-header");
     for (i = 0; i < tabheader.length; i++){
         tabheader[i].className = "tab-header inactive";
+        tabheader[i].removeAttribute("disabled");
     }
 
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(name).style.display = "block";
     event.currentTarget.className = "tab-header active";
+    event.currentTarget.setAttribute("disabled", "");
 }
 document.getElementById("defaultOpen").click();
 
