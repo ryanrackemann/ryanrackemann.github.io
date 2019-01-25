@@ -2,6 +2,7 @@
 	--red: #c01f01;
 	--gray: #939496;
 	--opaque-gray: #9394964a;
+	--add-opacity: #fff3;
 }
 
 html, body {
@@ -11,6 +12,10 @@ html, body {
     font-size: 20px;
     line-height: 1.5;
     margin: 0;
+}
+
+header {
+	padding: 16px 0;
 }
 
 h2 { font-family: 'Hind', sans-serif; font-size: 36px; margin: 8px 0; }
@@ -209,7 +214,7 @@ button > i.fa {
 .tablist {
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
-	justify-content: space-between;
+	align-items: stretch;
 	padding: 16px 16px 0 16px;
     overflow: hidden;
     background-color: var(--red);
@@ -245,7 +250,7 @@ button.tab-header.inactive:hover {
 /* End Tabs */
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 	/* Tablist Start */
 	.tablist {
 		padding: 16px;

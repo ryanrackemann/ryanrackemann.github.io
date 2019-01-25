@@ -8,12 +8,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Quicksand|Muli:400,700|Hind|Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
-<body>
+<body ng-app>
 	<div class="pants">
-	<header id="header" class="pad ja-red"></header>
-	<nav id="nav"></nav>
-	<div id="hours-fb" class="husky pants ja-gray"></div>
+	<header ng-include="'header.html'"></header>
+	<nav ng-include="'nav.html'"></nav>
+	<div ng-include="'hours-fb.html'" class="husky pants ja-gray"></div>
 	<div class="slim">
 		<h2>Welcome to J.A. Johnny&apos;s Cafe&#769;</h2>
 		<p class="mini-left">Welcome to J.A. Johhny&apos;s Cafe&#769;, a neighborhood restaurant operated by Master Foodie, Mr. Johnny! Sit back, relax and cozy on up to a fresh brewed cup of our specialty coffee in our newly rejuvenated &amp; renovated cafe&#769;. The ambience is modern, comforting and the aroma from our kitchen... mouthwatering! Our menu is diverse but yet true to traditional cafe&#769; plates with our own unique spin. Our breakfast burritos, fried egg sandwiches, monkey bread, and muffins are sure to fill you up and start your day out right. For lunch, we offer fresh, never frozen, juicy Angus hamburgers that are grilled to absolute perfection. Sink your teeth into these gourmet delights. No delish burger is complete without a side of scrumptious fries, fresh and crispy! Don&apos;t feel like cooking tonight? Come on in for our pizza, it&apos;s so savory and delicious that we&apos;re sure it&apos;ll make us famous!</p>
@@ -290,11 +291,9 @@
 			</div>
 		</form>
 	</div>
-	<footer id="footer" class="ja-red"></footer>
+	<footer ng-include="'footer.html'"></footer>
 </div>
 	<script src="js/tabs.js"></script>
 	<script src="js/geoDirect.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/includes.js"></script>
 </body>
 </html>

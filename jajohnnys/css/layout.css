@@ -1,7 +1,7 @@
 .pants {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
-	justify-content: center;
+	align-items: center;
 }
 .skinny {
 	grid-column: auto / span 1;
@@ -19,28 +19,20 @@
 	padding: 16px;
 }
 
-.no-pad {
-	padding: 0;
-}
-
-.right {
-	float: right;
-}
-
 img {
 	max-width: 100%;
     height: auto;
-    vertical-align: middle;
 }
 
+.right { float: right; }
 .hidden { display: none; }
-
 .center { text-align: center; }
-
 .no-pad { padding: 0; }
 
 footer, header {
 	grid-column: auto / span 4;
+	background-color: var(--red);
+	color: white;
 }
 
 /* Start Navigation */
@@ -54,8 +46,7 @@ nav {
 nav > ul {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
-	justify-content: center;
-	text-align: center;
+	align-items: stretch;
 	list-style-type: none;
 	margin: 0 150px;
 	padding: 0;
@@ -63,27 +54,35 @@ nav > ul {
 
 nav > ul > li {
 	grid-column: auto / span 1;
+	height: 100%;
 	margin: 0;
 }
 
 nav > ul > li > a {
+	min-height: 100%;
 	margin: 0;
 	padding: 16px 0;
 	display: block;
 	text-decoration: none;
 	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 nav > ul > li > a:hover {
-	display: block;
-	text-decoration: none;
-	background-color: white;
-	color: black;
+	background-color: var(--add-opacity);
+	color: white;
 }
 
 /* End Navigation */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+	header {
+		position: sticky;
+	}
+
 	.mobilize {
 		display: block;
 		width: 100%;
