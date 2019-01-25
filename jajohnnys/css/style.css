@@ -82,7 +82,7 @@ ul.menu > li > p { clear: both; }
 
 .banner-image {
 	max-width: 100%;
-	width: 700px;
+	width: 500px;
 }
 
 a { color: white; }
@@ -139,7 +139,6 @@ a:hover { color: black; }
 }
 
 #facebook {
-	float: right;
 	background-color: #365899;
 	color: white;
 	border: 0;
@@ -187,7 +186,6 @@ input, textarea {
 	overflow: visible;
 }
 input{ color: black; }
-/*.icon{ width: 50px; }*/
 textarea{ resize: none; }
 label, input, textarea, .submit { cursor: pointer; }
 .submit { font-size: 22px; }
