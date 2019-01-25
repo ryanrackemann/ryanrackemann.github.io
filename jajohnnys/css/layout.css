@@ -4,10 +4,10 @@
 	align-items: center;
 }
 .top {
-	align-items: initial;
+	align-self: self-start;
 }
 .bottom {
-	align-items: end;
+	align-self: self-end;
 }
 .skinny {
 	grid-column: auto / span 1;
