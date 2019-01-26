@@ -228,15 +228,16 @@ button > i.fa {
     transition: 0.3s;
 }
 button.tab-header.inactive:hover {
-    background-color: #ccc;
-    color: black;
+    background-color: var(--add-opacity);
+    color: white;
 }
 .tablist button.active {
     background-color: white;
     color: black;
+    cursor: default;
 }
 .tablist button.inactive {
-    background-color: #c01f01;
+    background-color: var(--red);
     color: white;
 }
 .tab-content {
@@ -260,23 +261,18 @@ button.tab-header.inactive:hover {
 	.tablist .inactive {
 		display: none;
 	}
-	.tablist button.active {
-		margin: 0;
-		background-color: var(--red);
-		color: white;
-	}
+	.tab-header { margin: 0; }
 	.tablist .menu-dropdown {
 		display: initial;
-		padding: 0;
+		padding: 6px 6px 10px 6px;
 	    background-color: var(--red);
 	    color: white;
 	    margin: 0;
 	}
 	.tablist .menu-dropdown:hover {
 		display: initial;
-		padding: 0;
-	    background-color: var(--gray);
-	    color: black;
+	    background-color: black;
+	    color: white;
 	    margin: 0;
 	}
 	.drop-open {

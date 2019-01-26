@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/layout.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="js/mobileMenu.js" async></script>
 </head>
 <body ng-app>
 	<div class="pants">
@@ -38,7 +39,7 @@
 				<button class="tab-header" onclick="getProjects(event, 'gelato')">Gelato</button>
 				<button class="tab-header" onclick="getProjects(event, 'coffee')">Coffee</button>
 				<button class="tab-header" onclick="getProjects(event, 'sweets')">Sweets</button>
-				<button class="menu-dropdown"><span class="hidden">View Menu Categories</span><span class="drop-closed"></span></button>
+				<button class="menu-dropdown" onclick="toggleMenu()"><span class="hidden">View Menu Categories</span><span id="menuOpener" class="drop-closed"></span></button>
 			</div>
 
 			<div id="breakfast" class="tab-content">

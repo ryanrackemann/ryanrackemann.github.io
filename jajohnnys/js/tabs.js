@@ -1,4 +1,4 @@
-// Controls tabs for Projects section
+// Controls tabs for Menu section
 function getProjects(event, name) {
     // Declare all variables
     var i, tabcontent, tabheader;
@@ -20,9 +20,10 @@ function getProjects(event, name) {
     document.getElementById(name).style.display = "block";
     event.currentTarget.className = "tab-header active";
     event.currentTarget.setAttribute("disabled", "");
+
+    /* On new tab click, close mobile menu */
+    if (document.getElementById("menuOpener").classList.contains("drop-open")) {
+        toggleMenu();
+    }
 }
 document.getElementById("defaultOpen").click();
-
-window.onload = function() {
-    checkUrl();
-}
