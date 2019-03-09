@@ -4,7 +4,6 @@
      --orange: #bd7a00;
 }
 
-
 html, body {
      margin: 0;
 }
@@ -29,10 +28,22 @@ body {
 header {
      text-align: center;
      padding: 42px;
-     color: var(--orange);
 }
 
 header, main > *, footer { padding: 16px 24px; }
+
+.orange {
+     background-color: var(--orange);
+     color: var(--dark-blue);
+}
+.dark-blue {
+     background-color: var(--dark-blue);
+     color: var(--orange);
+}
+.light-blue {
+     background-color: var(--light-blue);
+     color: var(--orange);
+}
 
 i {
      font-family: 'Material Icons';
@@ -90,12 +101,12 @@ h3 > i.material-icons, h4 > i.material-icons {
      font-size: 24px;
      font-weight: bold;
      text-align: center;
-     background-color: var(--light-blue);
+     background-color: var(--dark-blue);
      color: var(--orange);
 }
 .externals a:hover {
      background-color: var(--orange);
-     color: var(--light-blue);
+     color: var(--dark-blue);
 }
 
 .GitHub {
@@ -120,11 +131,17 @@ h3 > i.material-icons, h4 > i.material-icons {
      align-items: center;
      justify-content: center;
 }
-.timeBorderBlue {
-     border-right: var(--dark-blue) solid 2.2px;
+.dark-blue *::selection, .light-blue *::selection {
+     background: var(--dark-blue);
 }
-.timeBorderOrange {
+.orange *::selection {
+     background: var(--orange);
+}
+.dark-blue .timeWrap, .light-blue .timeWrap {
      border-right: var(--orange) solid 2.2px;
+}
+.orange .timeWrap {
+     border-right: var(--dark-blue) solid 2.2px;
 }
 .time {
      margin: 0;
@@ -136,35 +153,47 @@ h3 > i.material-icons, h4 > i.material-icons {
 .content {
      grid-area: content;
 }
-.taglist > div {
+.taglist div {
      display: inline-flex;
-     border: var(--dark-blue) solid 2px;
+     background-color: var(--light-blue);
+     color: var(--orange);
      border-radius: 6px;
      padding: 3px 6px;
+     margin-bottom: 8px;
 }
-
+.taglist div p {
+     font-size: 14px;
+     margin: 4px 12px;
+}
+ul {
+     list-style: none;
+}
+li {
+     padding-left: 12px;
+}
+/* Google Material Icon Unicode sheet */
+li:before {
+     content: "\e5da";
+     font-family: 'Material Icons';
+     display: inline-block;
+     margin-left: -12px;
+     margin-right: 6px;
+     font-size: 18px;
+}
 #Education {
-     background-color: var(--orange);
-     color: var(--dark-blue);
 }
 #Experience {
 }
 #Collaborations {
-     background-color: var(--orange);
-     color: var(--dark-blue);
 }
 #Skills {
 }
 #Projects {
-     background-color: var(--orange);
-     color: var(--dark-blue);
 }
 
 footer {
      font-size: 18px;
      font-weight: bold;
-     background-color: var(--light-blue);
-     color: var(--orange);
 }
 
 @media only screen and (min-width: 700px) {
