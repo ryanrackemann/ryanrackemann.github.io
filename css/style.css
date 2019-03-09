@@ -32,7 +32,7 @@ header {
      color: var(--orange);
 }
 
-header, footer, main > * { padding: 16px 24px; }
+header, main > *, footer { padding: 16px 24px; }
 
 i {
      font-family: 'Material Icons';
@@ -77,7 +77,9 @@ h3 > i.material-icons, h4 > i.material-icons {
      display: inline-grid;
      grid-template-areas: 'GitHub LinkedIn';
      grid-gap: 16px;
-     grid-template-columns: 1fr 1fr;
+     grid-template-columns: repeat(2, minmax(100px, 300px));
+     justify-content: center;
+     align-items: center;
 }
 
 .externals a {
