@@ -32,9 +32,7 @@ header {
      color: var(--orange);
 }
 
-header, footer, main > * {
-     padding: 16px 24px;
-}
+header, footer, main > * { padding: 16px 24px; }
 
 i {
      font-family: 'Material Icons';
@@ -165,4 +163,17 @@ footer {
      font-weight: bold;
      background-color: var(--light-blue);
      color: var(--orange);
+}
+
+@media only screen and (min-width: 700px) {
+     header, footer, main > * { padding: 16px 75px; }
+}
+@media only screen and (min-width: 900px) {
+     header, footer, main > * { padding: 16px 150px; }
+}
+@media only screen and (min-width: 1200px) {
+     header, footer, main > * { padding: 16px 250px; }
+}
+@media only screen and (min-width: 1600px) {
+     header, footer, main > * { padding: 16px 400px; }
 }
