@@ -90,10 +90,12 @@ i {
 a i {
      color: var(--white);
 }
+.externals a i {
+     font-size: 36px;
+}
 i.fab {
-     margin-right: 10px;
      font-size: 24px;
-     padding-bottom: 6px;
+     padding-bottom: 3px;
 }
 h2 > i.material-icons {
      font-size: 36px;
@@ -109,7 +111,7 @@ h3 > i.material-icons, h4 > i.material-icons {
 header {
      display: inline-grid;
      grid-template-areas: 'title externals';
-     grid-template-columns: 1fr 1fr;
+     grid-template-columns: 600px 1fr;
      align-items: center;
      width: 100%;
 }
@@ -132,19 +134,13 @@ header {
 }
 
 .externals a {
-     display: block;
-     padding: 8px 16px;
-     border-radius: 6px;
      text-decoration: none;
-     font-size: 24px;
-     font-weight: bold;
      text-align: center;
-     border: solid 2px var(--white);
      background-color: var(--black);
      color: var(--white);
 }
-.externals a:hover {
-     background-color: var(--blue);
+.externals a:hover i {
+     color: var(--blue);
 }
 
 .GitHub {
@@ -227,7 +223,7 @@ footer {
      font-weight: bold;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 750px) {
      footer, main > * { padding: 16px 75px; }
 }
 @media only screen and (min-width: 900px) {
