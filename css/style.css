@@ -44,9 +44,8 @@ body {
 }
 
 header {
-     position: -webkit-sticky;
-     position: sticky;
      border-bottom: 4px solid var(--blue);
+     width: 100%;
      top: 0;
      z-index: 1;
 }
@@ -110,21 +109,23 @@ h3 > i.material-icons, h4 > i.material-icons {
 
 header {
      display: inline-grid;
-     grid-template-areas: 'title externals';
-     grid-template-columns: 600px 1fr;
+     grid-template-areas: 'title' 'externals';
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto;
+     justify-content: center;
      align-items: center;
-     width: 100%;
+     text-align: center;
 }
 
 .title {
-     padding: 16px 50px;
+     padding: 16px 0;
      grid-area: title;
 }
 
 .externals {
-     padding: 16px 50px;
+     padding: 0 0 16px 0;
      grid-area: externals;
-     justify-self: end;
+     justify-self: auto;
      display: inline-grid;
      grid-template-areas: 'GitHub LinkedIn';
      grid-gap: 16px;
@@ -224,14 +225,38 @@ footer {
 }
 
 @media only screen and (min-width: 750px) {
+     header {
+          position: relative;
+          display: inline-grid;
+          grid-template-areas: 'title externals';
+          grid-template-columns: 1fr 85px;
+          text-align: left;
+          align-items: center;
+          width: 100%;
+     }
+     @supports sticky {
+          header {
+               position: -webkit-sticky;
+               position: sticky;
+          }
+     }
+     .title { padding: 16px 0 16px 50px; }
+     .externals {
+          padding: 16px 50px 16px 0;
+          justify-self: end;
+     }
      footer, main > * { padding: 16px 75px; }
 }
 @media only screen and (min-width: 900px) {
      footer, main > * { padding: 16px 150px; }
 }
 @media only screen and (min-width: 1200px) {
+     .title { padding: 16px 0 16px 200px; }
+     .externals { padding: 16px 200px 16px 0; }
      footer, main > * { padding: 16px 250px; }
 }
 @media only screen and (min-width: 1600px) {
+     .title { padding: 16px 0 16px 300px; }
+     .externals { padding: 16px 300px 16px 0; }
      footer, main > * { padding: 16px 400px; }
 }
