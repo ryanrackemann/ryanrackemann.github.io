@@ -1,5 +1,5 @@
 :root {
-     --black: #162d2d;
+     --dark: rgb(10,35,38);
      --blue: #006877;
      --white: #e4eaea;
 }
@@ -39,7 +39,7 @@ p, li, a {
 
 body {
      height: 100%;
-     background-color: var(--black);
+     background-color: var(--dark);
      color: var(--white);
 }
 
@@ -50,20 +50,18 @@ header {
      z-index: 1;
 }
 main > *, footer { padding: 16px 24px; }
-
-.orange {
+.white {
      background-color: var(--white);
-     color: var(--black);
+     color: var(--dark);
 }
-.dark-blue {
-     background-color: var(--black);
+.dark {
+     background-color: var(--dark);
      color: var(--white);
 }
-.light-blue {
+.blue {
      background-color: var(--blue);
      color: var(--white);
 }
-
 i {
      font-family: 'Material Icons';
      color: var(--blue);
@@ -106,7 +104,6 @@ h3 > i.material-icons, h4 > i.material-icons {
      margin-right: 6px;
      padding-bottom: 2px;
 }
-
 header {
      display: inline-grid;
      grid-template-areas: 'title' 'externals';
@@ -116,12 +113,10 @@ header {
      align-items: center;
      text-align: center;
 }
-
 .title {
      padding: 16px 0;
      grid-area: title;
 }
-
 .externals {
      padding: 0 0 16px 0;
      grid-area: externals;
@@ -133,58 +128,20 @@ header {
      justify-content: center;
      align-items: center;
 }
-
 .externals a {
      text-decoration: none;
      text-align: center;
-     background-color: var(--black);
+     background-color: var(--dark);
      color: var(--white);
 }
-.externals a:hover i {
-     color: var(--blue);
-}
-
-.GitHub {
-     grid-area: GitHub;
-}
-
-.LinkedIn {
-     grid-area: LinkedIn;
-}
-.timeContentGrid {
-     display: grid;
-     grid-template-areas: 'time content';
-     grid-template-columns: 70px 1fr;
-     grid-gap: 16px;
-}
-.offsetH {
-     padding-left: 86px;
-}
-.timeWrap {
-     grid-area: time;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-}
+.externals a:hover i { color: var(--blue); }
+.GitHub { grid-area: GitHub; }
+.LinkedIn { grid-area: LinkedIn; }
 .dark-blue *::selection, .light-blue *::selection {
-     background: var(--black);
+     background: var(--dark);
 }
 .orange *::selection {
      background: var(--white);
-}
-.dark-blue .timeWrap, .light-blue .timeWrap {
-     border-right: var(--white) solid 2.2px;
-}
-.orange .timeWrap {
-     border-right: var(--black) solid 2.2px;
-}
-.time {
-     margin: 0;
-     font-size: 20px;
-     font-weight: bold;
-     white-space: nowrap;
-     transform: rotate(-90deg);
-     z-index: 0;
 }
 .content {
      grid-area: content;
@@ -248,15 +205,65 @@ footer {
      footer, main > * { padding: 16px 75px; }
 }
 @media only screen and (min-width: 900px) {
+     .timeContentGrid {
+          display: grid;
+          grid-template-areas: 'time content';
+          grid-template-columns: 70px 1fr;
+          grid-gap: 16px;
+     }
+     .timeWrap {
+          grid-area: time;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+     }
+     .time {
+          margin: 0;
+          font-size: 20px;
+          font-weight: bold;
+          white-space: nowrap;
+          transform: rotate(-90deg);
+          z-index: 0;
+     }
+     .dark .timeWrap, .blue .timeWrap {
+          border-right: var(--white) solid 2.2px;
+     }
+     .white .timeWrap {
+          border-right: var(--dark) solid 2.2px;
+     }
      footer, main > * { padding: 16px 150px; }
 }
 @media only screen and (min-width: 1200px) {
      .title { padding: 16px 0 16px 200px; }
      .externals { padding: 16px 200px 16px 0; }
-     footer, main > * { padding: 16px 250px; }
+     footer, main > * { padding: 16px 64px; }
+     main {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: repeat(auto, 3);
+     }
+     #Education {
+          grid-column: 1 / span 2;
+          grid-row: 1 / span 1;
+     }
+     #Experience {
+          grid-column: auto / span 3;
+          grid-row: auto / span 1;
+     }
+     #Collaborations {
+          grid-column: 3 / span 2;
+          grid-row: 1 / span 1;
+     }
+     #Skills {
+          grid-column: auto / span 1;
+          grid-row: auto / span 1;
+     }
+     #Projects {
+          grid-column: auto / span 4;
+          grid-row: 3 / span 1;
+     }
 }
 @media only screen and (min-width: 1600px) {
      .title { padding: 16px 0 16px 300px; }
      .externals { padding: 16px 300px 16px 0; }
-     footer, main > * { padding: 16px 400px; }
 }
