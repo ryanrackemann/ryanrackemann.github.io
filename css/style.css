@@ -1,7 +1,7 @@
 :root {
-     --dark-blue: #071a1b;
-     --light-blue: #004a4a;
-     --orange: #bd7a00;
+     --black: #162d2d;
+     --blue: #006877;
+     --white: #e4eaea;
 }
 
 html, body {
@@ -11,42 +11,63 @@ html, body {
 h1, h2 {
      margin: 0
 }
-h1 { font-size: 42px; }
+h1 {
+     font-family: 'Orbitron', sans-serif;
+     letter-spacing: 4px;
+     font-size: 42px;
+}
 h2 {
+     font-family: 'Orbitron', sans-serif;
+     letter-spacing: 2px;
      font-size: 30px;
      margin: 18px 0;
 }
-h3 { font-size: 24px; }
-h4 { font-size: 20px; }
+h3 {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 24px;
+     font-style: oblique;
+}
+h4 {
+     font-family: 'Open Sans', sans-serif;
+     font-size: 20px;
+}
+p, li, a {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 16px;
+     line-height: 24px;
+}
 
 body {
      height: 100%;
-     background-color: var(--dark-blue);
-     color: var(--orange);
+     background-color: var(--black);
+     color: var(--white);
 }
 
 header {
-     text-align: center;
-     padding: 42px;
+     position: -webkit-sticky;
+     position: sticky;
+     border-bottom: 4px solid var(--blue);
+     top: 0;
+     z-index: 1;
 }
-
-header, main > *, footer { padding: 16px 24px; }
+main > *, footer { padding: 16px 24px; }
 
 .orange {
-     background-color: var(--orange);
-     color: var(--dark-blue);
+     background-color: var(--white);
+     color: var(--black);
 }
 .dark-blue {
-     background-color: var(--dark-blue);
-     color: var(--orange);
+     background-color: var(--black);
+     color: var(--white);
 }
 .light-blue {
-     background-color: var(--light-blue);
-     color: var(--orange);
+     background-color: var(--blue);
+     color: var(--white);
 }
 
 i {
      font-family: 'Material Icons';
+     color: var(--blue);
      font-weight: normal;
      font-style: normal;
      display: inline-block;
@@ -66,6 +87,9 @@ i {
      /* Support for IE. */
      font-feature-settings: 'liga';
 }
+a i {
+     color: var(--white);
+}
 i.fab {
      margin-right: 10px;
      font-size: 24px;
@@ -82,31 +106,45 @@ h3 > i.material-icons, h4 > i.material-icons {
      padding-bottom: 2px;
 }
 
+header {
+     display: inline-grid;
+     grid-template-areas: 'title externals';
+     grid-template-columns: 1fr 1fr;
+     align-items: center;
+     width: 100%;
+}
+
+.title {
+     padding: 16px 50px;
+     grid-area: title;
+}
+
 .externals {
-     width: calc(100% - 84px);
-     padding: 16px 42px;
+     padding: 16px 50px;
+     grid-area: externals;
+     justify-self: end;
      display: inline-grid;
      grid-template-areas: 'GitHub LinkedIn';
      grid-gap: 16px;
-     grid-template-columns: repeat(2, minmax(100px, 300px));
+     grid-template-columns: auto auto;
      justify-content: center;
      align-items: center;
 }
 
 .externals a {
      display: block;
-     padding: 16px;
+     padding: 8px 16px;
      border-radius: 6px;
      text-decoration: none;
      font-size: 24px;
      font-weight: bold;
      text-align: center;
-     background-color: var(--dark-blue);
-     color: var(--orange);
+     border: solid 2px var(--white);
+     background-color: var(--black);
+     color: var(--white);
 }
 .externals a:hover {
-     background-color: var(--orange);
-     color: var(--dark-blue);
+     background-color: var(--blue);
 }
 
 .GitHub {
@@ -132,37 +170,40 @@ h3 > i.material-icons, h4 > i.material-icons {
      justify-content: center;
 }
 .dark-blue *::selection, .light-blue *::selection {
-     background: var(--dark-blue);
+     background: var(--black);
 }
 .orange *::selection {
-     background: var(--orange);
+     background: var(--white);
 }
 .dark-blue .timeWrap, .light-blue .timeWrap {
-     border-right: var(--orange) solid 2.2px;
+     border-right: var(--white) solid 2.2px;
 }
 .orange .timeWrap {
-     border-right: var(--dark-blue) solid 2.2px;
+     border-right: var(--black) solid 2.2px;
 }
 .time {
      margin: 0;
      font-size: 20px;
      font-weight: bold;
-     display: flex;
+     white-space: nowrap;
      transform: rotate(-90deg);
+     z-index: 0;
 }
 .content {
      grid-area: content;
 }
 .taglist div {
      display: inline-flex;
-     background-color: var(--light-blue);
-     color: var(--orange);
+     background-color: var(--blue);
+     color: var(--white);
      border-radius: 6px;
      padding: 3px 6px;
      margin-bottom: 8px;
 }
 .taglist div p {
-     font-size: 14px;
+     font-family: 'Press Start 2P', cursive;
+     letter-spacing: 2px;
+     font-size: 12px;
      margin: 4px 12px;
 }
 ul {
@@ -180,16 +221,6 @@ li:before {
      margin-right: 6px;
      font-size: 18px;
 }
-#Education {
-}
-#Experience {
-}
-#Collaborations {
-}
-#Skills {
-}
-#Projects {
-}
 
 footer {
      font-size: 18px;
@@ -197,14 +228,14 @@ footer {
 }
 
 @media only screen and (min-width: 700px) {
-     header, footer, main > * { padding: 16px 75px; }
+     footer, main > * { padding: 16px 75px; }
 }
 @media only screen and (min-width: 900px) {
-     header, footer, main > * { padding: 16px 150px; }
+     footer, main > * { padding: 16px 150px; }
 }
 @media only screen and (min-width: 1200px) {
-     header, footer, main > * { padding: 16px 250px; }
+     footer, main > * { padding: 16px 250px; }
 }
 @media only screen and (min-width: 1600px) {
-     header, footer, main > * { padding: 16px 400px; }
+     footer, main > * { padding: 16px 400px; }
 }
