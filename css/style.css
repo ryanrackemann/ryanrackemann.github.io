@@ -76,6 +76,14 @@ main > *, footer {
 }
 .blue {
      background-color: var(--blue);
+     color: var(--dark);
+}
+.dark *::selection, .blue *::selection {
+     background: var(--white);
+     color: var(--dark);
+}
+.white *::selection {
+     background: var(--dark);
      color: var(--white);
 }
 i {
@@ -144,12 +152,6 @@ h3 > i.material-icons, h4 > i.material-icons {
 .externals a:hover i { color: var(--blue); }
 .GitHub { grid-area: GitHub; }
 .LinkedIn { grid-area: LinkedIn; }
-.dark-blue *::selection, .light-blue *::selection {
-     background: var(--dark);
-}
-.orange *::selection {
-     background: var(--white);
-}
 .content {
      grid-area: content;
 }
@@ -240,7 +242,7 @@ footer {
      main {
           display: grid;
           grid-template-columns: repeat(10, 10%);
-          grid-template-rows: repeat(2, auto);
+          grid-template-rows: repeat(3, auto);
      }
      #Experience {
           grid-column: 1 / span 6;
@@ -251,16 +253,39 @@ footer {
           grid-row: 1 / span 1;
      }
      #Skills {
-          grid-column: 1 / span 2;
+          padding: 16px 200px;
+          grid-column: auto / span 10;
           grid-row: 2 / span 1;
      }
      #Projects {
-          grid-column: 3 / span 4;
-          grid-row: 2 / span 1;
+          grid-column: auto / span 5;
+          grid-row: 3 / span 1;
      }
      #Collaborations {
-          grid-column: 7 / span 5;
-          grid-row: 2 / span 1;
+          grid-column: auto / span 5;
+          grid-row: 3 / span 1;
+     }
+     .desktop-white {
+          background-color: var(--white);
+          color: var(--dark);
+     }
+     .desktop-dark {
+          background-color: var(--dark);
+          color: var(--white);
+     }
+     .desktop-dark *::selection {
+          background: var(--white);
+          color: var(--dark);
+     }
+     .desktop-white *::selection {
+          background: var(--dark);
+          color: var(--white);
+     }
+     .desktop-dark .timeWrap {
+          border-right: var(--white) solid 2.2px;
+     }
+     .desktop-white .timeWrap {
+          border-right: var(--dark) solid 2.2px;
      }
 }
 @media only screen and (min-width: 1600px) {
