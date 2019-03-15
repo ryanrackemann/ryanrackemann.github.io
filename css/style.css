@@ -76,7 +76,7 @@ main > *, footer {
 }
 .blue {
      background-color: var(--blue);
-     color: var(--dark);
+     color: var(--white);
 }
 .dark *::selection, .blue *::selection {
      background: var(--white);
@@ -238,8 +238,8 @@ footer {
 @media only screen and (min-width: 1200px) {
      .title { padding: 16px 16px 16px 200px; }
      .externals { padding: 16px 200px 16px 16px; }
-     #Experience, #Collaborations { padding: 16px 16px 16px 300px; }
-     #Education, #Projects { padding: 16px 300px 16px 16px; }
+     #Experience, #Collaborations { padding: 16px 16px 16px 200px; }
+     #Education, #Projects { padding: 16px 200px 16px 16px; }
      footer, main > * {
           padding: 16px 64px;
      }
