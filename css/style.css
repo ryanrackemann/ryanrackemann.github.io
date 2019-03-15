@@ -257,7 +257,7 @@ footer {
           grid-row: 1 / span 1;
      }
      #Skills {
-          padding: 16px 300px;
+          padding: 16px 200px;
           grid-column: auto / span 10;
           grid-row: 2 / span 1;
      }
