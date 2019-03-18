@@ -156,18 +156,20 @@ h3 > i.material-icons, h4 > i.material-icons {
      grid-area: content;
 }
 .taglist div {
-     display: inline-flex;
      background-color: var(--blue);
      color: var(--white);
      border-radius: 6px;
      padding: 3px 6px;
-     margin-bottom: 8px;
+     margin: 0 8px 8px 0;
 }
 .taglist div p {
      font-family: 'Press Start 2P', cursive;
      letter-spacing: 2px;
      font-size: 12px;
      margin: 4px 12px;
+}
+.flex div, .stack div {
+     display: inline-flex;
 }
 ul {
      list-style: none;
@@ -238,11 +240,15 @@ footer {
 @media only screen and (min-width: 1200px) {
      .title { padding: 16px 16px 16px 200px; }
      .externals { padding: 16px 200px 16px 16px; }
-     #Experience, #Collaborations { margin: 24px 24px 24px 200px; }
-     #Education, #Projects { margin: 24px 200px 24px 24px; }
-     #Experience, #Education, #Projects, #Collaborations {
-          border-radius: 12px;
+     .stack div {
+          display: list-item;
+          list-style: none;
+          text-align: center;
+     }
+     #Experience, #Education, #Projects, #Collaborations, #Skills {
+          margin: 24px;
           padding: 16px;
+          border-radius: 12px;
           box-shadow: -8px -8px var(--blue);
      }
      footer, main > * {
@@ -253,26 +259,28 @@ footer {
           grid-template-columns: repeat(10, 1fr);
           grid-template-rows: repeat(3, auto);
      }
+     .start {
+          align-self: self-start;
+     }
      #Experience {
-          grid-column: 1 / span 6;
+          grid-column: auto / span 5;
           grid-row: 1 / span 1;
      }
      #Education {
-          grid-column: 7 / span 4;
+          grid-column: auto / span 4;
           grid-row: 1 / span 1;
      }
      #Skills {
-          padding: 16px 200px;
-          grid-column: auto / span 10;
-          grid-row: 2 / span 1;
+          grid-column: auto / span 1;
+          grid-row: 1 / span 2;
      }
      #Projects {
-          grid-column: auto / span 5;
-          grid-row: 3 / span 1;
+          grid-column: auto / span 4;
+          grid-row: 2 / span 1;
      }
      #Collaborations {
           grid-column: auto / span 5;
-          grid-row: 3 / span 1;
+          grid-row: 2 / span 1;
      }
      .desktop-white {
           background-color: var(--white);
