@@ -238,14 +238,19 @@ footer {
 @media only screen and (min-width: 1200px) {
      .title { padding: 16px 16px 16px 200px; }
      .externals { padding: 16px 200px 16px 16px; }
-     #Experience, #Collaborations { padding: 16px 16px 16px 200px; }
-     #Education, #Projects { padding: 16px 200px 16px 16px; }
+     #Experience, #Collaborations { margin: 24px 24px 24px 200px; }
+     #Education, #Projects { margin: 24px 200px 24px 24px; }
+     #Experience, #Education, #Projects, #Collaborations {
+          border-radius: 12px;
+          padding: 16px;
+          box-shadow: -8px -8px var(--blue);
+     }
      footer, main > * {
           padding: 16px 64px;
      }
      main {
           display: grid;
-          grid-template-columns: repeat(10, 10%);
+          grid-template-columns: repeat(10, 1fr);
           grid-template-rows: repeat(3, auto);
      }
      #Experience {
