@@ -12,7 +12,7 @@ h1, h2 {
 h1 {
      font-family: 'Orbitron', sans-serif;
      letter-spacing: 4px;
-     font-size: 42px;
+     font-size: 36px;
 }
 h2 {
      font-family: 'Orbitron', sans-serif;
@@ -63,8 +63,24 @@ header {
           position: sticky;
      }
 }
-main > *, footer {
-     padding: 16px 24px;
+main > *, footer { padding: 16px 24px; }
+main {
+     display: grid;
+     grid-template-columns: 1fr;
+}
+#Experience, #Education, #Projects, #Collaborations, #Skills, #Gallery {
+     grid-column: auto / span 2;
+}
+#Gallery {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     justify-content: center;
+     align-items: center;
+     grid-gap: 24px;
+}
+#Gallery img {
+     border-radius: 6px 42px 42px;
+     width: 100%;
 }
 .white {
      background-color: var(--white);
@@ -108,12 +124,22 @@ i {
      /* Support for IE. */
      font-feature-settings: 'liga';
 }
-a i {
+a i { color: var(--white); }
+.btn {
+     display: flex;
+     text-decoration: none;
+     background-color: var(--dark);
      color: var(--white);
+     padding: 16px;
+     width: fit-content;
 }
-.externals a i {
-     font-size: 36px;
+.btn i {
+     margin-left: 8px;
 }
+.btn:hover {
+     background-color: var(--blue);
+}
+.externals a i { font-size: 36px; }
 i.fab {
      font-size: 24px;
      padding-bottom: 3px;
@@ -168,15 +194,9 @@ h3 > i.material-icons, h4 > i.material-icons {
      font-size: 12px;
      margin: 4px 12px;
 }
-.flex div, .stack div {
-     display: inline-flex;
-}
-ul {
-     list-style: none;
-}
-li {
-     padding-left: 12px;
-}
+.flex div, .stack div { display: inline-flex; }
+ul { list-style: none; }
+li { padding-left: 12px; }
 /* Google Material Icon Unicode sheet */
 li:before {
      content: "\e5da";
@@ -245,24 +265,19 @@ footer {
           list-style: none;
           text-align: center;
      }
-     #Experience, #Education, #Projects, #Collaborations, #Skills {
+     #Experience, #Education, #Projects, #Collaborations, #Skills, #Gallery {
           padding: 16px;
           border-radius: 12px;
           box-shadow: -8px -8px var(--blue);
      }
-     footer, main > * {
-          padding: 16px 64px;
-     }
+     footer, main > * { padding: 16px 64px; }
      main {
-          display: grid;
-          margin: 24px;
           grid-gap: 24px;
+          margin: 24px;
           grid-template-columns: repeat(10, 1fr);
           grid-template-rows: repeat(3, auto);
      }
-     .align-start {
-          align-self: self-start;
-     }
+     .align-start { align-self: self-start; }
      #Experience {
           grid-column: auto / span 5;
           grid-row: 1 / span 1;
@@ -276,12 +291,18 @@ footer {
           grid-row: 1 / span 2;
      }
      #Projects {
-          grid-column: auto / span 4;
+          grid-column: auto / span 5;
           grid-row: 2 / span 1;
      }
      #Collaborations {
-          grid-column: auto / span 5;
+          grid-column: auto / span 4;
           grid-row: 2 / span 1;
+     }
+     #Gallery {
+          grid-column: 1 / span 10;
+          grid-row: 3 / span 1;
+          grid-gap: 16px;
+          grid-template-columns: repeat(4, 1fr);
      }
      .desktop-white {
           background-color: var(--white);
@@ -299,12 +320,8 @@ footer {
           background: var(--dark);
           color: var(--white);
      }
-     .desktop-dark .timeWrap {
-          border-right: var(--white) solid 2.2px;
-     }
-     .desktop-white .timeWrap {
-          border-right: var(--dark) solid 2.2px;
-     }
+     .desktop-dark .timeWrap { border-right: var(--white) solid 2.2px; }
+     .desktop-white .timeWrap { border-right: var(--dark) solid 2.2px; }
 }
 @media only screen and (min-width: 1600px) {
      .title { padding: 16px 0 16px 300px; }
