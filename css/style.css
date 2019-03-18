@@ -246,7 +246,6 @@ footer {
           text-align: center;
      }
      #Experience, #Education, #Projects, #Collaborations, #Skills {
-          margin: 24px;
           padding: 16px;
           border-radius: 12px;
           box-shadow: -8px -8px var(--blue);
@@ -256,10 +255,12 @@ footer {
      }
      main {
           display: grid;
+          margin: 24px;
+          grid-gap: 24px;
           grid-template-columns: repeat(10, 1fr);
           grid-template-rows: repeat(3, auto);
      }
-     .start {
+     .align-start {
           align-self: self-start;
      }
      #Experience {
