@@ -49,12 +49,6 @@ header {
      top: 0;
      z-index: 1;
      width: 100%;
-     display: inline-grid;
-     grid-template-areas: 'title' 'externals';
-     grid-template-columns: 1fr;
-     grid-template-rows: auto auto;
-     justify-content: center;
-     align-items: center;
      text-align: center;
 }
 @supports (position: sticky) {
@@ -68,10 +62,42 @@ main {
      display: grid;
      grid-template-columns: 1fr;
 }
+.hGrid {
+     display: grid;
+     grid-template-areas: 'title externals';
+     grid-template-columns: 1fr 80px;
+     padding: 16px 0;
+     width: fit-content;
+     text-align: left;
+     align-items: center;
+     width: 100%;
+}
+.title {
+     grid-area: title;
+     padding-left: 24px;
+}
+.externals {
+     grid-area: externals;
+     padding-right: 32px;
+     margin-left: 8px;
+     display: grid;
+     grid-template-areas: 'GitHub LinkedIn';
+     grid-gap: 24px;
+     grid-template-columns: repeat(2, 50%);
+     justify-content: center;
+     align-items: center;
+}
+.externals a {
+     text-decoration: none;
+     text-align: center;
+     background-color: var(--dark);
+     color: var(--white);
+}
+.externals a:hover i { color: var(--blue); }
 #Experience, #Education, #Projects, #Collaborations, #Skills, #Gallery {
      grid-column: auto / span 2;
 }
-#Gallery {
+.gallery {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
      justify-content: center;
@@ -154,28 +180,6 @@ h3 > i.material-icons, h4 > i.material-icons {
      margin-right: 6px;
      padding-bottom: 2px;
 }
-.title {
-     padding: 16px 0;
-     grid-area: title;
-}
-.externals {
-     padding: 0 0 16px 0;
-     grid-area: externals;
-     justify-self: auto;
-     display: inline-grid;
-     grid-template-areas: 'GitHub LinkedIn';
-     grid-gap: 16px;
-     grid-template-columns: auto auto;
-     justify-content: center;
-     align-items: center;
-}
-.externals a {
-     text-decoration: none;
-     text-align: center;
-     background-color: var(--dark);
-     color: var(--white);
-}
-.externals a:hover i { color: var(--blue); }
 .GitHub { grid-area: GitHub; }
 .LinkedIn { grid-area: LinkedIn; }
 .content {
@@ -212,22 +216,7 @@ footer {
      font-weight: bold;
 }
 
-@media only screen and (min-width: 750px) {
-     header {
-          display: inline-grid;
-          grid-template-areas: 'title externals';
-          grid-template-columns: 1fr 85px;
-          text-align: left;
-          align-items: center;
-          width: 100%;
-     }
-     .title { padding: 16px 0 16px 50px; }
-     .externals {
-          padding: 16px 50px 16px 0;
-          justify-self: end;
-     }
-     footer, main > * { padding: 16px 75px; }
-}
+@media only screen and (min-width: 750px) { footer, main > * { padding: 16px 75px; } }
 @media only screen and (min-width: 900px) {
      .timeContentGrid {
           display: grid;
@@ -301,6 +290,8 @@ footer {
      #Gallery {
           grid-column: 1 / span 10;
           grid-row: 3 / span 1;
+     }
+     .gallery {
           grid-gap: 16px;
           grid-template-columns: repeat(4, 1fr);
      }
