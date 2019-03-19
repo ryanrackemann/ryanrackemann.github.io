@@ -14,13 +14,12 @@
 	--header-bottom-border: var(--blue);
 	--main-bg: var(--dark);
 	--main-txt: var(--white);
-	--icons: var(--blue);
 	--footer-bg: var(--blue);
 	--footer-txt: var(--white);
 	--card-bg: var(--white);
 	--card-drop: var(--blue);
 	--card-txt: var(--dark);
-	--card-icons: var(--blue);
+	--card-icon: var(--blue);
 	--btn-bg: var(--dark);
 	--btn-txt: var(--white);
 	--btn-hvr: var(--blue);
@@ -57,6 +56,7 @@
 ::-webkit-scrollbar-thumb {
 	background: var(--scroll);
 }
+* { box-sizing: border-box; }
 i {
      font-family: 'Material Icons';
      color: var(--icons);
@@ -79,6 +79,66 @@ i {
      /* Support for IE. */
      font-feature-settings: 'liga';
 }
+html, body { margin: 0; }
+h1, h2 { margin: 0 }
+h1 {
+     font-family: 'Orbitron', sans-serif;
+     letter-spacing: 4px;
+     font-size: 32px;
+}
+h2 {
+     font-family: 'Orbitron', sans-serif;
+     letter-spacing: 2px;
+     font-size: 30px;
+     margin: 18px 0;
+}
+h3 {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 24px;
+     font-style: oblique;
+}
+h4 {
+     font-family: 'Open Sans', sans-serif;
+     font-size: 20px;
+}
+p, li, a {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 16px;
+     line-height: 24px;
+}
+input {
+     font-family: 'Press Start 2P', cursive;
+     font-size: 14px;
+     letter-spacing: 4px;
+}
+.experience, .education, .projects, .collaborations, .skills, .gallery {
+     grid-column: auto / span 2;
+}
+
+.experience, .experience i {
+	background-color: var(--main-mobile-1-bg);
+	color: var(--main-mobile-1-txt);
+}
+.education, .education i {
+	background-color: var(--main-mobile-2-bg);
+	color: var(--main-mobile-2-txt);
+}
+.projects, .projects i {
+	background-color: var(--main-mobile-3-bg);
+	color: var(--main-mobile-3-txt);
+}
+.collaborations, .collaborations i {
+	background-color: var(--main-mobile-4-bg);
+	color: var(--main-mobile-4-txt);
+}
+.skills, .skills i {
+	background-color: var(--main-mobile-5-bg);
+	color: var(--main-mobile-5-txt);
+}
+.gallery, .gallery i {
+	background-color: var(--main-mobile-6-bg);
+	color: var(--main-mobile-6-txt);
+}
 .btn {
      display: flex;
      text-decoration: none;
@@ -87,15 +147,20 @@ i {
      padding: 16px;
      width: fit-content;
 }
+.btn i.material-icons {
+	background-color: var(--btn-bg);
+	color: var(--btn-icon);
+	margin-left: 8px;
+}
 .btn:hover {
 	background-color: var(--btn-hvr);
 	color: var(btn-bg);
 }
-.btn i {
-	color: var(--btn-icon);
-	margin-left: 8px;
+.btn:hover i {
+	background-color: var(--btn-hvr);
+	color: var(btn-bg);
 }
-.btn:hover i { color: var(--btn-icon-hvr); }
+.btn:hover > i.material-icons { color: var(--btn-icon-hvr); }
 .profiles a i {
 	color: var(--header-icon);
 	font-size: 36px;
@@ -140,39 +205,6 @@ li:before {
      margin-right: 6px;
      font-size: 18px;
 }
-html, body { margin: 0; }
-h1, h2 { margin: 0 }
-h1 {
-     font-family: 'Orbitron', sans-serif;
-     letter-spacing: 4px;
-     font-size: 32px;
-}
-h2 {
-     font-family: 'Orbitron', sans-serif;
-     letter-spacing: 2px;
-     font-size: 30px;
-     margin: 18px 0;
-}
-h3 {
-     font-family: 'Montserrat', sans-serif;
-     font-size: 24px;
-     font-style: oblique;
-}
-h4 {
-     font-family: 'Open Sans', sans-serif;
-     font-size: 20px;
-}
-p, li, a {
-     font-family: 'Montserrat', sans-serif;
-     font-size: 16px;
-     line-height: 24px;
-}
-input {
-     font-family: 'Press Start 2P', cursive;
-     font-size: 14px;
-     letter-spacing: 4px;
-}
-header, main, footer, div { box-sizing: border-box; }
 header {
 	background-color: var(--header-bg);
 	position: relative;
@@ -234,17 +266,14 @@ footer .colorSwitcher i {
 	font-size: 36px;
 }
 header a:hover i.fab { color: var(--header-icon-hvr); }
-#Experience, #Education, #Projects, #Collaborations, #Skills, #Gallery {
-     grid-column: auto / span 2;
-}
-.gallery {
+.photo-gallery {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
      justify-content: center;
      align-items: center;
      grid-gap: 24px;
 }
-#Gallery img {
+.photo-gallery img {
      border-radius: 6px 42px 42px;
      width: 100%;
 }
@@ -298,7 +327,7 @@ header a:hover i.fab { color: var(--header-icon-hvr); }
 	text-decoration: none;
 	cursor: pointer;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1200px) {
      .timeContentGrid {
           display: grid;
           grid-template-areas: 'time content';
@@ -320,8 +349,6 @@ header a:hover i.fab { color: var(--header-icon-hvr); }
           z-index: 0;
      }
 	.timeWrap { border-right: var(--timeline-bar) solid 2.2px; }
-}
-@media only screen and (min-width: 1200px) {
 	.selection-wrapper {
 		display: grid;
 		grid-template-columns: auto auto;
@@ -334,13 +361,17 @@ header a:hover i.fab { color: var(--header-icon-hvr); }
           list-style: none;
           text-align: center;
      }
-     #Experience, #Education, #Projects, #Collaborations, #Skills, #Gallery {
+     .experience, .education, .projects, .collaborations, .skills, .gallery {
 		background-color: var(--card-bg);
 		color: var(--card-txt);
           padding: 16px;
           border-radius: 12px;
           box-shadow: -8px -8px var(--card-drop);
      }
+	.experience i, .education i, .projects i, .collaborations i, .skills i, .gallery i {
+		background-color: var(--card-bg);
+		color: var(--card-icon);
+	}
      main {
           grid-gap: 24px;
           margin: 24px;
@@ -348,31 +379,31 @@ header a:hover i.fab { color: var(--header-icon-hvr); }
           grid-template-rows: repeat(3, auto);
      }
      .align-start { align-self: self-start; }
-     #Experience {
+     .experience {
           grid-column: auto / span 5;
           grid-row: 1 / span 1;
      }
-     #Education {
+     .education {
           grid-column: auto / span 4;
           grid-row: 1 / span 1;
      }
-     #Skills {
+     .skills {
           grid-column: auto / span 1;
           grid-row: 1 / span 2;
      }
-     #Projects {
+     .projects {
           grid-column: auto / span 5;
           grid-row: 2 / span 1;
      }
-     #Collaborations {
+     .collaborations {
           grid-column: auto / span 4;
           grid-row: 2 / span 1;
      }
-     #Gallery {
+     .gallery {
           grid-column: 1 / span 10;
           grid-row: 3 / span 1;
      }
-     .gallery {
+     .photo-gallery {
           grid-gap: 16px;
           grid-template-columns: repeat(4, 1fr);
      }
