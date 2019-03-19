@@ -30,19 +30,13 @@
      }
 }
 
+/* Fade in transformation */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 /* Bounce Animation */
-@-moz-keyframes bounce {
-     25% { -moz-transform: rotate(30deg); }
-     50% { -moz-transform: rotate(0deg); }
-     75% { -moz-transform: rotate(-30deg); }
-     100% { -moz-transform: rotate(0deg); }
-}
-@-webkit-keyframes bounce {
-     25% { -webkit-transform: rotate(30deg); }
-     50% { -webkit-transform: rotate(0deg); }
-     75% { -webkit-transform: rotate(-30deg); }
-     100% { -webkit-transform: rotate(0deg); }
-}
 @keyframes bounce {
      from {
           -ms-transform: translateY(0);
@@ -56,6 +50,37 @@
      }
 }
 
+/* Gradient Marquee Animation */
+@-moz-keyframes gradMarquee {
+     25% { -moz-transform: rotate(30deg); }
+     50% { -moz-transform: rotate(0deg); }
+     75% { -moz-transform: rotate(-30deg); }
+     100% { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes gradMarquee {
+     25% { -webkit-transform: rotate(30deg); }
+     50% { -webkit-transform: rotate(0deg); }
+     75% { -webkit-transform: rotate(-30deg); }
+     100% { -webkit-transform: rotate(0deg); }
+}
+@keyframes gradMarquee {
+     20% {
+          background-image: linear-gradient(to top, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd54, #47e184, #00e2ad, #00c7da, #00a5ff);
+     }
+     40% {
+          background-image: linear-gradient(to top, #00c7da, #00a5ff, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd54, #47e184, #00e2ad);
+     }
+     60% {
+          background-image: linear-gradient(to top, #47e184, #00e2ad, #00c7da, #00a5ff, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd54);
+     }
+     80% {
+          background-image: linear-gradient(to top, #a1d600, #76dd54, #47e184, #00e2ad, #00c7da, #00a5ff, #ff0000, #f36300, #de9200, #c3b700);
+     }
+     100% {
+          background-image: linear-gradient(to top, #de9200, #c3b700, #a1d600, #76dd54, #47e184, #00e2ad, #00c7da, #00a5ff, #ff0000, #f36300);
+     }
+}
+
 :hover.spin{
      -webkit-animation:spin 1s linear infinite;
      -moz-animation:spin 1s linear infinite;
@@ -66,4 +91,16 @@
      -moz-animation: bounce .3s cubic-bezier(.5,.05,1,.5) infinite;
      animation: bounce .3s cubic-bezier(.5,.05,1,.5) infinite;
      animation-direction: alternate;
+}
+.fadein {
+     -webkit-animation: fadein 2s;
+     -moz-animation: fadein 2s;
+     -ms-animation: fadein 2s;
+     -o-animation: fadein 2s;
+     animation: fadein 2s;
+}
+:hover.gradMarquee{
+     -webkit-animation:gradMarquee 1s linear infinite;
+     -moz-animation:gradMarquee 1s linear infinite;
+     animation:gradMarquee 1s linear infinite;
 }
