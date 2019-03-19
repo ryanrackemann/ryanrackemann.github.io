@@ -207,6 +207,7 @@ li:before {
 }
 header {
 	background-color: var(--header-bg);
+	color: var(--header-text);
 	position: relative;
 	display: flex;
 	justify-content: space-between;
