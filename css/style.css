@@ -1,7 +1,43 @@
 :root {
-     --dark: #0a2326;
-     --blue: #006877;
-     --white: #e4eaea;
+	--dark: #0a2326;
+	--blue: #006877;
+	--white: #e4eaea;
+	--orange: #e66036;
+
+	--header-bg: #;
+	--header-txt: #;
+	--header-icon: #;
+	--header-icon-hvr: #;
+	--header-bottom-border: #;
+	--main-bg: #;
+	--footer-bg: #;
+	--footer-txt: #;
+	--card-bg: #;
+	--card-drop: #;
+	--card-txt: #;
+	--card-icons: #;
+	--btn: #;
+	--btn-hvr: #;
+	--tag-bg: #;
+	--tag-txt: #;
+	--main-mobile-1-bg: #;
+	--main-mobile-1-txt: #;
+	--main-mobile-1-icon: #;
+	--main-mobile-2-bg: #;
+	--main-mobile-2-txt: #;
+	--main-mobile-2-icon: #;
+	--main-mobile-3-bg: #;
+	--main-mobile-3-txt: #;
+	--main-mobile-3-icon: #;
+	--main-mobile-4-bg: #;
+	--main-mobile-4-txt: #;
+	--main-mobile-4-icon: #;
+	--main-mobile-5-bg: #;
+	--main-mobile-5-txt: #;
+	--main-mobile-5-icon: #;
+	--main-mobile-6-bg: #;
+	--main-mobile-6-txt: #;
+	--main-mobile-6-icon: #;
 }
 .white {
      background-color: var(--white);
