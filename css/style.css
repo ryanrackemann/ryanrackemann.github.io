@@ -247,8 +247,6 @@ footer {
      footer, main > * { padding: 16px 150px; }
 }
 @media only screen and (min-width: 1200px) {
-     .title { padding: 16px 16px 16px 200px; }
-     .externals { padding: 16px 200px 16px 16px; }
      .stack div {
           display: list-item;
           list-style: none;
@@ -313,8 +311,4 @@ footer {
      }
      .desktop-dark .timeWrap { border-right: var(--white) solid 2.2px; }
      .desktop-white .timeWrap { border-right: var(--dark) solid 2.2px; }
-}
-@media only screen and (min-width: 1600px) {
-     .title { padding: 16px 0 16px 300px; }
-     .externals { padding: 16px 300px 16px 0; }
 }
