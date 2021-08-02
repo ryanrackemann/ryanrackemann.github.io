@@ -1,0 +1,198 @@
+:root {
+  --light-yellow: #fff9ce;
+  --light-teal: #cfe6e5;
+  --light-gray: #eeeeee;
+  --dark: #000;
+}
+
+/*************************************\
+|               Layout                |
+\*************************************/
+html {
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-areas: 'header'
+    'article'
+    'main'
+    'aside'
+    'footer';
+}
+
+header {
+  grid-area: header;
+  padding: 16px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--dark);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  grid-area: main;
+  padding: 0 16px;
+}
+
+footer {
+  grid-area: footer;
+  border-top: 4px solid var(--dark);
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  border: dashed 2px var(--dark);
+}
+
+/*************************************\
+|              Backgrounds            |
+\*************************************/
+.slashed {
+background: repeating-linear-gradient( -55deg, var(--light-gray), var(--light-gray) 5px, #ffffff 5px, #ffffff 10px );
+}
+
+.dotted {
+  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
+  background-size: 30px 30px;
+}
+
+/*************************************\
+|                 Fonts               |
+\*************************************/
+h1, h2, p, li {
+  font-family: 'Roboto', Tahoma, sans-serif;
+}
+
+h3, h4, span {
+  font-family: 'Open Sans Condensed', Tahoma, sans-serif;
+}
+
+h4 {
+  font-style: italic;
+}
+
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+
+/*************************************\
+|              Headshot               |
+\*************************************/
+header img.headshot {
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
+  height: auto;
+  margin: 0 auto;
+  border: 4px solid var(--dark);
+  border-radius: 50%;
+}
+
+/*************************************\
+|               Socials               |
+\*************************************/
+.socials {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.socials a i.fab {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  padding: 0 4px;
+}
+
+.socials a i.fab:hover {
+  opacity: 0.7;
+}
+
+/*************************************\
+|            Google Icons             |
+\*************************************/
+.material-icons {
+  margin-right: 4px;
+  float: left;
+}
+
+
+/*************************************\
+|            Google Icons             |
+\*************************************/
+
+.split-header {
+  display: grid;
+  grid-template-areas: 'icon text';
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+.split-header i {
+  display: block;
+  grid-area: icon;
+  text-align: center;
+}
+
+.split-header i.h2 {
+  font-size: 42px;
+}
+
+.split-header i.h3 {
+  font-size: 28px;
+}
+
+.split-header h2 {
+  border-left: 4px dotted var(--dark);
+  padding-left: 24px;
+}
+
+.split-header h2, .split-header h3 {
+  grid-area: text;
+}
+
+
+/*************************************\
+|             Experience              |
+\*************************************/
+.card {
+  border: 4px solid var(--dark);
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 42px;
+}
+
+
+
+@media (min-width: 600px)
+{
+}
+
+@media (min-width: 1080px)
+{
+}

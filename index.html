@@ -6,205 +6,100 @@
 		<meta name="keywords" content="PHP, Python, HTML5, XML, CSS, JavaScript, JSON, jQuery, SQL, AJAX, C, Java, LaTeX, XSLT, Computer Science, Software, Engineering, Math, Mathematics">
 		<meta name="description" content="A Computer Science and Mathematics student seeking a new placement in the workforce.">
 		<meta name="author" content="Ryan Rackemann">
-		<link rel="shortcut icon" href="img/tab-icon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/animations.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link href="css/main.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/e6fa8d29fb.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat|Orbitron|Press+Start+2P|Open+Sans" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 		<title>Ryan Rackemann</title>
 	</head>
 	<body class="fadein">
-		<div class="pallet" id="pallet">
-			<div class="pallet-content">
-				<span class="exit" tabindex="0">&times;</span>
-				<h2>Color Pallet<i class="material-icons">style</i></h2>
-				<div id="colors" class="selection-wrapper">
-					<label>Header</label> <input type="text" name="header-bg" placeholder="HMTL color"></input>
-					<label>Header Text</label> <input type="text" name="header-txt" placeholder="HMTL color"></input>
-					<label>Header Icon</label> <input type="text" name="header-icon" placeholder="HMTL color"></input>
-					<label>Header Icon Hover</label> <input type="text" name="header-icon-hvr" placeholder="HMTL color"></input>
-					<label>Header Bottom Border</label> <input type="text" name="header-bottom-border" placeholder="HMTL color"></input>
-					<label>Main</label> <input type="text" name="main-bg" placeholder="HMTL color"></input>
-					<label>Main Text</label> <input type="text" name="main-txt" placeholder="HMTL color"></input>
-					<label>Footer</label> <input type="text" name="footer-bg" placeholder="HMTL color"></input>
-					<label>Footer Text</label> <input type="text" name="footer-txt" placeholder="HMTL color"></input>
-					<label>Card</label> <input type="text" name="card-bg" placeholder="HMTL color"></input>
-					<label>Card Backdrop</label> <input type="text" name="card-drop" placeholder="HMTL color"></input>
-					<label>Card Text</label> <input type="text" name="card-txt" placeholder="HMTL color"></input>
-					<label>Card Icons</label> <input type="text" name="card-icons" placeholder="HMTL color"></input>
-					<label>Button</label> <input type="text" name="btn-bg" placeholder="HMTL color"></input>
-					<label>Button Text</label> <input type="text" name="btn-txt" placeholder="HMTL color"></input>
-					<label>Button Hover</label> <input type="text" name="btn-hvr" placeholder="HMTL color"></input>
-					<label>Button Icon</label> <input type="text" name="btn-icon" placeholder="HMTL color"></input>
-					<label>Button Icon Hover</label> <input type="text" name="btn-icon-hvr" placeholder="HMTL color"></input>
-					<label>Tag</label> <input type="text" name="tag-bg" placeholder="HMTL color"></input>
-					<label>Tag Text</label> <input type="text" name="tag-txt" placeholder="HMTL color"></input>
-					<label>Timeline Bar</label> <input type="text" name="timeline-bar" placeholder="HMTL color"></input>
-					<label>Mobile Card 1</label> <input type="text" name="main-mobile-1-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 1 Text</label> <input type="text" name="main-mobile-1-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 1 Icon</label> <input type="text" name="main-mobile-1-icon" placeholder="HMTL color"></input>
-					<label>Mobile Card 2</label> <input type="text" name="main-mobile-2-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 2 Text</label> <input type="text" name="main-mobile-2-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 2 Icon</label> <input type="text" name="main-mobile-2-icon" placeholder="HMTL color"></input>
-					<label>Mobile Card 3</label> <input type="text" name="main-mobile-3-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 3 Text</label> <input type="text" name="main-mobile-3-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 3 Icon</label> <input type="text" name="main-mobile-3-icon" placeholder="HMTL color"></input>
-					<label>Mobile Card 4</label> <input type="text" name="main-mobile-4-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 4 Text</label> <input type="text" name="main-mobile-4-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 4 Icon</label> <input type="text" name="main-mobile-4-icon" placeholder="HMTL color"></input>
-					<label>Mobile Card 5</label> <input type="text" name="main-mobile-5-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 5 Text</label> <input type="text" name="main-mobile-5-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 5 Icon</label> <input type="text" name="main-mobile-5-icon" placeholder="HMTL color"></input>
-					<label>Mobile Card 6</label> <input type="text" name="main-mobile-6-bg" placeholder="HMTL color"></input>
-					<label>Mobile Card 6 Text</label> <input type="text" name="main-mobile-6-txt" placeholder="HMTL color"></input>
-					<label>Mobile Card 6 Icon</label> <input type="text" name="main-mobile-6-icon" placeholder="HMTL color"></input>
-					<label>Scrollbar</label> <input type="text" name="scroll" placeholder="HMTL color"></input>
-					<label>Scrollbar</label> <input type="text" name="scroll-bg" placeholder="HMTL color"></input>
-				</div>
-			</div>
-		</div>
-		<header>
-		<div class="title">
+		<header class="dotted">
+			<img src="img/ryan.jpg" alt="Ryan Rackemann" class="headshot" />
 			<h1>Ryan Rackemann</h1>
-		</div>
-		<div class="profiles">
-			<a target="_blank" href="https://github.com/ryanrackemann"><i class="fab fa-github spin"></i></a>
-			<a target="_blank" href="https://www.linkedin.com/in/ryan-rackemann" class="LinkedIn"><i class="fab fa-linkedin bounce"></i></a>
-		</div>
+			<div class="socials">
+				<a target="_blank" href="https://github.com/ryanrackemann"><i class="fab fa-github"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/in/ryan-rackemann"><i class="fab fa-linkedin"></i></a>
+			</div>
 		</header>
-		<main>
-		<div class="experience">
-			<h2><i class="material-icons">work</i>Experience</h2>
-			<div class="timeContentGrid">
-				<div class="timeWrap">
-					<p class="time">July 2015 &ndash; Present</p>
-				</div>
-				<div class="content">
-					<h3><i class="material-icons">desktop_windows</i>Senior Web Assistant</h3>
-					<h4>California State University, Channel Islands</h4>
-					<ul>
-					   <li>Provided training and support to other web assistants</li>
-					   <li>Maintained compliance with Web Design Standards, Usability and Web Accessibility for all CSU, state, and federal policies and guidelines</li>
-					   <li>Designed appropriate web page templates, both brand-new or based on existing on University templates</li>
-					   <li>Drafted websites for client, end user, and peer review</li>
-					   <li>Optimized all forms of media for web publication.</li>
-					   <li>Provided information, analysis, and support for for web technology issues</li>
-					</ul>
-					<a class="btn" href="https://www.csuci.edu/">Visit the CSU Channel Islands Site <i class="material-icons">public</i></a>
-				</div>
+
+		<main class="slashed">
+			<div class="split-header">
+				<i class="material-icons h2">work</i>
+				<h2>Experience</h2>
 			</div>
-		</div>
-		<div class="education">
-		<h2><i class="material-icons">school</i>Education</h2>
-		<div class="timeContentGrid">
-		<div class="timeWrap">
-			<p class="time">May 2019</p>
-		</div>
-		<div class="content">
-			<h3>California State University, Channel&nbsp;Islands</h3>
-			<h4><i class="material-icons">code</i>B.S. Computer Science</h4>
-			<h4><i class="material-icons">show_chart</i>B.S. Mathematics</h4>
-			<h4><i class="material-icons">security</i>Minor in Security Systems Engineering</h4>
-			<h4><i class="material-icons">music_note</i>Certificate in Guitar</h4>
-		</div>
-		</div>
-		</div>
-		<div class="align-start skills">
-			<h2><i class="material-icons">done_outline</i>Skills</h2>
-			<div class="taglist stack">
-				<div><p>PHP</p></div>
-				<div><p>Python</p></div>
-				<div><p>HTML5</p></div>
-				<div><p>XML</p></div>
-				<div><p>CSS</p></div>
-				<div><p>JavaScript</p></div>
-				<div><p>JSON</p></div>
-				<div><p>jQuery</p></div>
-				<div><p>SQL</p></div>
-				<div><p>AJAX</p></div>
-				<div><p>C</p></div>
-				<div><p>Java</p></div>
-				<div><p>LaTeX</p></div>
-				<div><p>XSLT</p></div>
-			</div>
-		</div>
-		<div class="collaborations">
-			<h2><i class="material-icons">people</i>Collaborations</h2>
-			<div class="timeContentGrid">
-				<div class="timeWrap">
-					<p class="time">2019</p>
+
+			<div class="card dotted">
+				<div class="split-header">
+					<i class="material-icons h3">desktop_windows</i>
+					<h3>Senior Web Assistant</h3>
 				</div>
-				<div class="content">
-					<h3>Health Comprehension Survey</h3>
-					<p>Implemented a web application to conduct research on health literacy in commonly accessed online health articles. Research was conducted jointly with Dr. Brian Thoms’ on the subject.</p>
-					<div class="taglist flex">
-						<div><p>PHP</p></div>
-						<div><p>AJAX</p></div>
-						<div><p>HTML</p></div>
-						<div><p>JS</p></div>
-						<div><p>XML</p></div>
-					</div>
-				</div>
+				<p>July 2015 &ndash; Present</p>
+				<h4>California State University, Channel Islands</h4>
+				<ul>
+					<li>Provided training and support to other web assistants</li>
+					<li>Maintained compliance with Web Design Standards, Usability and Web Accessibility for all CSU, state, and federal policies and guidelines</li>
+					<li>Designed appropriate web page templates, both brand-new or based on existing on University templates</li>
+					<li>Drafted websites for client, end user, and peer review</li>
+					<li>Optimized all forms of media for web publication.</li>
+					<li>Provided information, analysis, and support for for web technology issues</li>
+				</ul>
 			</div>
-			<br>
-			<div class="timeContentGrid">
-				<div class="timeWrap">
-					<p class="time">2018</p>
-				</div>
-				<div class="content">
-					<h3>NASA Swarmathon</h3>
-					<p>Participated in NASA’s annual Swarmathon competition. Helped program the Swarmie robot functionality for the California State University, Channel Islands team.</p>
-				</div>
+
+			<hr>
+
+			<div class="split-header">
+				<i class="material-icons h2">school</i>
+				<h2>Education</h2>
 			</div>
-		</div>
-		<div class="projects">
-			<h2><i class="material-icons">folder_special</i>Projects</h2>
-			<h3>Math Editor</h3>
-			<div class="taglist flex">
-				<div><p>PHP</p></div>
-				<div><p>AJAX</p></div>
-				<div><p>JS</p></div>
+
+
+			<div class="card dotted">
+				<h3>California State University, Channel&nbsp;Islands</h3>
+				<p>May 2019</p>
+				<p><i class="material-icons">code</i>B.S. Computer Science</p>
+				<p><i class="material-icons">show_chart</i>B.S. Mathematics</p>
+				<p><i class="material-icons">security</i>Minor in Security Systems Engineering</p>
+				<p><i class="material-icons">music_note</i>Certificate in Guitar</p>
 			</div>
-			<ul>
-				<li>A simple math note-taking web application</li>
+
+			<hr>
+
+			<div class="split-header">
+				<i class="material-icons h2">code</i>
+				<h2>Skills</h2>
+			</div>
+			<ul class="badge-list">
+				<li>C#</li>
+				<li>ASP.Net</li>
+				<li>SQL</li>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript/jQuery</li>
 			</ul>
-			<h3>J.A. Johnny’s Website</h3>
-			<div class="taglist flex">
-				<div><p>HTML</p></div>
-				<div><p>CSS</p></div>
-				<div><p>JS</p></div>
-				<div><p>PHP</p></div>
+
+			<hr>
+
+			<div class="split-header">
+				<i class="material-icons h2">done</i>
+				<h2>Projects</h2>
 			</div>
-			<ul>
-				<li>A website for a restaurant in Parker, AZ</li>
-			</ul>
-			<h3>Nonogames</h3>
-			<div class="taglist flex">
-				<div><p>Java</p></div>
-				<div><p>XML</p></div>
+			<div class="card dotted">
+				<h3>J.A. Johnny’s Website</h3>
+				<ul>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JS</li>
+					<li>PHP</li>
+				</ul>
+				<ul>
+					<li>A website for a restaurant in Parker, AZ</li>
+				</ul>
 			</div>
-			<ul>
-				<li>A Nonograms puzzle Android application</li>
-				<li>Mainly tasked with the theme manager and assisted in some basic functionality of the game</li>
-			</ul>
-		</div>
-		<div class="gallery">
-			<h2><i class="material-icons">local_see</i> Gallery</h2>
-			<div class="photo-gallery">
-				<!-- <i class="material-icons">keyboard_arrow_left</i> -->
-				<img src="img/nasa.jpg">
-				<img src="img/ski.jpg">
-				<img src="img/disney.jpg">
-				<img src="img/vegas.jpg">
-				<!-- <i class="material-icons">keyboard_arrow_right</i> -->
-			</div>
-		</div>
 		</main>
-		<footer>
-		  <div id="openPallet" class="colorSwitcher gradMarquee"><i class="material-icons">color_lens</i></div>
-		  <p class="close-tag">&lt;/ryanrackemann&gt;</p>
+		<footer class="dotted">
+			<p>&lt;/ryanrackemann&gt;</p>
 		</footer>
 	</body>
-	<script src="js/pallet.js" type="text/JavaScript"></script>
 </html>
