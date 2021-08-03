@@ -22,9 +22,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-areas: 'header'
-    'article'
     'main'
-    'aside'
     'footer';
 }
 
@@ -39,77 +37,52 @@ header {
 main {
   grid-area: main;
   padding: 0 16px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
   grid-area: footer;
   border-top: 4px solid var(--dark);
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
+  padding: 0 16px;
+  margin-top: 36px;
 }
 
 hr {
   border: dashed 2px var(--dark);
-}
-
-/*************************************\
-|              Backgrounds            |
-\*************************************/
-.slashed {
-background: repeating-linear-gradient( -55deg, var(--light-gray), var(--light-gray) 5px, #ffffff 5px, #ffffff 10px );
-}
-
-.dotted {
-  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
-  background-size: 30px 30px;
+  margin-top: 36px;
 }
 
 /*************************************\
 |                 Fonts               |
 \*************************************/
-h1, h2, p, li {
-  font-family: 'Roboto', Tahoma, sans-serif;
-}
+p, a, span { font-size: 1em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+h1, h2, h4, p, a, span, li { font-family: 'Roboto', Tahoma, sans-serif; }
+h3, h3 a { font-family: 'Open Sans Condensed', Tahoma, sans-serif; }
 
-h3, h4, span {
-  font-family: 'Open Sans Condensed', Tahoma, sans-serif;
-}
-
-h4 {
-  font-style: italic;
-}
-
-p {
-  font-size: 1em;
-}
-
-h1 {
-  font-size: 2em;
-}
-
-h2 {
-  font-size: 1.75em;
-}
-
-
-h3 {
-  font-size: 1.5em;
-}
-
-h4 {
-  font-size: 1.25em;
-}
+a { color: black; }
+h4 { margin: 0; }
 
 
 /*************************************\
-|              Headshot               |
+|               Header                |
 \*************************************/
-header img.headshot {
+.header-content .contact {
+  grid-area: contact;
+}
+
+.header-content .headshot img {
   display: block;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 215px;
+  max-height: 215px;
   height: auto;
   margin: 0 auto;
-  border: 4px solid var(--dark);
   border-radius: 50%;
 }
 
@@ -122,14 +95,14 @@ header img.headshot {
   width: 100%;
 }
 
-.socials a i.fab {
+.socials i {
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: 36px;
   padding: 0 4px;
 }
 
-.socials a i.fab:hover {
+.socials i:hover {
   opacity: 0.7;
 }
 
@@ -140,7 +113,6 @@ header img.headshot {
   margin-right: 4px;
   float: left;
 }
-
 
 /*************************************\
 |            Google Icons             |
@@ -176,23 +148,66 @@ header img.headshot {
   grid-area: text;
 }
 
-
 /*************************************\
-|             Experience              |
+|          Cards and Badges           |
 \*************************************/
+ul.badges {
+  margin: 0;
+  padding: 0;
+}
+
+ul.badges li {
+  display: inline-block;
+  list-style: none;
+  padding: 12px 28px;
+  margin-top: 4px;
+  border: 2px solid var(--dark);
+  border-radius: 6px;
+  /* dotted styling to reduce class repetition */
+  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
+  background-size: 30px 30px;
+}
+
 .card {
   border: 4px solid var(--dark);
   padding: 16px;
   border-radius: 6px;
-  margin-bottom: 42px;
+  margin-bottom: 16px;
 }
 
+/*************************************\
+|              Backgrounds            |
+\*************************************/
+.slashed {
+  background: repeating-linear-gradient( -55deg, var(--light-gray), var(--light-gray) 5px, #ffffff 5px, #ffffff 10px );
+}
 
+.dotted {
+  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
+  background-size: 30px 30px;
+}
 
 @media (min-width: 600px)
 {
-}
+  .header-content {
+    display: grid;
+    grid-template-areas: 'header contact';
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-@media (min-width: 1080px)
-{
+  .header-content .contact {
+    grid-area: contact;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .header-content .headshot {
+    grid-area: headshot;
+    grid-row: 1;
+    grid-column: 1;
+  }
 }
