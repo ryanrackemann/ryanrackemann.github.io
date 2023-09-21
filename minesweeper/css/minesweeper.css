@@ -1,0 +1,545 @@
+/**********************************\
+|            CSS Variables         |
+\**********************************/
+:root {
+    /* static colors */
+    --dark: #000;
+    --light: #fff;
+    --gameover: #db3636;
+    --flag: #ffa600;
+    --trophybronze: #cd7f32;
+    --trophysilver: #c7bebe;
+    --trophygold: #eac500;
+
+    /* theme colors */
+    --main: #242424;
+    --opposite: #fff;
+    --secondary: #616467;
+    --accent: #156265;
+    --transparency: rgba(0, 0, 0, 0.75);
+    --oppositeTransparency: rgba(255, 255, 255, 0.75);
+}
+
+/**********************************\
+|          Basic structure         |
+\**********************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--main);
+    color: var(--opposite);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+html, body, .gameover-message, .gameover-content, .patch, button, select, .highScores {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    align-items: stretch;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-areas: 'header' 'body' 'footer';
+    padding: 20px;
+}
+
+header {
+    align-items: center;
+    display: grid;
+    gap: 15px;
+    grid-area: header;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: 'title title title' 'controls stats stats';
+    justify-items: center;
+}
+
+h1 {
+    font-size: 1.5em;
+    grid-area: title;
+    justify-self: center;
+    margin: 0;
+}
+
+main {
+    grid-area: body;
+    justify-self: center;
+}
+
+#game {
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+.info {
+    text-align: left;
+}
+
+/**********************************\
+|      Form fields and controls    |
+\**********************************/
+
+button {
+    border-radius: 50px;
+}
+
+select {
+    appearance:none;
+    border-radius: 10px;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+button, select {
+    background-color: var(--opposite);
+    border: none;
+    color: var(--main);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    min-width: 160px;
+    opacity: 1;
+    outline: none;
+    padding: 16px 14px 18px;
+    text-align: center;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color, box-shadow, filter, opacity;
+}
+
+button:hover, select:hover{
+    background-color: var(--opposite);
+    box-shadow: 8px 8px 2px var(--accent);
+    color: var(--main);
+    opacity: 0.7;
+}
+
+#difficulties {
+    align-items: center;
+    display: flex;
+}
+
+#difficulty-label {
+    margin-right: 20px;
+}
+
+/**********************************\
+|        Game control styles       |
+\**********************************/
+
+.controls, .stats {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    width: fit-content;
+}
+
+.controls {
+    grid-area: controls;
+}
+
+.stats {
+    grid-area: stats;
+}
+
+.start {
+    align-content: center;
+    display: grid;
+    gap: 40px;
+    height: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.gameover-message {
+    align-items: center;
+    background-color: var(--transparency);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+.gameover-content {
+    background-color: var(--transparency);
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px 18%;
+    width: fit-content;
+    z-index: 1000;
+}
+
+/**********************************\
+|            Button styles         |
+\**********************************/
+
+.action-button {
+    align-items: center;
+    display: flex;
+    min-width: 0;
+    width: fit-content;
+}
+
+.action-button {
+    height: 60px;
+    padding: 18px;
+}
+
+.action-button.no-shadow:hover {
+    box-shadow: none;
+}
+
+.action-button i {
+    font-size: 24px;
+}
+
+button.full-width, button.action-button.full-width {
+    justify-content: center;
+    width: 100%;
+}
+
+button.center {
+    margin: 0 auto;
+}
+
+.fitted-button {
+    height: fit-content;
+    padding: 10px 20px;
+    width: fit-content;
+}
+
+/**********************************\
+|            Game elements         |
+\**********************************/
+
+#mineField {
+    margin: 20px 0;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#mineField .row .diggable.hover:hover {
+    background-color: rgb(148, 195, 112);
+    cursor: default;
+}
+
+.row:nth-child(2n) .diggable:nth-child(2n) {
+    background-color: rgb(165, 211, 130);
+}
+
+.row:nth-child(2n) .diggable:nth-child(2n+1) {
+    background-color: rgb(128, 171, 96);
+}
+
+.row:nth-child(2n+1) .diggable:nth-child(2n) {
+    background-color: rgb(128, 171, 96);
+}
+
+.row:nth-child(2n+1) .diggable:nth-child(2n+1) {
+    background-color: rgb(165, 211, 130);
+}
+
+.row:nth-child(2n) .dug0:nth-child(2n) {
+    background-color: #9f9f99
+}
+
+.row:nth-child(2n) .dug0:nth-child(2n+1) {
+    background-color: rgb(202, 202, 202)
+}
+
+.row:nth-child(2n+1) .dug0:nth-child(2n) {
+    background-color: rgb(202, 202, 202)
+}
+
+.row:nth-child(2n+1) .dug0:nth-child(2n+1) {
+    background-color: #9f9f99
+}
+
+#mineField .row .dug1 {
+    background-color: rgb(194, 194, 255);
+}
+
+#mineField .row .dug2 {
+    background-color: rgb(162, 216, 216);
+}
+
+#mineField .row .dug3 {
+    background-color: #f07e94;
+}
+
+#mineField .row .dug4 {
+    background-color: rgb(188, 149, 188);
+}
+
+#mineField .row .dug5 {
+    background-color: rgb(217, 145, 145);
+}
+
+#mineField .row .dug6 {
+    background-color: rgb(193, 193, 193);
+}
+
+#mineField .row .dug7 {
+    background-color: rgb(224, 128, 128);
+}
+
+#mineField .row .dug8 {
+    background-color: rgb(188, 238, 233);
+}
+
+.dug {
+    background-color: beige;
+}
+
+.mine {
+    background-color: var(--gameover);
+}
+
+.patch {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.patch i {
+    color: var(--opposite);
+}
+
+/**********************************\
+|            Timer content         |
+\**********************************/
+
+.timerWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+button.pausedOverlay {
+    align-items: center;
+    backdrop-filter: blur(24px);
+    background-color: var(--transparency);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+button.pausedOverlay i {
+    color: var(--opposite);
+    font-size: 42px;
+}
+
+button.pausedOverlay:hover {
+    backdrop-filter: blur(30px);
+    box-shadow: 8px 8px 6px var(--accent);
+}
+
+button.pausedOverlay:hover i {
+    color: var(--accent);
+}
+
+/**********************************\
+|      High scores and records     |
+\**********************************/
+
+.highScores {
+    border: 2px solid var(--secondary);
+    border-collapse: separate;
+    border-radius: 8px;
+    border-spacing: 0;
+    font-size: 20px;
+    max-width: 500px;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+}
+
+.highScores th, .highScores td {
+    font-weight: bold;
+    padding: 10px;
+}
+
+/**********************************\
+|         Lessons Learned          |
+\**********************************/
+
+.info {
+    background-color: var(--main);
+    font-size: 0.8em;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.info-content {
+    margin: 70px auto;
+    max-width: 900px;
+    padding: 10px 20px;
+}
+
+button.close-info {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+/**********************************\
+|             Icons                |
+\**********************************/
+
+i {
+    transition: color 0.3s ease;
+}
+
+.fa-medal {
+    background-color: var(--dark);
+    border-radius: 8px;
+    margin-right: 8px;
+    padding: 8px;
+}
+
+.fa-flag, .patch i.fa-flag {
+    color: var(--flag);
+}
+
+.fa-clock {
+    color: var(--opposite);
+}
+
+/* offset for resume button being larger */
+.fa-pause {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.fa-medal.bronze {
+    color: var(--trophybronze);
+}
+
+.fa-medal.silver {
+    color: var(--trophysilver);
+}
+
+.fa-medal.gold, .fa-champagne-glasses, .fa-trophy {
+    color: var(--trophygold);
+}
+
+/**********************************\
+|      Animations and effects      |
+\**********************************/
+
+.explosion {
+    animation: explode;
+    animation-delay: infinite;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+}
+
+@keyframes explode {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateY(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateY(10px);
+    }
+}
+
+/**********************************\
+|    Design overrides and extras   |
+\**********************************/
+
+.invisible {
+    display: none !important;
+}
+
+.margin-sides-tiny {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
+.margin-left-mini {
+    margin-left: 8px !important;
+}
+
+.margin-right-mini {
+    margin-right: 8px !important;
+}
+
+.margin-left-medium {
+    margin-left: 16px !important;
+}
+
+.margin-right-medium {
+    margin-right: 16px !important;
+}
+
+.margin-bottom-large {
+    margin-bottom: 20px !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+/**********************************\
+|         Desktop overrides        |
+\**********************************/
+
+@media (min-width: 800px) {
+    html, body {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .info-content {
+        margin: 20px auto;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    header {
+        grid-template-areas: 'controls title stats';
+    }
+}
