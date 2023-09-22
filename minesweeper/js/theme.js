@@ -133,5 +133,7 @@ var themes = {
 
     setAccentValue: function () {
         $(':root').css(this.accentVariable, this.accentHexes[this.currentAccent])
+        $('.accent').removeClass('selected')
+        $('.accent.' + this.currentAccent).addClass('selected')
     }
 }
