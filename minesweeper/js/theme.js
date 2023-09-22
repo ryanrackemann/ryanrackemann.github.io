@@ -119,14 +119,12 @@ var themes = {
     },
 
     changeAccentValue: function (newAccent) {
-        localStorage.setItem(this.accentKey, this.accents[newAccent])
+        localStorage.setItem(this.accentStorageKey, this.accents[newAccent])
         this.currentAccent = newAccent
         this.setAccentValue()
     },
 
     setAccentValue: function () {
-        console.log("this.accentVariable:" + this.accentVariable)
-        console.log("this.accents[this.currentAccent]:" + this.accents[this.currentAccent])
         $(':root').css(this.accentVariable, this.accents[this.currentAccent])
     }
 }
