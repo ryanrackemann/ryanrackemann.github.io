@@ -21,12 +21,12 @@
     <body>
         <header>
             <h1><i class="fa-solid fa-person-digging margin-right-mini"></i> Minesweeper</h1>
-            
-            <div class="theme-toggle">
-                <input type="checkbox" id="theme" class="theme">
-                <label for="theme" class="themeLabel">
-                    <div class="moon"><i class="fa-solid fa-moon"></i></div>
-                    <div class="sun"><i class="fa-solid fa-sun"></i></div>
+
+            <div class="toggle theme-wrapper">
+                <input type="checkbox" id="theme" class="toggle-checkbox">
+                <label for="theme" class="toggle-label">
+                    <div class="secondary"><i class="fa-solid fa-moon"></i></div>
+                    <div class="primary"><i class="fa-solid fa-sun"></i></div>
                 </label>
             </div>
 
@@ -42,8 +42,14 @@
             <button id="startOver" type="button" class="action-button invisible"><i class="fa-solid fa-arrow-left margin-sides-tiny"></i></button>
 
             <div id="stats" class="stats invisible">
-                <div>
-                    <i class="fa-solid fa-flag margin-right-mini"></i>
+                <div class="flag-container">
+                    <div class="toggle mini flag-toggle-wrapper margin-right-mini invisible">
+                        <input type="checkbox" id="flag-toggle" class="toggle-checkbox">
+                        <label for="flag-toggle" class="toggle-label muted flag-toggle-label">
+                            <div class="secondary"><i class="fa-solid fa-flag fa-beat-fade"></i></div>
+                            <div class="primary"><i class="fa-solid fa-flag"></i></div>
+                        </label>
+                    </div>
                     <span id="remainingFlags"></span>
                 </div>
                 <div class="timerWrapper">
