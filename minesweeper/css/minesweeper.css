@@ -175,6 +175,7 @@ button:hover, select:hover{
 }
 
 .flag-container {
+    align-items: center;
     display: flex;
 }
 
