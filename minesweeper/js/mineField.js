@@ -91,6 +91,8 @@ var mineField = {
     this.lit = false
     // Represents the locked/unlocked status of the game board for pause/unpause
     this.locked = false
+    // Represents whether or not only flags can be placed
+    this.flagOnlyMode = false
 
     // Index modifications to access neighbors of a given patch
     this.neighbors = [
@@ -202,7 +204,7 @@ var mineField = {
     if (this.locked || (!this.firstDig && (this.loser || this.surveyStatus[row][col] == this.surveyStatuses.dug))){
       return
     }
-    if (event.type == 'taphold') {
+    if (this.flagOnlyMode) {
       // Handle flag event
       this.flagOrUnflag(row, col)
       return
@@ -326,6 +328,10 @@ var mineField = {
     this.surveyStatus[row][col] = this.surveyStatuses.diggable
     this.settings.flags++
     $('#remainingFlags').text(this.settings.flags)
+  },
+
+  toggleFlagOnlyMode: function () {
+    this.flagOnlyMode = !this.flagOnlyMode
   },
 
   // Handle the win/loss event
