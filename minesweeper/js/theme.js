@@ -32,6 +32,13 @@ var themes = {
             '--oppositeTransparency': 'rgba(0, 0, 0, 0.75)'
         }
         this.accents = {
+            pink: 'pink',
+            teal: 'teal',
+            orange: 'orange',
+            red: 'red',
+            green: 'green'
+        }
+        this.accentHexes = {
             pink: '#f092dd',
             teal: '#2abec4',
             orange: '#ffa500',
@@ -125,6 +132,6 @@ var themes = {
     },
 
     setAccentValue: function () {
-        $(':root').css(this.accentVariable, this.accents[this.currentAccent])
+        $(':root').css(this.accentVariable, this.accentHexes[this.currentAccent])
     }
 }
