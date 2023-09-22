@@ -25,11 +25,11 @@ const shell = {
 
     playScreen: {
         show: function () {
-            $('#stats, #game, #mineField').removeClass('invisible')
+            $('#stats, #game, #mineField, .flag-toggle-wrapper').removeClass('invisible')
             $('header').addClass('playHeader')
         },
         hide: function () {
-            $('#stats, #game, #mineField, #lose, #win, #newHighScore, #startOver, .gameover-message').addClass('invisible')
+            $('#stats, #game, #mineField, #lose, #win, #newHighScore, #startOver, .flag-toggle-wrapper, .gameover-message').addClass('invisible')
             $('header').removeClass('playHeader')
         }
     },

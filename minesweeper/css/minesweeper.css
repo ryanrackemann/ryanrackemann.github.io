@@ -93,6 +93,10 @@ main {
     grid-area: startOver;
 }
 
+.theme-wrapper {
+    grid-area: theme;
+}
+
 .info {
     text-align: left;
 }
@@ -168,6 +172,10 @@ button:hover, select:hover{
     height: 100%;
     max-width: 400px;
     text-align: center;
+}
+
+.flag-container {
+    display: flex;
 }
 
 .gameover-message {
@@ -542,6 +550,14 @@ i {
     margin-left: 8px !important;
 }
 
+.margin-left-micro {
+    margin-left: 1px !important;
+}
+
+.margin-right-micro {
+    margin-right: 1px !important;
+}
+
 .margin-right-mini {
     margin-right: 8px !important;
 }
@@ -580,7 +596,7 @@ i {
     }
 
     body {
-        grid-template-rows: 100px 1fr 80px;
+        grid-template-rows: 120px 1fr 80px;
     }
 
     header {
@@ -601,7 +617,7 @@ i {
         font-size: 18px;
         padding: 16px;
     }
-    
+
     .action-button {
         padding: 18px;
     }

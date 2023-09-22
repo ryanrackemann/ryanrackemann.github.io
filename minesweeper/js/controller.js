@@ -54,8 +54,13 @@ $(function () {
     })
 
     // Toggle theme
-    $('.theme-toggle').on('change', function () {
+    $('.theme-wrapper').on('change', function () {
         themes.switchTheme()
+    })
+
+    // Toggle flag override
+    $('.flag-toggle-wrapper').on('change', function () {
+        mineField.toggleFlagOnlyMode()
     })
 
     // Accent change
