@@ -9,7 +9,8 @@ var themes = {
     |    Theme initialization and setup    |
     \**************************************/
 
-    storageKey: 'selectedTheme',
+    themeStorageKey: 'selectedTheme',
+    accentStorageKey: 'themeAccent',
 
     init: function () {
         this.themeOptions = {
@@ -21,18 +22,26 @@ var themes = {
             '--opposite': '#fff',
             '--secondary': '#616467',
             '--transparency': 'rgba(0, 0, 0, 0.75)',
-            '--oppositeTransparency': 'rgba(255, 255, 255, 0.75)',
-            '--accent': '#156265'
+            '--oppositeTransparency': 'rgba(255, 255, 255, 0.75)'
         }
         this.lightTheme = {
             '--main': '#eee',
             '--opposite': '#000',
             '--secondary': '#c1c1c1',
             '--transparency': 'rgba(255, 255, 255, 0.75)',
-            '--oppositeTransparency': 'rgba(0, 0, 0, 0.75)',
-            '--accent': '#2abec4'
+            '--oppositeTransparency': 'rgba(0, 0, 0, 0.75)'
         }
+        this.accents = {
+            pink: '#f092dd',
+            teal: '#2abec4',
+            orange: '#ffa500',
+            red: '#e66e6e',
+            green: '#7dd07d'
+        }
+        this.accentVariable = '--accent'
+        this.currentAccent = 'teal'
         this.setPreferredTheme()
+        this.setAccentValue()
         this.setThemeValues()
     },
 
@@ -45,19 +54,24 @@ var themes = {
     //     2. Browser color scheme
     //     3. Default: light mode
     setPreferredTheme: function () {
-        if (localStorage.getItem(this.storageKey) != null) {
-            this.currentTheme = localStorage.getItem(this.storageKey)
+        if (localStorage.getItem(this.themeStorageKey) != null) {
+            this.currentTheme = localStorage.getItem(this.themeStorageKey)
         }
         else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            console.log('prefers dark')
             this.currentTheme = this.themeOptions.dark
-            localStorage.setItem(this.storageKey, this.themeOptions.dark)
+            localStorage.setItem(this.themeStorageKey, this.themeOptions.dark)
         }
         else {
-            console.log('prefers light')
             this.currentTheme = this.themeOptions.light
-            localStorage.setItem(this.storageKey, this.themeOptions.light)
+            localStorage.setItem(this.themeStorageKey, this.themeOptions.light)
         }
+    },
+
+    setPreferredAccent: function () {
+        if (localStorage.getItem(this.accentStorageKey) != null) {
+            this.currentAccent = localStorage.getItem(this.accentStorageKey)
+        }
+        this.setAccentValue()
     },
 
     // Toggle theme from light -> dark or dark -> light
@@ -65,11 +79,11 @@ var themes = {
         switch (this.currentTheme) {
             case this.themeOptions.dark:
                 this.currentTheme = this.themeOptions.light
-                localStorage.setItem(this.storageKey, this.themeOptions.light)
+                localStorage.setItem(this.themeStorageKey, this.themeOptions.light)
                 break
             case this.themeOptions.light:
                 this.currentTheme = this.themeOptions.dark
-                localStorage.setItem(this.storageKey, this.themeOptions.dark)
+                localStorage.setItem(this.themeStorageKey, this.themeOptions.dark)
                 break
         }
 
@@ -101,4 +115,16 @@ var themes = {
             $(':root').css(lightVariable, this.lightTheme[lightVariable]);
         }
     },
+
+    changeAccentValue: function (newAccent) {
+        localStorage.setItem(this.accentKey, this.accents[newAccent])
+        this.currentAccent = newAccent
+        this.setAccentValue()
+    },
+
+    setAccentValue: function () {
+        console.log("this.accentVariable:" + this.accentVariable)
+        console.log("this.accents[this.currentAccent]:" + this.accents[this.currentAccent])
+        $(':root').css(this.accentVariable, this.accents[this.currentAccent])
+    }
 }
