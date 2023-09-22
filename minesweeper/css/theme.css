@@ -1,7 +1,8 @@
 .theme-toggle {
-    font-size: 30px;
-    height: 60px;
-    width: 140px;
+    font-size: 20px;
+    grid-area: theme;
+    height: 40px;
+    width: 80px;
 }
 
 .theme {
@@ -39,7 +40,7 @@
 
 .theme:checked + .themeLabel .moon {
     opacity: 1;
-    transform: translateX(66px);
+    transform: translateX(36px);
 }
 
 .theme:checked + .themeLabel .moon::before {
@@ -48,9 +49,29 @@
 
 .theme:not(:checked) + .themeLabel .sun {
     opacity: 1;
-    transform: translateX(-66px);
+    transform: translateX(-36px);
 }
 
 .theme:not(:checked) + .themeLabel .sun::before {
     opacity: 1;
+}
+
+/**********************************\
+|         Desktop overrides        |
+\**********************************/
+
+@media (min-width: 800px) {
+    .theme-toggle {
+        font-size: 30px;
+        height: 60px;
+        width: 140px;
+    }
+
+    .theme:checked + .themeLabel .moon {
+        transform: translateX(66px);
+    }
+    
+    .theme:not(:checked) + .themeLabel .sun {
+        transform: translateX(-66px);
+    }
 }

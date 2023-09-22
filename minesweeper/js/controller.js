@@ -25,6 +25,7 @@ $(function () {
 
     // dig patch
     $('#mineField').on('mousedown', '.patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
+    $('#mineField').on('taphold', '.patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
 
     // prevent right click menu on minefield
     $('#mineField').on('contextmenu', function (event) { event.preventDefault() })
@@ -55,6 +56,13 @@ $(function () {
     // Toggle theme
     $('.theme-toggle').on('change', function () {
         themes.switchTheme()
+    })
+
+    // Accent change
+    $('.accent').on('click', function () {
+        $('.accent').removeClass('selected')
+        $(this).addClass('selected')
+        themes.changeAccentValue($(this).attr('data-accent'))
     })
 
     // initialize object literals
