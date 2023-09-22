@@ -39,8 +39,8 @@ var themes = {
             green: '#7dd07d'
         }
         this.accentVariable = '--accent'
-        this.currentAccent = 'teal'
         this.setPreferredTheme()
+        this.setPreferredAccent()
         this.setAccentValue()
         this.setThemeValues()
     },
@@ -70,6 +70,8 @@ var themes = {
     setPreferredAccent: function () {
         if (localStorage.getItem(this.accentStorageKey) != null) {
             this.currentAccent = localStorage.getItem(this.accentStorageKey)
+        } else {
+            this.currentAccent = 'teal'
         }
         this.setAccentValue()
     },
