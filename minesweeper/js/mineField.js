@@ -202,6 +202,12 @@ var mineField = {
     if (this.locked || (!this.firstDig && (this.loser || this.surveyStatus[row][col] == this.surveyStatuses.dug))){
       return
     }
+    if (event.type == 'taphold') {
+      // Handle flag event
+      this.flagOrUnflag(row, col)
+      return
+    }
+
     switch (event.which) {
         case 1: // Left click
           // Handle first dig and initialize game state

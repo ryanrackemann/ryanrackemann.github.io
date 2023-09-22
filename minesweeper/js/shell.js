@@ -16,21 +16,21 @@ const shell = {
 
     startScreen: {
         show: function () {
-            $('#start').removeClass('invisible')
-            $('.info-link').removeClass('invisible')
+            $('#start, .accents, .info-link').removeClass('invisible')
         },
         hide: function () {
-            $('#start').addClass('invisible')
-            $('.info-link').addClass('invisible')
+            $('#start, .accents, .info-link').addClass('invisible')
         }
     },
 
     playScreen: {
         show: function () {
             $('#stats, #game, #mineField').removeClass('invisible')
+            $('header').addClass('playHeader')
         },
         hide: function () {
             $('#stats, #game, #mineField, #lose, #win, #newHighScore, #startOver, .gameover-message').addClass('invisible')
+            $('header').removeClass('playHeader')
         }
     },
 
