@@ -39,16 +39,16 @@ $(function () {
     $('#startOver').on('click', function () { shell.startOver() })
 
     // replay game with the same difficulty
-    $('main').on('click', '.replay', function () { shell.replay() })
+    $('body').on('click', '.replay', function () { shell.replay() })
 
     // pause game
-    $('main').on('click', '.pause', function () {
+    $('body').on('click', '.pause', function () {
         mineField.lockControls()
         timer.pause()
     })
 
     // resume game
-    $('main').on('click', '.resume', function () {
+    $('body').on('click', '.resume', function () {
         mineField.unlockControls()
         timer.resume()
     })
@@ -59,7 +59,7 @@ $(function () {
     })
 
     // Toggle flag override
-    $('main').on('change', '.flag-toggle-wrapper', function () {
+    $('.flag-toggle-wrapper').on('change', function () {
         mineField.toggleFlagOnlyMode()
     })
 
