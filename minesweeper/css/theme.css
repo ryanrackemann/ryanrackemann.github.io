@@ -58,7 +58,7 @@
 
 .toggle-checkbox:not(:checked) + .toggle-label .primary {
     opacity: 1;
-    transform: translateX(-8px);
+    transform: translateX(-9px);
 }
 
 .toggle-checkbox:not(:checked) + .toggle-label .primary::before {
