@@ -25,11 +25,11 @@ const shell = {
 
     playScreen: {
         show: function () {
-            $('#stats, #game, #mineField, .flag-toggle-wrapper').removeClass('invisible')
+            $('#stats, #game, #mineField, .flag-toggle-wrapper, #startOver').removeClass('invisible')
             $('header').addClass('playHeader')
         },
         hide: function () {
-            $('#stats, #game, #mineField, #lose, #win, #newHighScore, #startOver, .flag-toggle-wrapper, .gameover-message').addClass('invisible')
+            $('#stats, #game, #mineField, #lose, #win, #newRecordWrapper, #startOver, .flag-toggle-wrapper, .gameover-message').addClass('invisible')
             $('header').removeClass('playHeader')
         }
     },
@@ -39,6 +39,7 @@ const shell = {
     \**************************************************/
 
     startGame: function () {
+        this.renderGameTemplate()
         mineField.init()
         mineField.drawField()
         highScores.displayStatBarRecord()
@@ -48,6 +49,7 @@ const shell = {
     },
 
     startOver: function () {
+        this.derenderGameTemplate()
         timer.deactivateTimer()
         this.playScreen.hide()
         this.startScreen.show()
@@ -55,6 +57,8 @@ const shell = {
     },
 
     replay: function () {
+        this.derenderGameTemplate()
+        this.renderGameTemplate()
         mineField.clearField()
         timer.clear()
         this.clearGameResults()
@@ -64,6 +68,16 @@ const shell = {
     },
 
     clearGameResults: function () {
-        $('#lose, #win, #newHighScore, #startOver, .gameover-message, .newRecordWrapper').addClass('invisible')
+        $('#lose, #win, #newRecordWrapper, .gameover-message, .newRecordWrapper').addClass('invisible')
+        $('#game, #mineField').removeClass('invisible')
+    },
+
+    derenderGameTemplate: function () {
+        $('#game').remove()
+    },
+
+    renderGameTemplate: function () {
+        var template = $('#gameTemplate').html()
+        $('main').append(template)
     }
 }
