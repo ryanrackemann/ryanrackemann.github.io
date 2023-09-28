@@ -24,14 +24,14 @@ $(function () {
     })
 
     // dig patch
-    $('#mineField').on('mousedown', '.patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
-    $('#mineField').on('taphold', '.patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
+    $('main').on('mousedown', '#mineField .patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
+    $('main').on('taphold', '#mineField .patch', function (event) { mineField.dig(event, parseInt($(this).attr('data-row')), parseInt($(this).attr('data-col'))) })
 
     // prevent right click menu on minefield
-    $('#mineField').on('contextmenu', function (event) { event.preventDefault() })
+    $('main').on('contextmenu', '#mineField', function (event) { event.preventDefault() })
 
     // mine explosion animation clear
-    $('#mineField').on('animationend', function() {
+    $('main').on('animationend', '#mineField', function() {
         $('#mineField').removeClass('explosion')
     })
 
@@ -39,16 +39,16 @@ $(function () {
     $('#startOver').on('click', function () { shell.startOver() })
 
     // replay game with the same difficulty
-    $('.replay').on('click', function () { shell.replay() })
+    $('main').on('click', '.replay', function () { shell.replay() })
 
     // pause game
-    $('.pause').on('click', function () {
+    $('main').on('click', '.pause', function () {
         mineField.lockControls()
         timer.pause()
     })
 
     // resume game
-    $('.resume').on('click', function () {
+    $('main').on('click', '.resume', function () {
         mineField.unlockControls()
         timer.resume()
     })
@@ -59,7 +59,7 @@ $(function () {
     })
 
     // Toggle flag override
-    $('.flag-toggle-wrapper').on('change', function () {
+    $('main').on('change', '.flag-toggle-wrapper', function () {
         mineField.toggleFlagOnlyMode()
     })
 

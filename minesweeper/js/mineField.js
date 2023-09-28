@@ -27,13 +27,13 @@ var mineField = {
 
   // Initialize all game settings in preparation for the first dig
   init: function () {
-      // underground list for whether the patch is a 💣 or #
-      this.underground = []
-      // surveyStatus list to keep track of flags and dug patches
-      this.surveyStatus = []
-      // settings will contain: the number of rows, columns, 💣, and 🚩
-      this.settings = {}
-      this.setSettings()
+    // underground list for whether the patch is a 💣 or #
+    this.underground = []
+    // surveyStatus list to keep track of flags and dug patches
+    this.surveyStatus = []
+    // settings will contain: the number of rows, columns, 💣, and 🚩
+    this.settings = {}
+    this.setSettings()
   },
 
   // Initialize settings based on difficulty
@@ -67,6 +67,15 @@ var mineField = {
 
     // Set remaining flags tracker to the set number of flags for the current difficulty
     $('#remainingFlags').text(this.settings.flags)
+
+    // Set unique game guid
+    if (this.currentGameId > 0) {
+      this.currentGameId++
+    } else {
+      this.currentGameId = 1
+    }
+
+    $('#game').attr('data-game-id', this.currentGameId)
 
     // Responsiveness improvement to match the larger of col/row to the larger of width/height of the screen
     if ($(document).height() > $(document).width()) {
@@ -337,6 +346,7 @@ var mineField = {
   // Handle the win/loss event
   gameOver: function (isWin) {
     timer.stop()
+    let currentGameId = this.currentGameId
 
     // Remove active game elements
     $('.diggable').removeClass('hover')
@@ -344,15 +354,13 @@ var mineField = {
 
     if (!isWin) {
       // Trigger front end animation
-      this.minesTriggered()
+      this.minesTriggered(currentGameId)
 
       this.loser = true
-
       // wait to show win/lose until explosion animation ends
       setTimeout( function(){
-        $('#lose').removeClass('invisible')
-        $('#startOver').removeClass('invisible')
-        $('.gameover-message').removeClass('invisible')
+        $('[data-game-id="' + currentGameId + '"] #lose').removeClass('invisible')
+        $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('invisible')
       }, 2700)
     } else {
       // Update high scores if records are being kept
@@ -360,14 +368,13 @@ var mineField = {
         highScores.checkHighScore()
       }
 
-      $('#win').removeClass('invisible')
-      $('#startOver').removeClass('invisible')
-      $('.gameover-message').removeClass('invisible')
+      $('[data-game-id="' + currentGameId + '"] #win').removeClass('invisible')
+      $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('invisible')
     }
   },
 
   // set off all 💣 on the mineField game board
-  minesTriggered: function () {
+  minesTriggered: function (currentGameId) {
     for (let row = 0; row < this.settings.rows; row++) {
       for (let col = 0; col < this.settings.cols; col++) {
         if (this.underground[row][col] == this.markers.mine) {
@@ -382,18 +389,18 @@ var mineField = {
     // light fuse for front-end animation
     const fuse = setInterval(() => {
       if (this.lit) {
-        $('.mine').css('opacity', '0.9')
+        $('[data-game-id="' + currentGameId + '"] .mine').css('opacity', '0.9')
       } else {
-        $('.mine').css('opacity', '1')
+        $('[data-game-id="' + currentGameId + '"] .mine').css('opacity', '1')
       }
       this.lit = !this.lit
     }, 200)
 
     setTimeout(() => {
       clearInterval(fuse)
-      $('.mine').css('opacity', '1')
-      $('.mine').html(this.markers.explosion)
-      $('#mineField').addClass('explosion')
+      $('[data-game-id="' + currentGameId + '"] .mine').css('opacity', '1')
+      $('[data-game-id="' + currentGameId + '"] .mine').html(this.markers.explosion)
+      $('[data-game-id="' + currentGameId + '"] #mineField').addClass('explosion')
     }, 2000)
   },
 
