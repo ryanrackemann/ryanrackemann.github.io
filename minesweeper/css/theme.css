@@ -76,7 +76,7 @@
 |         Desktop overrides        |
 \**********************************/
 
-@media (min-width: 800px) {
+@media (min-width: 1050px) {
     .toggle {
         font-size: 30px;
         height: 60px;
