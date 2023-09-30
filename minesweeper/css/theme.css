@@ -10,6 +10,18 @@
     font-size: 16px;
 }
 
+.toggle i {
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    width: 20px;
+}
+
+.toggle.mini i {
+    height: 15px;
+    width: 15px;
+}
+
 .toggle-checkbox {
     display: none;
 }
@@ -28,6 +40,10 @@
 .toggle-label:hover {
     box-shadow: 8px 8px 2px var(--accent);
     opacity: 0.7;
+}
+
+.toggle.mini .toggle-label:hover {
+    box-shadow: 4px 4px 2px var(--accent);
 }
 
 .primary, .secondary {
@@ -49,7 +65,7 @@
 
 .toggle-checkbox:checked + .toggle-label .secondary {
     opacity: 1;
-    transform: translateX(12px);
+    transform: translateX(50%);
 }
 
 .toggle-checkbox:checked + .toggle-label .secondary::before {
@@ -58,7 +74,7 @@
 
 .toggle-checkbox:not(:checked) + .toggle-label .primary {
     opacity: 1;
-    transform: translateX(-9px);
+    transform: translateX(-50%);
 }
 
 .toggle-checkbox:not(:checked) + .toggle-label .primary::before {
@@ -66,11 +82,11 @@
 }
 
 .toggle.mini .toggle-checkbox:checked + .toggle-label .secondary {
-    transform: translateX(6px);
+    transform: translateX(50%);
 }
 
 .toggle.mini .toggle-checkbox:not(:checked) + .toggle-label .primary {
-    transform: translateX(-8px);
+    transform: translateX(-50%);
 }
 
 /**********************************\
@@ -84,11 +100,8 @@
         width: 60px;
     }
 
-    .toggle-checkbox:checked + .toggle-label .secondary {
-        transform: translateX(16px);
-    }
-
-    .toggle-checkbox:not(:checked) + .toggle-label .primary {
-        transform: translateX(-14px);
+    .toggle i {
+        height: 30px;
+        width: 30px;
     }
 }
