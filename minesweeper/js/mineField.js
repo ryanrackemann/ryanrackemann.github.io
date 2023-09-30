@@ -177,12 +177,12 @@ var mineField = {
           var squareSize
           if ($(document).width() < $(document).height()) {
             squareSize = Math.floor(
-              ($(document).width() - this.maxHeaderSizePX) * this.gameSizeRatio/ this.settings.cols
+              $(document).width() * this.gameSizeRatio / this.settings.cols
               // ($(document).width() * this.gameSizeRatio) / this.settings.cols
             )
           } else {
             squareSize = Math.floor(
-              $(document).height() * this.gameSizeRatio / this.settings.rows
+              ($(document).height() - this.maxHeaderSizePX) * this.gameSizeRatio / this.settings.rows
               // ($(document).height() * this.gameSizeRatio) / this.settings.rows
             )
           }
