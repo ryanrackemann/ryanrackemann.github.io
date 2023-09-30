@@ -85,7 +85,8 @@ var mineField = {
     }
 
     // Multiplier to impact the size of the mineField
-    this.gameSizeRatio = 0.8
+    this.gameSizeRatio = 0.9
+    this.maxHeaderSizePX = 140
     // Represents win/loss
     this.loser = false
     // Tells whether the board has been initialized and the state of the game
@@ -176,11 +177,13 @@ var mineField = {
           var squareSize
           if ($(document).width() < $(document).height()) {
             squareSize = Math.floor(
-              ($(document).width() * this.gameSizeRatio) / this.settings.cols
+              ($(document).width() - this.maxHeaderSizePX) * this.gameSizeRatio/ this.settings.cols
+              // ($(document).width() * this.gameSizeRatio) / this.settings.cols
             )
           } else {
             squareSize = Math.floor(
-              ($(document).height() * this.gameSizeRatio) / this.settings.rows
+              $(document).height() * this.gameSizeRatio / this.settings.rows
+              // ($(document).height() * this.gameSizeRatio) / this.settings.rows
             )
           }
           cellDiv.width(squareSize)
