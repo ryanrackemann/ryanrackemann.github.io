@@ -1,6 +1,6 @@
 /**************************************************\
 |    Handles all interactions with the minefield   |
-|     including the minesweeper game creation,     |
+|     including the Minefield game creation,     |
 |     destruction for new games,                   |
 |     game events like digging and flagging,       |
 |     and keeps track of all game states           |
@@ -82,11 +82,12 @@ var mineField = {
       let newCols = this.settings.rows
       this.settings.rows = this.settings.cols
       this.settings.cols = newCols
+      this.offsetSize = $('header').height()
     }
 
     // Multiplier to impact the size of the mineField
     this.gameSizeRatio = 0.9
-    this.maxHeaderSizePX = 140
+    this.gameSizeMax = 1200
     // Represents win/loss
     this.loser = false
     // Tells whether the board has been initialized and the state of the game
@@ -101,8 +102,10 @@ var mineField = {
     this.lit = false
     // Represents the locked/unlocked status of the game board for pause/unpause
     this.locked = false
-    // Represents whether or not only flags can be placed
+    // Represents flagging toggle
     this.flagOnlyMode = false
+    // Hide flagging
+    this.hideFlagging()
 
     // Index modifications to access neighbors of a given patch
     this.neighbors = [
@@ -160,10 +163,8 @@ var mineField = {
 
   // Draw the mineField for the front end
   drawField: function () {
-
       // Generate HTML elements for the field
       for (let row = 0; row < this.settings.rows; row++) {
-
         // Create the new patch to be dug
         const rowDiv = $('<div>').addClass('row')
         for (let col = 0; col < this.settings.cols; col++) {
@@ -175,15 +176,19 @@ var mineField = {
 
           // Calculate patch sizes
           var squareSize
-          if ($(document).width() < $(document).height()) {
-            squareSize = Math.floor(
-              $(document).width() * this.gameSizeRatio / this.settings.cols
-              // ($(document).width() * this.gameSizeRatio) / this.settings.cols
-            )
+          if ($(document).width() > $(document).height()) {
+            if (($(document).width()) > this.gameSizeMax) {
+              squareSize = Math.floor(
+                (this.gameSizeMax * this.gameSizeRatio) / this.settings.cols
+              )
+            } else {
+              squareSize = Math.floor(
+                ($(document).width() * this.gameSizeRatio) / this.settings.cols
+              )
+            }
           } else {
             squareSize = Math.floor(
-              ($(document).height() - this.maxHeaderSizePX) * this.gameSizeRatio / this.settings.rows
-              // ($(document).height() * this.gameSizeRatio) / this.settings.rows
+              (($(document).height() - this.offsetSize) * this.gameSizeRatio) / this.settings.rows
             )
           }
           cellDiv.width(squareSize)
@@ -226,6 +231,8 @@ var mineField = {
         case 1: // Left click
           // Handle first dig and initialize game state
           if (this.firstDig) {
+            // Show flagging
+            this.showFlagging()
             // Begin the timer
             timer.start()
             // Plant all mines and update the mine neighbor statuses
@@ -342,8 +349,25 @@ var mineField = {
     $('#remainingFlags').text(this.settings.flags)
   },
 
+  hideFlagging: function () {
+    $('.flag-toggle-wrapper').addClass('hidden')
+  },
+
+  showFlagging: function () {
+    $('.flag-toggle-wrapper').removeClass('hidden')
+  },
+
   toggleFlagOnlyMode: function () {
+    if (this.firstDig) {
+      return
+    }
     this.flagOnlyMode = !this.flagOnlyMode
+    $('#flagToggle').attr('checked', this.flagOnlyMode)
+  },
+
+  disableFlagOnlyMode: function () {
+    this.flagOnlyMode = false
+    $('#flagToggle').attr('checked', this.flagOnlyMode)
   },
 
   // Handle the win/loss event
@@ -362,8 +386,8 @@ var mineField = {
       this.loser = true
       // wait to show win/lose until explosion animation ends
       setTimeout( function(){
-        $('[data-game-id="' + currentGameId + '"] #lose').removeClass('invisible')
-        $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('invisible')
+        $('[data-game-id="' + currentGameId + '"] #lose').removeClass('hidden')
+        $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('hidden')
       }, 2700)
     } else {
       // Update high scores if records are being kept
@@ -371,8 +395,8 @@ var mineField = {
         highScores.checkHighScore()
       }
 
-      $('[data-game-id="' + currentGameId + '"] #win').removeClass('invisible')
-      $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('invisible')
+      $('[data-game-id="' + currentGameId + '"] #win').removeClass('hidden')
+      $('[data-game-id="' + currentGameId + '"] .gameover-message').removeClass('hidden')
     }
   },
 

@@ -69,7 +69,7 @@ var highScores = {
     }
     if (newRecord) {
       $('.highScore').text(formattedTime)
-      $('.highScores, .highScoreWrapper, #newHighScore, #newRecordWrapper').removeClass('invisible')
+      $('.highScores, .highScoreWrapper, #newHighScore, #newRecordWrapper').removeClass('hidden')
     }
   },
 
@@ -127,10 +127,10 @@ var highScores = {
     }
 
     if (formattedRecord != '') {
-      $('.highScoreWrapper').removeClass('invisible')
+      $('.highScoreWrapper').removeClass('hidden')
     }
     else {
-      $('.highScoreWrapper').addClass('invisible')
+      $('.highScoreWrapper').addClass('hidden')
     }
     $('.highScore').text(formattedRecord)
   },

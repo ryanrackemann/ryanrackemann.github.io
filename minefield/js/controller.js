@@ -10,12 +10,12 @@ $(function () {
 
     // close lessons learned section
     $('.open-info').on('click', function () {
-        $('.info').removeClass('invisible')
+        $('.info').removeClass('hidden')
     })
 
     // close lessons learned section
     $('.close-info').on('click', function () {
-        $('.info').addClass('invisible')
+        $('.info').addClass('hidden')
     })
 
     // Start game button event

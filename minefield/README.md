@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/person-digging.svg" style="background-color: white; border-radius: 25%; height: 50px; margin-right: 15px; padding: 6px; width: 50px;"> Minesweeper</h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/person-digging.svg" style="background-color: white; border-radius: 25%; height: 50px; margin-right: 15px; padding: 6px; width: 50px;"> Minefield</h1>
 
 <h2 align="center">Features<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/gift.svg" style="background-color: white; border-radius: 25%; height: 20px; margin-left: 15px; padding: 6px; width: 20px;"></h2>
 
