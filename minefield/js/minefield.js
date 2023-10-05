@@ -102,8 +102,8 @@ var mineField = {
     this.lit = false
     // Represents the locked/unlocked status of the game board for pause/unpause
     this.locked = false
-    // Represents flagging toggle
-    this.flagOnlyMode = false
+    // Flagging only toggle
+    this.disableFlagOnlyMode()
     // Hide flagging
     this.hideFlagging()
 
