@@ -5,7 +5,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-        <link href="css/minesweeper.css" rel="stylesheet">
+        <link href="css/minefield.css" rel="stylesheet">
         <link href="css/theme.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/e6fa8d29fb.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -13,22 +13,22 @@
         <script src="js/timer.js"></script>
         <script src="js/difficulty.js"></script>
         <script src="js/highScores.js"></script>
-        <script src="js/mineField.js"></script>
+        <script src="js/minefield.js"></script>
         <script src="js/shell.js"></script>
         <script src="js/controller.js"></script>
         <script type="text/template" id="gameTemplate">
-            <div id="game" class="invisible" data-game-id="0">
-                <div id="mineField" class="invisible">
-                    <div class="gameover-message invisible">
+            <div id="game" class="hidden" data-game-id="0">
+                <div id="mineField" class="hidden">
+                    <div class="gameover-message hidden">
                         <div class="gameover-content">
-                            <p id="win" class="invisible"><i class="fa-solid fa-champagne-glasses fa-flip margin-right-mini"></i> Congratulations <i class="fa-solid fa-champagne-glasses fa-flip margin-left-mini"></i></p>
-                            <p id="lose" class="invisible"><i class="fa-solid fa-ghost fa-beat margin-right-mini"></i> You lose <i class="fa-solid fa-heart-crack fa-beat margin-left-mini"></i></p>
-                            <p id="newRecordWrapper" class="invisible">New Record Time <i class="fa-solid fa-trophy fa-beat margin-left-mini"></i> <span class="highScore"></span></p>
+                            <p id="win" class="hidden"><i class="fa-solid fa-champagne-glasses fa-flip margin-right-mini"></i> Congratulations <i class="fa-solid fa-champagne-glasses fa-flip margin-left-mini"></i></p>
+                            <p id="lose" class="hidden"><i class="fa-solid fa-ghost fa-beat margin-right-mini"></i> You lose <i class="fa-solid fa-heart-crack fa-beat margin-left-mini"></i></p>
+                            <p id="newRecordWrapper" class="hidden">New Record Time <i class="fa-solid fa-trophy fa-beat margin-left-mini"></i> <span class="highScore"></span></p>
                             <button type="button" class="action-button replay center margin-bottom-large"><i class="fa-solid fa-rotate-left margin-right-mini"></i> Replay</button>
                         </div>
                     </div>
 
-                    <button type="button" class="pausedOverlay resume invisible">
+                    <button type="button" class="pausedOverlay resume hidden">
                         <i class="fa-solid fa-play"></i>
                     </button>
                 </div>
@@ -38,11 +38,11 @@
 
     <body>
         <header>
-            <h1><i class="fa-solid fa-person-digging margin-right-mini"></i> Minesweeper</h1>
+            <h1><i class="fa-solid fa-person-digging margin-right-mini"></i> Minefield</h1>
 
             <div class="toggle theme-wrapper">
                 <input type="checkbox" id="theme" class="toggle-checkbox">
-                <label for="theme" class="toggle-label">
+                <label for="theme" class="toggle-label switcher">
                     <div class="secondary"><i class="fa-solid fa-moon"></i></div>
                     <div class="primary"><i class="fa-solid fa-sun"></i></div>
                 </label>
@@ -59,24 +59,23 @@
 
             <button id="startOver" type="button" class="action-button"><i class="fa-solid fa-arrow-left margin-sides-tiny"></i></button>
 
-            <div id="stats" class="stats invisible">
+            <div id="stats" class="stats hidden">
                 <div class="flag-container">
-                    <div class="toggle flag-toggle-wrapper margin-right-medium invisible">
-                        <input type="checkbox" id="flag-toggle" class="toggle-checkbox">
-                        <label for="flag-toggle" class="toggle-label muted flag-toggle-label">
-                            <div class="secondary"><i class="fa-solid fa-flag fa-beat-fade"></i></div>
-                            <div class="primary"><i class="fa-solid fa-flag"></i></div>
+                    <div class="toggle split flag-toggle-wrapper margin-right-medium hidden">
+                        <input type="checkbox" id="flagToggle" class="toggle-checkbox">
+                        <label for="flagToggle" class="toggle-label outline flag-toggle-label">
+                            <div class="margin-right-medium"><i class="fa-solid fa-flag fa-beat-fade"></i></div>
+                            <span id="remainingFlags"></span>
                         </label>
                     </div>
-                    <span id="remainingFlags"></span>
                 </div>
                 <div class="timerWrapper">
-                    <button type="button" class="pause action-button margin-right-medium invisible"><i class="fa-solid fa-pause margin-sides-medium"></i><span class="hidden-mobile margin-left-mini"> Pause</span></button>
-                    <button type="button" class="resume action-button margin-right-medium invisible"><i class="fa-solid fa-play margin-sides-tiny"></i><span class="hidden-mobile margin-left-mini"> Resume</span></button>
+                    <button type="button" class="pause action-button margin-right-medium hidden"><i class="fa-solid fa-pause margin-sides-medium"></i><span class="hidden-mobile margin-left-mini"> Pause</span></button>
+                    <button type="button" class="resume action-button margin-right-medium hidden"><i class="fa-solid fa-play margin-sides-tiny"></i><span class="hidden-mobile margin-left-mini"> Resume</span></button>
                     <i class="fa-solid fa-clock fa-fade margin-right-mini"></i>
                     <span id="timer">--:--</span>
                 </div>
-                <div class="highScoreWrapper invisible">
+                <div class="highScoreWrapper hidden">
                     <i class="fa-solid fa-trophy margin-right-mini"></i>
                     <span class="highScore">∞</span>
                 </div>
@@ -97,7 +96,7 @@
                 <button id="play" type="button" class="action-button full-width"><i class="fa-solid fa-land-mine-on fa-bounce margin-right-mini"></i> Dig <i class="fa-solid fa-land-mine-on fa-bounce margin-left-mini"></i></button>
 
                 <table class="highScores">
-                    <thead class="invisible">
+                    <thead class="hidden">
                         <th scope="col">Difficulty</th>
                         <th scope="col">Record Time</th>
                         <th scope="col">Win Count</th>
@@ -140,10 +139,10 @@
                 </table>
                 <button type="button" class="action-button open-info full-width">Features <i class="fa-solid fa-lightbulb margin-left-mini"></i></button>
 
-                <div class="info invisible">
+                <div class="info hidden">
                     <button class="action-button close-info">Close <i class="fa-solid fa-x margin-left-mini"></i></button>
                     <div class="info-content">
-                        <h1 class="text-center"><i class="fa-solid fa-person-digging margin-right-mini"></i> Minesweeper</h1>
+                        <h1 class="text-center"><i class="fa-solid fa-person-digging margin-right-mini"></i> Minefield</h1>
                         <hr />
                         <h2 class="text-center">Features <i class="fa-solid fa-gift fa-bounce margin-left-mini"></i></h2>
                         <hr />

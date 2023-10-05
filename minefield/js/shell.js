@@ -16,20 +16,21 @@ const shell = {
 
     startScreen: {
         show: function () {
-            $('#start, .accents, .info-link').removeClass('invisible')
+            $('#start, .accents, .info-link').removeClass('hidden')
         },
         hide: function () {
-            $('#start, .accents, .info-link').addClass('invisible')
+            $('#start, .accents, .info-link').addClass('hidden')
         }
     },
 
     playScreen: {
         show: function () {
-            $('#stats, #game, #mineField, .flag-toggle-wrapper, #startOver').removeClass('invisible')
+            $('#stats, #game, #mineField, #startOver').removeClass('hidden')
             $('header').addClass('playHeader')
+            mineField.resetFlagToggle()
         },
         hide: function () {
-            $('#stats, #game, #mineField, #lose, #win, #newRecordWrapper, #startOver, .flag-toggle-wrapper, .gameover-message').addClass('invisible')
+            $('#stats, #game, #mineField, #lose, #win, #newRecordWrapper, #startOver, .gameover-message').addClass('hidden')
             $('header').removeClass('playHeader')
         }
     },
@@ -49,6 +50,7 @@ const shell = {
     },
 
     startOver: function () {
+        this.resetFlagToggle()
         this.derenderGameTemplate()
         timer.deactivateTimer()
         this.playScreen.hide()
@@ -68,8 +70,8 @@ const shell = {
     },
 
     clearGameResults: function () {
-        $('#lose, #win, #newRecordWrapper, .gameover-message, .newRecordWrapper').addClass('invisible')
-        $('#game, #mineField').removeClass('invisible')
+        $('#lose, #win, #newRecordWrapper, .gameover-message, .newRecordWrapper').addClass('hidden')
+        $('#game, #mineField').removeClass('hidden')
     },
 
     derenderGameTemplate: function () {
@@ -79,5 +81,9 @@ const shell = {
     renderGameTemplate: function () {
         var template = $('#gameTemplate').html()
         $('main').append(template)
+    },
+
+    resetFlagToggle: function () {
+        $('#flagToggle').attr('checked', false)
     }
 }

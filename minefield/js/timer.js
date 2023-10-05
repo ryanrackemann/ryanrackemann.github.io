@@ -97,21 +97,21 @@ var timer = {
   },
 
   hidePauseElements: function () {
-    $('.pause').addClass('invisible')
+    $('.pause').addClass('hidden')
   },
 
   showPauseElements: function () {
-    $('.pause').removeClass('invisible')
+    $('.pause').removeClass('hidden')
   },
 
   hideResumeElements: function () {
-    $('.resume').addClass('invisible')
-    $('.pausedOverlay').addClass('invisible')
+    $('.resume').addClass('hidden')
+    $('.pausedOverlay').addClass('hidden')
   },
 
   showResumeElements: function () {
-    $('.resume').removeClass('invisible')
-    $('.pausedOverlay').removeClass('invisible')
+    $('.resume').removeClass('hidden')
+    $('.pausedOverlay').removeClass('hidden')
   },
 
   stopTimerAnimation: function () {
