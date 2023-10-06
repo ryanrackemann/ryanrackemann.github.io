@@ -27,7 +27,6 @@ const shell = {
         show: function () {
             $('#stats, #game, #mineField, #startOver').removeClass('hidden')
             $('header').addClass('playHeader')
-            mineField.resetFlagToggle()
         },
         hide: function () {
             $('#stats, #game, #mineField, #lose, #win, #newRecordWrapper, #startOver, .gameover-message').addClass('hidden')
@@ -50,7 +49,6 @@ const shell = {
     },
 
     startOver: function () {
-        this.resetFlagToggle()
         this.derenderGameTemplate()
         timer.deactivateTimer()
         this.playScreen.hide()
