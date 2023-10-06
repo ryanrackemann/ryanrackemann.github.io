@@ -79,11 +79,14 @@ var mineField = {
 
     // Responsiveness improvement to match the larger of col/row to the larger of width/height of the screen
     if ($(document).height() > $(document).width()) {
-      let newCols = this.settings.rows
-      this.settings.rows = this.settings.cols
-      this.settings.cols = newCols
-      this.offsetSize = $('header').height()
+      if (this.settings.cols > this.settings.rows) {
+        let newCols = this.settings.rows
+        this.settings.rows = this.settings.cols
+        this.settings.cols = newCols
+      }
     }
+
+    this.offsetSize = $('header').height() * 2
 
     // Multiplier to impact the size of the mineField
     this.gameSizeRatio = 0.9
@@ -176,21 +179,16 @@ var mineField = {
 
           // Calculate patch sizes
           var squareSize
-          if ($(document).width() > $(document).height()) {
-            if (($(document).width()) > this.gameSizeMax) {
-              squareSize = Math.floor(
-                (this.gameSizeMax * this.gameSizeRatio) / this.settings.cols
-              )
-            } else {
-              squareSize = Math.floor(
-                ($(document).width() * this.gameSizeRatio) / this.settings.rows
-              )
-            }
-          } else {
-            squareSize = Math.floor(
-              (($(document).height() - this.offsetSize) * this.gameSizeRatio) / this.settings.rows
-            )
-          }
+
+          var maxSquareHeight = Math.floor(
+            (($(document).height() - this.offsetSize) * this.gameSizeRatio) / this.settings.rows
+          )
+
+          var maxSquareWidth = Math.floor(
+            ($(document).width() * this.gameSizeRatio) / this.settings.cols
+          )
+
+          squareSize = maxSquareWidth > maxSquareHeight ? maxSquareHeight : maxSquareWidth
           cellDiv.width(squareSize)
           cellDiv.height(squareSize)
           cellDiv.css('line-height', squareSize + 'px')
