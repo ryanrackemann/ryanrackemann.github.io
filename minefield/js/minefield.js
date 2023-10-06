@@ -183,7 +183,7 @@ var mineField = {
               )
             } else {
               squareSize = Math.floor(
-                ($(document).width() * this.gameSizeRatio) / this.settings.cols
+                ($(document).width() * this.gameSizeRatio) / this.settings.rows
               )
             }
           } else {
