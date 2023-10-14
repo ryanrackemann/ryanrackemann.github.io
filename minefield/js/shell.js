@@ -25,7 +25,7 @@ const shell = {
 
     playScreen: {
         show: function () {
-            $('#stats, #game, #mineField, #startOver').removeClass('hidden')
+            $('#stats, #startOver').removeClass('hidden')
             $('header').addClass('playHeader')
         },
         hide: function () {
@@ -39,13 +39,13 @@ const shell = {
     \**************************************************/
 
     startGame: function () {
+        this.startScreen.hide()
+        this.playScreen.show()
         this.renderGameTemplate()
         mineField.init()
         mineField.drawField()
         highScores.displayStatBarRecord()
         timer.clear()
-        this.startScreen.hide()
-        this.playScreen.show()
     },
 
     startOver: function () {
@@ -79,6 +79,7 @@ const shell = {
     renderGameTemplate: function () {
         var template = $('#gameTemplate').html()
         $('main').append(template)
+        $('#game, #mineField').removeClass('hidden')
     },
 
     resetFlagToggle: function () {

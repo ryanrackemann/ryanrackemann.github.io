@@ -112,7 +112,7 @@ select {
     -webkit-appearance:none;
 }
 
-button, select {
+button, select, .button {
     background-color: var(--opposite);
     border: none;
     border-radius: 8px;
@@ -131,7 +131,7 @@ button, select {
     transition-property: background-color, border-color, color, box-shadow, filter, opacity;
 }
 
-button:hover, select:hover{
+button:hover, select:hover, .button:hover {
     background-color: var(--opposite);
     color: var(--main);
     opacity: 0.7;
@@ -153,7 +153,7 @@ button:hover, select:hover{
 .stats {
     align-items: center;
     display: flex;
-    gap: 24px;
+    gap: 14px;
     width: fit-content;
 }
 
@@ -218,7 +218,7 @@ button:hover, select:hover{
     font-size: 14px;
 }
 
-button.full-width, button.action-button.full-width {
+button.full-width, button.full-width, .button.full-width {
     justify-content: center;
     width: 100%;
 }
@@ -606,12 +606,16 @@ i {
         font-size: 2em;
     }
 
-    button {
+    a.button {
+        text-decoration: none;
+    }
+
+    button, .button {
         font-size: 18px;
         padding: 16px;
     }
 
-    button:hover, select:hover{
+    button:hover, select:hover, .button:hover {
         box-shadow: 8px 8px 2px var(--accent);
     }
 
