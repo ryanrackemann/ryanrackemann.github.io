@@ -85,8 +85,8 @@ var mineField = {
         this.settings.cols = newCols
       }
     }
-
-    this.offsetSize = $('header').height() * 2
+    
+    this.offsetSize = $('header').height()
 
     // Multiplier to impact the size of the mineField
     this.gameSizeRatio = 0.9
@@ -370,6 +370,7 @@ var mineField = {
 
   // Handle the win/loss event
   gameOver: function (isWin) {
+    this.hideFlagging()
     timer.stop()
     let currentGameId = this.currentGameId
 
