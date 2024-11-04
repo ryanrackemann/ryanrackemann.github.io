@@ -38,27 +38,28 @@ var mineField = {
 
   // Initialize settings based on difficulty
   setSettings: function () {
+    const gridSize = parseInt($('#gridSize').val());
     switch (difficulty.getDifficulty()) {
       case difficulty.difficulties.easy:
         this.settings = {
-          rows: 8,
-          cols: 10,
+          rows: gridSize,
+          cols: gridSize,
           mines: 10,
           flags: 10
         }
         break
       case difficulty.difficulties.medium:
           this.settings = {
-          rows: 13,
-          cols: 16,
+          rows: gridSize,
+          cols: gridSize,
           mines: 40,
           flags: 40
         }
         break
       case difficulty.difficulties.hard:
           this.settings = {
-          rows: 16,
-          cols: 30,
+          rows: gridSize,
+          cols: gridSize,
           mines: 99,
           flags: 99
         }
@@ -173,7 +174,7 @@ var mineField = {
         for (let col = 0; col < this.settings.cols; col++) {
           const cellDiv = $('<div>')
             .attr('id', row + '_' + col)
-            .addClass('patch diggable hover')
+            .attr('class', 'patch diggable hover')
           cellDiv.attr('data-row', row)
           cellDiv.attr('data-col', col)
 

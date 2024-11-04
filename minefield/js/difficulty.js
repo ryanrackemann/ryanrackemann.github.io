@@ -6,6 +6,7 @@
 var difficulty = {
     // Key for storing the selected difficulty in the browser storage
     storageKey: 'selectedDifficulty',
+    gridSizeStorageKey: 'customGridSize',
 
     // Constant definitions for consistent access by other objects
     difficulties: {
@@ -22,6 +23,13 @@ var difficulty = {
         else {
             $('#difficulty').val('easy')
         }
+
+        if (localStorage.getItem(this.gridSizeStorageKey) != null) {
+            $('#gridSize').val(localStorage.getItem(this.gridSizeStorageKey))
+        }
+        else {
+            $('#gridSize').val(10)
+        }
     },
 
     // Pull and return the difficulty chosen in the select field
@@ -32,5 +40,10 @@ var difficulty = {
     // Sets the selected difficulty in local storage
     setDifficulty: function () {
         localStorage.setItem(this.storageKey, $('#difficulty').val())
+    },
+
+    // Sets the custom grid size in local storage
+    setCustomGridSize: function () {
+        localStorage.setItem(this.gridSizeStorageKey, $('#gridSize').val())
     }
 }

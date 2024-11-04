@@ -8,6 +8,11 @@ $(function () {
         difficulty.setDifficulty()
     })
 
+    // Custom grid size input field change event
+    $('#gridSize').on('change', function () {
+        difficulty.setCustomGridSize()
+    })
+
     // close lessons learned section
     $('.open-info').on('click', function () {
         $('.info').removeClass('hidden')

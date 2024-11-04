@@ -60,7 +60,6 @@ header {
     align-items: center;
     display: grid;
     gap: 15px;
-    grid-area: header;
     grid-template-columns: auto auto;
     grid-template-areas: 'title title' 'accents theme';
     justify-items: center;
@@ -144,6 +143,28 @@ button:hover, select:hover, .button:hover {
 
 #difficulty-label {
     margin-right: 20px;
+}
+
+#gridSizeWrapper {
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+#gridSize-label {
+    margin-right: 20px;
+}
+
+#gridSize {
+    background-color: var(--opposite);
+    border: none;
+    border-radius: 8px;
+    color: var(--main);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px;
+    text-align: center;
+    width: 100px;
 }
 
 /**********************************\
