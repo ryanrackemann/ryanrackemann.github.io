@@ -1,6 +1,4 @@
 :root {
-  --light-yellow: #fff9ce;
-  --light-teal: #cfe6e5;
   --light-gray: #eeeeee;
   --dark: #000;
 }
@@ -59,7 +57,10 @@ hr {
 |                 Fonts               |
 \*************************************/
 p, a, span { font-size: 1em; }
-h1 { font-size: 2em; }
+h1 {
+  background-color: white;
+  font-size: 2em;
+}
 h2 { font-size: 1.75em; }
 h3 { font-size: 1.2em; }
 h1, h2, h3, p, a, span, li { font-family: 'Roboto', Tahoma, sans-serif; }
@@ -113,6 +114,12 @@ h3 { margin: 0; }
   float: left;
 }
 
+.material-icons.text, .material-symbols-outlined.text {
+  float: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /*************************************\
 |            Google Icons             |
 \*************************************/
@@ -153,18 +160,41 @@ h3 { margin: 0; }
 ul.badges {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 ul.badges li {
-  display: inline-block;
-  list-style: none;
-  padding: 8px 16px;
-  margin-top: 4px;
+  align-items: center;
+  background-color: var(--dark);
   border: 2px solid var(--dark);
   border-radius: 6px;
-  /* dotted styling to reduce class repetition */
-  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
-  background-size: 30px 30px;
+  color: white;
+  display: flex; /* Ensures the content inside the list items can adjust */
+  flex-grow: 1;
+  justify-content: center; /* Centers the text inside each item */
+  list-style: none;
+  margin-top: 4px;
+  padding: 4px 22px;
+}
+
+ul.flex {
+  display: flex; /* Ensures the content inside the list items can adjust */
+  justify-content: center; /* Centers the text inside each item */
+  align-items: center;
+  flex-grow: 1;
+}
+
+ul.badges li.expand {
+  color: var(--dark);
+  background-color: white;
+}
+
+ul.badges li.expand:hover {
+  color: var(--light-gray);
+  background-color: var(--dark);
+  cursor: pointer;
 }
 
 .card {
@@ -245,6 +275,10 @@ ul.badges li {
   margin-right: 20px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (min-width: 600px)
 {
   .header-content {
@@ -267,5 +301,15 @@ ul.badges li {
     grid-area: headshot;
     grid-row: 1;
     grid-column: 1;
+  }
+
+  ul.badges {
+    gap: 3px;
+  }
+
+  ul.badges li {
+    display: inline-block;
+    flex-grow: 0;
+    padding: 4px 20px;
   }
 }
