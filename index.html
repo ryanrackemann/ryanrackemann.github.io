@@ -12,6 +12,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_drop_down" />
 		<title>Ryan Rackemann</title>
 	  	<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBHLJ9352B"></script>
@@ -22,6 +23,9 @@
 		
 		  gtag('config', 'G-GBHLJ9352B');
 		</script>
+  		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/badges.js"></script>
+		<script src="js/app.js" defer></script>
 	</head>
 	<body class="slashed">
 		<header class="dotted">
@@ -48,19 +52,35 @@
 			<div class="card dotted">
 				<h3>In-N-Out Burger</h3>
 				<p><strong>Software Engineer</strong> | September 2022 &ndash; Present</p>
-				<ul class="badges">
-					<li>C#</li>
-					<li>.NET: Core, Framework, ASP.Net</li>
-					<li>JavaScript: Angular, JQuery, Electron</li>
-					<li>SQL: Oracle PL/SQL, Microsoft T-SQL</li>
+				<ul class="badges badges-minimize">
+					<li class="showcase">C#</li>
+					<li class="showcase group">.NET</li>
+					<li>.NET Core</li>
+					<li>.NET Framework</li>
+					<li>ASP.Net</li>
+					<li class="showcase">JavaScript</li>
+					<li>Angular</li>
+					<li>JQuery</li>
+					<li>Electron</li>
+					<li class="showcase group">SQL</li>
+					<li>Oracle PL/SQL</li>
+					<li>Microsoft T-SQL</li>
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>XML</li>
 					<li>Python</li>
+					<li class="showcase">Visual Studio</li>
+					<li>Visual Studio Code</li>
+					<li class="showcase group">GitHub</li>
+					<li>GitHub Copilot</li>
+					<li>GitHub Actions</li>
+					<li>GitHub CLI</li>
+					<li>Atlassian</li>
+					<li>Jira</li>
+					<li>Confluence</li>
+					<li>Trello</li>
+					<li>Asana</li>
 					<li>Selenium</li>
-					<li>Visual Studio: Full IDE and VS Code</li>
-					<li>GitHub: CLI, Desktop, Copilot, Actions</li>
-					<li>Atlassian Products: Jira, Confluence, Trello</li>
 					<li>DataDog</li>
 					<li>Postman</li>
 					<li>Swagger</li>
@@ -70,18 +90,24 @@
 				<p><strong>Software Developer 2</strong> | June 2022 &ndash; September 2022</p>
 				<p><strong>Software Developer 1</strong> | June 2020 &ndash; June 2022</p>
 				<p><strong>Jr. Software Developer</strong> | May 2019 &ndash; June 2020</p>
-				<ul class="badges">
-					<li>C#</li>
-					<li>.NET: Core, Framework, ASP.Net, Razor</li>
-					<li>JavaScript and JQuery</li>
-					<li>SQL: Microsoft T-SQL</li>
+				<ul class="badges badges-minimize">
+					<li class="showcase">C#</li>
+					<li class="showcase group">.NET</li>
+					<li>.NET Core</li>
+					<li>.NET Framework</li>
+					<li>ASP.Net</li>
+					<li class="showcase">JavaScript</li>
+					<li>JQuery</li>
+					<li class="showcase group">SQL</li>
+					<li>Microsoft T-SQL</li>
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>XML</li>
-					<li>Visual Studio: Full IDE and VS Code</li>
-					<li>Atlassian Products: Jira, Confluence</li>
-					<li>DataDog</li>
-					<li>Azure DevOps Server (TFS)</li>
+					<li class="showcase">Visual Studio</li>
+					<li>Visual Studio Code</li>
+					<li>Jira</li>
+					<li>Confluence</li>
+					<li class="showcase">Azure DevOps Server (TFS)</li>
 					<li>Postman</li>
 					<li>Swagger</li>
 					<li>BrowserStack</li>
@@ -91,7 +117,8 @@
 				<p><strong>Senior Web Assistant</strong> | January 2018 &ndash; May 2019</p>
 				<p><strong>Web Assistant</strong> | July 2015 &ndash; January 2018</p>
 				<ul class="badges">
-					<li>JavaScript and JQuery</li>
+					<li>JavaScript</li>
+					<li>JQuery</li>
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>XML</li>
@@ -205,13 +232,20 @@
 				<i data-nosnippet class="material-icons h2">language</i>
 				<h2>Languages and Frameworks</h2>
 			</div>
-			<ul class="badges">
+			<ul class="badges" data-visible-count="5">
 				<li>C#</li>
-				<li>.NET: Core, Framework, ASP.Net, Razor</li>
-				<li>JavaScript: Vanilla, Angular, JQuery, Electron</li>
-				<li>SQL: Microsoft T-SQL, Oracle PL/SQL, MySQL</li>
 				<li>HTML</li>
 				<li>CSS</li>
+				<li>.NET Core</li>
+				<li>.NET Framework</li>
+				<li>ASP.Net</li>
+				<li>JavaScript</li>
+				<li>Angular</li>
+				<li>JQuery</li>
+				<li>Electron</li>
+				<li>Microsoft T-SQL</li>
+				<li>Oracle PL/SQL</li>
+				<li>MySQL</li>
 				<li>XML</li>
 				<li>Python</li>
 				<li>PHP</li>
@@ -224,14 +258,20 @@
 				<i data-nosnippet class="material-icons h2">construction</i>
 				<h2>Tools</h2>
 			</div>
-			<ul class="badges">
-				<li>Visual Studio: Full IDE and VS Code</li>
-				<li>GitHub: CLI, Desktop, Copilot, Actions, Pages</li>
-				<li>Atlassian Products: Jira, Confluence, Trello</li>
+			<ul class="badges" data-visible-count="5">
+				<li>Visual Studio</li>
+				<li>Visual Studio Code</li>
+				<li>GitHub CLI</li>
+				<li>GitHub Copilot</li>
+				<li>GitHub Actions</li>
 				<li>DataDog</li>
-				<li>Azure: DevOps</li>
 				<li>Postman</li>
 				<li>Swagger</li>
+				<li>Jira</li>
+				<li>Confluence</li>
+				<li>Trello</li>
+				<li>Asana</li>
+				<li>Azure: DevOps</li>
 				<li>Shopify</li>
 				<li>BrowserStack</li>
 			</ul>
