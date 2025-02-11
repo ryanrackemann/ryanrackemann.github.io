@@ -18,7 +18,7 @@
 
         // Dynamically append the expand button if it doesn't exist
         if ($expandButton.length === 0) {
-          $list.append('<li class="expand">&mldr;</li>')
+          $list.append('<li class="expand"><i class="fa-solid fa-circle-plus"></i>')
           $expandButton = $list.find('.expand')
         }
 
@@ -35,6 +35,16 @@
           $(this).hide() // Hide the expand button
         })
       })
+
+      // Attach hover event AFTER initializing elements
+      $("ul.badges").hover(
+        function() {
+          $(this).find(".expand i").addClass("fa-beat-fade");
+        },
+        function() {
+          $(this).find(".expand i").removeClass("fa-beat-fade");
+        }
+      );
     }
   }
 
