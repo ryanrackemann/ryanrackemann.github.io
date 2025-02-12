@@ -1,14 +1,15 @@
 :root {
-  --light-gray: #eeeeee;
-  --dark: #000;
+  --accent: #eeeeee;
+  --main: #000;
+  --alt: #fff;
 }
 
 /*************************************\
 |               Layout                |
 \*************************************/
 html {
-  background-color: white;
-  color: black;
+  background-color: var(--alt);
+  color: var(--main);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -28,7 +29,7 @@ header {
   grid-area: header;
   padding: 16px 16px;
   text-align: center;
-  border-bottom: 4px solid var(--dark);
+  border-bottom: 4px solid var(--main);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -42,14 +43,14 @@ main {
 
 footer {
   grid-area: footer;
-  border-top: 4px solid var(--dark);
+  border-top: 4px solid var(--main);
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
   padding: 0 16px;
   margin-top: 36px;
 }
 
 hr {
-  border: solid 1px var(--dark);
+  border: solid 1px var(--main);
   margin: 24px 0;
 }
 
@@ -58,7 +59,7 @@ hr {
 \*************************************/
 p, a, span { font-size: 1em; }
 h1 {
-  background-color: white;
+  background-color: var(--alt);
   font-size: 2em;
 }
 h2 { font-size: 1.75em; }
@@ -66,7 +67,7 @@ h3 { font-size: 1.2em; }
 h1, h2, h3, p, a, span, li { font-family: 'Roboto', Tahoma, sans-serif; }
 /* h3, h3 a { font-family: 'Open Sans Condensed', Tahoma, sans-serif; } */
 
-a { color: black; }
+a { color: var(--main); }
 h3 { margin: 0; }
 
 
@@ -97,7 +98,7 @@ h3 { margin: 0; }
 
 .socials i {
   text-decoration: none;
-  color: black;
+  color: var(--main);
   font-size: 36px;
   padding: 0 4px;
 }
@@ -146,7 +147,7 @@ h3 { margin: 0; }
 }
 
 .split-header h2 {
-  border-left: 4px dotted var(--dark);
+  border-left: 4px dotted var(--main);
   padding-left: 24px;
 }
 
@@ -167,10 +168,10 @@ ul.badges {
 
 ul.badges li {
   align-items: center;
-  background-color: var(--dark);
-  border: 2px solid var(--dark);
+  background-color: var(--main);
+  border: 2px solid var(--main);
   border-radius: 6px;
-  color: white;
+  color: var(--alt);
   display: flex; /* Ensures the content inside the list items can adjust */
   flex-grow: 1;
   justify-content: center; /* Centers the text inside each item */
@@ -187,18 +188,18 @@ ul.flex {
 }
 
 ul.badges li.expand {
-  color: var(--dark);
-  background-color: white;
+  color: var(--main);
+  background-color: var(--alt);
 }
 
 ul.badges li.expand:hover {
-  color: var(--light-gray);
-  background-color: var(--dark);
+  color: var(--accent);
+  background-color: var(--main);
   cursor: pointer;
 }
 
 .card {
-  border: 4px solid var(--dark);
+  border: 4px solid var(--main);
   padding: 16px;
   border-radius: 6px;
   margin-bottom: 16px;
@@ -208,11 +209,11 @@ ul.badges li.expand:hover {
 |              Backgrounds            |
 \*************************************/
 .slashed {
-  background: repeating-linear-gradient( -55deg, var(--light-gray), var(--light-gray) 5px, #ffffff 5px, #ffffff 10px );
+  background: repeating-linear-gradient( -55deg, var(--accent), var(--accent) 5px, var(--alt) 5px, var(--alt) 10px );
 }
 
 .dotted {
-  background: linear-gradient(90deg, white 26px, transparent 1%) center, linear-gradient(white 26px, transparent 1%) center, var(--light-gray);
+  background: linear-gradient(90deg, var(--alt) 26px, transparent 1%) center, linear-gradient(var(--alt) 26px, transparent 1%) center, var(--accent);
   background-size: 30px 30px;
 }
 
@@ -224,7 +225,7 @@ ul.badges li.expand:hover {
   align-items: center;
   background-image: url('https://www.ryanrackemann.com/img/minefield-preview.gif');
   background-size: 480px;
-  border: 4px solid var(--dark);
+  border: 4px solid var(--main);
   border-radius: 8px;
   display: flex;
   font-size: 30px;
@@ -237,9 +238,9 @@ ul.badges li.expand:hover {
 
 .minefield-button span {
   align-items: center;
-  background-color: black;
+  background-color: var(--main);
   border-radius: 8px;
-  color: white;
+  color: var(--alt);
   display: flex;
   justify-content: center;
   padding: 18px;
@@ -247,8 +248,8 @@ ul.badges li.expand:hover {
 }
 
 .minefield-button:hover span {
-  background-color: white;
-  color: black;
+  background-color: var(--alt);
+  color: var(--main);
 }
 
 .minefield-button i {
