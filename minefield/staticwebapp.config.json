@@ -2,12 +2,16 @@
   "trailingSlash": "auto",
   "routes": [
     {
-      "route": "/*",
-      "allowedRoles": ["authenticated"]
+      "route": "/login",
+      "allowedRoles": ["anonymous"],
+      "redirect": "/.auth/login/github"
     },
     {
-      "route": "/login",
-      "redirect": "/.auth/login/github"
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
-  ]
+  ],
+  "responseOverrides": {
+    "401": { "redirect": "/login", "statusCode": 302 }
+  }
 }
