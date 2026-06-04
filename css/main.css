@@ -239,6 +239,7 @@ ul.badges li.expand:hover {
 .minefield-button span {
   align-items: center;
   background-color: var(--main);
+  border: 4px solid var(--alt);
   border-radius: 8px;
   color: var(--alt);
   display: flex;
