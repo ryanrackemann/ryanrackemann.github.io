@@ -12,9 +12,9 @@ var themes = {
             light: 'light'
         }
         this.darkTheme = {
-            '--main': '#e4e4e4',
-            '--alt': '#171717',
-            '--accent': '#212121'
+            '--main': '#fff',
+            '--alt': '#000',
+            '--accent': '#151515'
         }
         this.lightTheme = {
             '--main': '#000',
